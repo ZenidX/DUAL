@@ -3,10 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DUAL</title>
+    <title>Certificado de actividades DUAL</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none !important; }
+            .page { box-shadow: none !important; margin: 0 !important; padding: 40px 60px !important; }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 30px auto;
+            background: #fff;
+            padding: 50px 65px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        /* Logo area */
+        .logo-area {
+            margin-bottom: 30px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-area img {
+            max-height: 70px;
+            display: none;
+        }
+        .logo-placeholder {
+            border: 2px dashed #bbb;
+            border-radius: 8px;
+            padding: 15px 25px;
+            color: #999;
+            font-size: 13px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .logo-placeholder.has-logo { display: none; }
+
+        /* Editable fields */
+        .editable {
+            border-bottom: 1.5px solid #ccc;
+            min-width: 120px;
+            display: inline-block;
+            padding: 2px 4px;
+            outline: none;
+            color: #1a1a1a;
+            transition: border-color 0.2s;
+        }
+        .editable:hover, .editable:focus {
+            border-bottom-color: #2a7ab5;
+            background: #f8fbff;
+        }
+        .editable:empty::before {
+            content: attr(data-placeholder);
+            color: #aaa;
+            font-style: italic;
+        }
+        .editable-bold {
+            font-weight: bold;
+        }
+
+        /* Header text */
+        .header-text {
+            font-size: 14px;
+            text-align: justify;
+            margin-bottom: 35px;
+        }
+
+        /* CERTIFICA */
+        .certifica {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 35px 0;
+            letter-spacing: 1px;
+        }
+
+        /* Body text */
+        .body-text {
+            font-size: 14px;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Activities */
+        .funciones-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+        }
+
+        .actividad-group {
+            margin-bottom: 18px;
+        }
+        .actividad-group-title {
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .actividad-item {
+            font-size: 13px;
+            margin: 0 0 6px 20px;
+            padding-left: 15px;
+            position: relative;
+            text-align: justify;
+            color: #333;
+        }
+        .actividad-item::before {
+            content: "–";
+            position: absolute;
+            left: 0;
+        }
+        .actividad-detail {
+            color: #555;
+            font-size: 12.5px;
+        }
+
+        /* Footer */
+        .cierre {
+            font-size: 14px;
+            text-align: justify;
+            margin-top: 35px;
+        }
+
+        .firma-area {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .firma-placeholder {
+            border: 2px dashed #bbb;
+            border-radius: 8px;
+            width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .firma-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+        .firma-name {
+            font-size: 13px;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #2a7ab5;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+        .toolbar button {
+            background: #fff;
+            color: #2a7ab5;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .toolbar button:hover { background: #e8f0f7; }
+    </style>
 </head>
 <body>
-    <h1>DUAL</h1>
-    <p>Página en construcción.</p>
+
+<div class="toolbar no-print">
+    <span><strong>Certificado DUAL</strong> — Rellena los campos y luego imprime a PDF</span>
+    <button onclick="window.print()">Imprimir / Guardar PDF</button>
+</div>
+
+<div class="page" style="margin-top: 70px;">
+
+    <!-- Logo -->
+    <div class="logo-area">
+        <img id="logoImg" src="" alt="Logo empresa">
+        <label class="logo-placeholder" id="logoPlaceholder">
+            Haz clic para subir el logo de la empresa
+            <input type="file" accept="image/*" style="display:none" onchange="loadImage(this, 'logoImg', 'logoPlaceholder')">
+        </label>
+    </div>
+
+    <!-- Header: firmante y empresa -->
+    <div class="header-text">
+        D. <span class="editable editable-bold" contenteditable="true" data-placeholder="NOMBRE Y APELLIDOS DEL FIRMANTE"></span>,
+        con D.N.I. N.º <span class="editable editable-bold" contenteditable="true" data-placeholder="00000000A"></span>
+        como <span class="editable" contenteditable="true" data-placeholder="cargo del firmante (ej: director/a de zona)"></span>
+        de la empresa <span class="editable editable-bold" contenteditable="true" data-placeholder="RAZÓN SOCIAL DE LA EMPRESA, S.A."></span>,
+        con domicilio en <span class="editable" contenteditable="true" data-placeholder="dirección completa, CP y ciudad"></span>.
+    </div>
+
+    <!-- CERTIFICA -->
+    <div class="certifica">CERTIFICA</div>
+
+    <!-- Cuerpo -->
+    <div class="body-text">
+        Que D./D.ª <span class="editable editable-bold" contenteditable="true" data-placeholder="NOMBRE Y APELLIDOS DEL ALUMNO/A"></span>
+        con NIE/DNI N.º <span class="editable" contenteditable="true" data-placeholder="Z0000000A"></span>
+        presta sus servicios para esta empresa, como
+        <span class="editable" contenteditable="true" data-placeholder="puesto de trabajo (ej: HelpDesk, Técnico de sistemas...)"></span>,
+        desde el <span class="editable" contenteditable="true" data-placeholder="dd/mm/aaaa"></span>.
+    </div>
+
+    <div class="body-text">Las tareas principales del puesto son:</div>
+
+    <!-- Funciones del puesto -->
+    <div class="funciones-title">Funciones del puesto:</div>
+
+    <!-- Grupo 1 -->
+    <div class="actividad-group">
+        <div class="actividad-group-title">1. Determinación de las características de la instalación a partir de las funcionalidades y necesidades establecidas</div>
+
+        <div class="actividad-item">
+            <strong>1.1. Especificación de las características de los equipos y accesorios</strong>
+            <span class="actividad-detail"> — Dimensionamiento de equipos y elementos de la instalación en función de los requisitos de sistema operativo y software a utilizar. Realización del inventario de programas y componentes de la instalación según las especificaciones establecidas.</span>
+        </div>
+
+        <div class="actividad-item">
+            <strong>1.2. Descripción de las principales medidas de seguridad a adoptar</strong>
+            <span class="actividad-detail"> — Identificación de los riesgos. Aplicación de la normativa de prevención de riesgos. Conocimiento de la normativa aplicable a la instalación.</span>
+        </div>
+    </div>
+
+    <!-- Grupo 2 -->
+    <div class="actividad-group">
+        <div class="actividad-group-title">2. Participación en el diseño, puesta en marcha y mantenimiento de instalaciones con servicios de red local e Internet</div>
+
+        <div class="actividad-item">
+            <strong>2.2. Realización de la instalación del sistema</strong>
+            <span class="actividad-detail"> — Realización de la instalación y/o configuración del sistema operativo y las aplicaciones necesarias. Resolución de incidencias relacionadas con el software implicado.</span>
+        </div>
+
+        <div class="actividad-item">
+            <strong>2.4. Administración de sistema informático</strong>
+            <span class="actividad-detail"> — Administración del sistema informático desde la vertiente del sistema operativo. Control de permisos. Gestión de usuarios. Gestión de recursos. Mantenimiento de servicios vinculados al sistema operativo.</span>
+        </div>
+
+        <div class="actividad-item">
+            <strong>2.5. Administración de redes</strong>
+            <span class="actividad-detail"> — Análisis y documentación de la topología de red. Configuración de parámetros de red. Gestión de hardware específico de redes. Diagnóstico y resolución de incidencias de red.</span>
+        </div>
+
+        <div class="actividad-item">
+            <strong>2.6. Administración de sistemas gestores de bases de datos</strong>
+            <span class="actividad-detail"> — Instalación, configuración y mantenimiento de los sistemas gestores de bases de datos y de las bases de datos que gestionan.</span>
+        </div>
+
+        <div class="actividad-item">
+            <strong>2.8. Implantación de servicios de Internet</strong>
+            <span class="actividad-detail"> — Instalación, configuración y mantenimiento de servicios de Internet. Implantación de aplicaciones web. Instalación, configuración y mantenimiento de gestores de contenido.</span>
+        </div>
+    </div>
+
+    <!-- Grupo 3 -->
+    <div class="actividad-group">
+        <div class="actividad-group-title">3. Asistencia a los usuarios resolviendo problemas de la explotación del sistema, según las normas y tiempos establecidos</div>
+
+        <div class="actividad-item">
+            <strong>3.1. Identificación de las necesidades de los usuarios</strong>
+            <span class="actividad-detail"> — Descripción de los procesos que realiza el sistema con indicaciones comprensibles para los usuarios.</span>
+        </div>
+
+        <div class="actividad-item">
+            <strong>3.2. Resolución de las incidencias en los tiempos previstos</strong>
+            <span class="actividad-detail"> — Realización de intervenciones sobre los procesos de los usuarios de acuerdo con el procedimiento establecido. Asignación de los recursos del sistema de forma adecuada a las necesidades de los usuarios.</span>
+        </div>
+
+        <div class="actividad-item">
+            <strong>3.3. Documentación de las incidencias producidas durante la asistencia a los usuarios</strong>
+            <span class="actividad-detail"> — Elaboración de manuales de instrucciones de servicio y mantenimiento de las instalaciones.</span>
+        </div>
+    </div>
+
+    <!-- Cierre -->
+    <div class="cierre">
+        Y para que así conste, a los efectos oportunos y a petición del interesado, firmo el presente certificado, en
+        <span class="editable" contenteditable="true" data-placeholder="ciudad"></span>, a
+        <span class="editable" contenteditable="true" data-placeholder="día de mes de año"></span>.
+    </div>
+
+    <!-- Firma -->
+    <div class="firma-area">
+        <label class="firma-placeholder no-print" id="firmaPlaceholder">
+            <span>Firma y sello</span>
+            <input type="file" accept="image/*" style="display:none" onchange="loadImage(this, 'firmaImg', 'firmaPlaceholder')">
+        </label>
+        <img id="firmaImg" src="" alt="Firma" style="max-width:200px; max-height:100px; display:none;">
+        <div class="firma-name">
+            <span class="editable" contenteditable="true" data-placeholder="Nombre del firmante"></span><br>
+            <span class="editable" contenteditable="true" data-placeholder="Cargo"></span>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function loadImage(input, imgId, placeholderId) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = document.getElementById(imgId);
+        img.src = e.target.result;
+        img.style.display = 'block';
+        document.getElementById(placeholderId).classList.add('has-logo');
+    };
+    reader.readAsDataURL(file);
+}
+</script>
+
 </body>
 </html>
