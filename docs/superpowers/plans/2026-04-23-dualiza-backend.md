@@ -14,13 +14,21 @@
 
 ## Environment conventions
 
-- **Local development path:** `D:/Xavi/ProjectsITIC/dualiza/`
+- **Local development path:** `D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/`
 - **GitHub repo:** `ZenidX/dualiza` (private initially)
 - **VPS:** `ubuntu@150.230.183.140`, deploy to `/opt/docker/DUALIZA/`
 - **Python env locally:** `uv` or `venv` — pla assumeix `venv`, però és indiferent
 - **Shell:** bash (Git Bash on Windows)
 
 Commands are shown as bash. On Windows use Git Bash or WSL.
+
+### Note on nested git repositories
+
+The DUALIZA project directory lives **inside** an existing git repo (`DUAL-SolucionesClaude`). To keep the two repos independent:
+
+1. Before creating the DUALIZA project dir, add `Dualiza/server/` to `DUAL-SolucionesClaude/.gitignore`.
+2. Initialize the DUALIZA repo inside `Dualiza/server/` normally — git treats nested repos as opaque when the inner path is in the outer `.gitignore`.
+3. Never run git commands from the outer repo that touch `Dualiza/server/`; always `cd` into the inner repo first.
 
 ---
 
@@ -29,18 +37,36 @@ Commands are shown as bash. On Windows use Git Bash or WSL.
 ### Task 1: Create the local project directory and git repo
 
 **Files:**
-- Create: `D:/Xavi/ProjectsITIC/dualiza/.gitignore`
-- Create: `D:/Xavi/ProjectsITIC/dualiza/README.md`
+- Modify: `D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/.gitignore`
+- Create: `D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/.gitignore`
+- Create: `D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/README.md`
 
-- [ ] **Step 1: Create dir and initialize git**
+- [ ] **Step 1: Add the new project path to the outer repo's .gitignore**
+
+Append to `D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/.gitignore`:
+
+```
+# DUALIZA backend lives here as an independent git repository
+/Dualiza/server/
+```
+
+Commit this in the **outer** repo:
 
 ```bash
-mkdir -p D:/Xavi/ProjectsITIC/dualiza
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude
+git add .gitignore
+git commit -m "chore: ignore Dualiza/server (independent DUALIZA repo)"
+```
+
+- [ ] **Step 2: Create the inner project dir and initialize git**
+
+```bash
+mkdir -p D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git init -b main
 ```
 
-- [ ] **Step 2: Create `.gitignore`**
+- [ ] **Step 3: Create `.gitignore`** (inside `Dualiza/server/`)
 
 ```gitignore
 # Python
@@ -88,7 +114,7 @@ docker-compose.override.yml
 Thumbs.db
 ```
 
-- [ ] **Step 3: Create minimal `README.md`**
+- [ ] **Step 4: Create minimal `README.md`**
 
 ```markdown
 # DUALIZA
@@ -115,9 +141,10 @@ docker compose up --build
 Automàtic via GitHub Actions en push a `main`.
 ```
 
-- [ ] **Step 4: Commit**
+- [ ] **Step 5: Commit inside `Dualiza/server/`**
 
 ```bash
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add .gitignore README.md
 git commit -m "chore: initial project scaffold"
 ```
@@ -131,7 +158,7 @@ git commit -m "chore: initial project scaffold"
 - [ ] **Step 1: Create private GitHub repo**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 gh repo create ZenidX/dualiza --private --source=. --remote=origin --description "Backend DUALIZA: gestió de propostes de projectes empresa-ITICBCN"
 ```
 
@@ -162,7 +189,7 @@ Expected: `main` branch pushed and tracking `origin/main`.
 - [ ] **Step 1: Create venv and install Django**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 python -m venv venv
 source venv/Scripts/activate    # Git Bash on Windows
 pip install --upgrade pip
@@ -198,7 +225,7 @@ Pillow>=10.0
 - [ ] **Step 4: Install deps**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 pip install -r src/requirements.txt
 ```
 
@@ -207,7 +234,7 @@ Expected: all install cleanly. If `django-mongodb-backend` fails (version mismat
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/
 git commit -m "feat: Django project skeleton with src layout"
 ```
@@ -384,7 +411,7 @@ No change needed; verify by running `python manage.py check` after apps exist.
 
 - [ ] **Step 3: Create `.env.example` at repo root**
 
-File: `D:/Xavi/ProjectsITIC/dualiza/.env.example`
+File: `D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/.env.example`
 
 ```
 # Django
@@ -562,7 +589,7 @@ networks:
 Note: this will fail later tasks still need done (no apps yet), but we verify the services come up.
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 # Ensure .env has MONGO_USER/PASSWORD, DJANGO_SECRET_KEY set
 docker compose -f docker/docker-compose.yml up -d mongodb
 docker compose -f docker/docker-compose.yml logs mongodb | tail
@@ -643,7 +670,7 @@ git commit -m "feat: nginx reverse proxy config with X-Accel-Redirect for media"
 - [ ] **Step 1: Create app**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py startapp core
 ```
 
@@ -712,7 +739,7 @@ git commit -m "feat: core app and root URL configuration"
 - [ ] **Step 1: Create app**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py startapp empreses
 ```
 
@@ -817,7 +844,7 @@ class EmpresesConfig(AppConfig):
 - [ ] **Step 5: Run `makemigrations`**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py makemigrations empreses
 ```
 
@@ -826,7 +853,7 @@ Expected: `Migrations for 'empreses': 0001_initial.py`.
 - [ ] **Step 6: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/empreses/
 git commit -m "feat(empreses): Empresa model with embedded Contacte"
 ```
@@ -841,7 +868,7 @@ git commit -m "feat(empreses): Empresa model with embedded Contacte"
 - [ ] **Step 1: Create app**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py startapp projectes
 ```
 
@@ -986,14 +1013,14 @@ urlpatterns = []
 - [ ] **Step 5: Run `makemigrations`**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py makemigrations projectes
 ```
 
 - [ ] **Step 6: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/projectes/
 git commit -m "feat(projectes): Projecte and FitxerAdjunt models"
 ```
@@ -1008,7 +1035,7 @@ git commit -m "feat(projectes): Projecte and FitxerAdjunt models"
 - [ ] **Step 1: Create app**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py startapp comptes
 ```
 
@@ -1047,7 +1074,7 @@ File: `src/comptes/models.py`
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/comptes/
 git commit -m "feat(comptes): app scaffold for auth flows"
 ```
@@ -1061,7 +1088,7 @@ git commit -m "feat(comptes): app scaffold for auth flows"
 - [ ] **Step 1: Start MongoDB locally (via Docker)**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 docker compose -f docker/docker-compose.yml up -d mongodb
 ```
 
@@ -1087,7 +1114,7 @@ Restart: `docker compose -f docker/docker-compose.yml up -d mongodb`.
 - [ ] **Step 3: Run migrations**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py migrate
 ```
 
@@ -1199,7 +1226,7 @@ class ProjecteFormTest(TestCase):
 - [ ] **Step 2: Run tests to see them fail**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py test projectes
 ```
 
@@ -1300,7 +1327,7 @@ Expected: `OK (4 tests)`.
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/projectes/forms.py src/projectes/tests.py
 git commit -m "feat(projectes): ProjecteForm with validation tests"
 ```
@@ -1393,7 +1420,7 @@ File: `src/templates/enviat.html`
 - [ ] **Step 4: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/templates/
 git commit -m "feat: base template + adapted formulari + enviat template"
 ```
@@ -1466,7 +1493,7 @@ class EnviarFormulariViewTest(TestCase):
 - [ ] **Step 2: Run tests — expect failures**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py test projectes.tests.EnviarFormulariViewTest
 ```
 
@@ -1670,7 +1697,7 @@ cliqueu "He oblidat la contrasenya" al login i establiu una contrasenya nova.</p
 - [ ] **Step 7: Run tests**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza/src
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server/src
 python manage.py test projectes
 ```
 
@@ -1679,7 +1706,7 @@ Expected: all pass.
 - [ ] **Step 8: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/projectes/views.py src/projectes/urls.py src/projectes/tests.py src/comptes/services.py src/templates/emails/
 git commit -m "feat: form submission view creates Empresa+Projecte+User and sends email"
 ```
@@ -1800,7 +1827,7 @@ python manage.py test projectes
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/projectes/forms.py src/projectes/tests.py
 git commit -m "feat(projectes): file upload validation (size, extension, count)"
 ```
@@ -1814,7 +1841,7 @@ git commit -m "feat(projectes): file upload validation (size, extension, count)"
 - [ ] **Step 1: Start the stack**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 # Make sure EMAIL_BACKEND is console for dev:
 # In .env: EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
 docker compose -f docker/docker-compose.yml up --build
@@ -1923,7 +1950,7 @@ Open `http://localhost:8000/accounts/login/` — should render our override temp
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/templates/account/
 git commit -m "feat(comptes): allauth template overrides for login/signup"
 ```
@@ -2066,7 +2093,7 @@ python manage.py test comptes
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/comptes/adapters.py src/config/settings.py src/comptes/tests.py
 git commit -m "feat(comptes): link Google OAuth to existing User by email"
 ```
@@ -2213,7 +2240,7 @@ File: `src/templates/dashboard.html`
 - [ ] **Step 6: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/empreses/views.py src/empreses/urls.py src/empreses/tests.py src/templates/dashboard.html
 git commit -m "feat(empreses): dashboard listing logged-in user's projects"
 ```
@@ -2321,7 +2348,7 @@ File: `src/templates/projecte_detail.html`
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/projectes/
 git add src/templates/projecte_detail.html
 git commit -m "feat(projectes): detail view with access control"
@@ -2549,7 +2576,7 @@ Open `http://localhost:8000/admin/`. Verify Unfold renders, and Empresa/Projecte
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/empreses/admin.py src/projectes/admin.py src/config/settings.py
 git commit -m "feat(admin): Unfold theme + Empresa/Projecte admin with status actions"
 ```
@@ -2863,7 +2890,7 @@ curl -H 'Authorization: Token ...' http://localhost:8000/api/v1/projectes/
 - [ ] **Step 5: Commit**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git add src/api/
 git commit -m "feat(api): DRF viewsets for Projecte and Empresa with owner/staff perms"
 ```
@@ -3051,7 +3078,7 @@ No commit for this task unless README gets updated.
 - [ ] **Step 1: Make a trivial change on a feature branch**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git checkout -b test/ci
 echo "Deployed via GitHub Actions." >> README.md
 git add README.md
@@ -3189,7 +3216,7 @@ git commit -m "feat: structured stdout logging for Docker"
 - [ ] **Step 1: Push all pending changes**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git push origin main
 # Watch: gh run watch
 ```
@@ -3252,7 +3279,7 @@ git push origin main
 - [ ] **Step 1: Tag**
 
 ```bash
-cd D:/Xavi/ProjectsITIC/dualiza
+cd D:/Xavi/ProjectsITIC/DUAL-SolucionesClaude/Dualiza/server
 git tag -a v0.1.0-mvp -m "DUALIZA backend MVP"
 git push origin v0.1.0-mvp
 ```
