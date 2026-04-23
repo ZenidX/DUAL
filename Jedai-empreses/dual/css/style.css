@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+
+	--daw: #33afcf;
+	--dam: #30efbc;
+	--asix: #2f299f;
+	--colorSecundariL: #9ba1a3;
+	--white: #ffffff;
+	--black: #131313;	
+	--grisClaret: #f6f6f6;
+	--activeColor: #12103d;
+	
+	--fontText: 'Poppins', sans-serif;;
+}
+
+h2 {
+    font-size: 48px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-family: var(--fontText);
+    font-weight: 600;
+    margin: 0 auto 20px auto;
+}
+
+.heading{
+	width: 700px;
+}
+
+h3{
+	font-size:30px;
+	margin-bottom: 20px;
+	font-family: var(--fontText);
+	font-weight: 300;
+}
+
+h4 {
+    text-align: center;
+    font-size: 19px;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: var(--activeColor);
+    color: #ffffff;
+    width:fit-content;
+	width: -moz-fit-content;
+	margin: 0 auto;
+	font-weight: 500;
+}
+
+
+.h4left {
+    text-align: left;
+    font-size: 19px;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: var(--activeColor);
+    color: #ffffff;
+    display: inline-block;
+	font-weight:500;
+}
+
+
+header h5{
+    color: var(--white);
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+
+
+header{
+	position: relative;
+	min-height: 100vh;
+	background-image: linear-gradient(120deg, #227a91b2, #0ca67db2, #2a258eb2), url("../img/home.jpg");
+	background-size: cover;
+	color: var(--grisClaret);
+	padding:50px 0px;
+
+}
+
+.separador{
+	width:100%;
+	height:7px;
+	background: linear-gradient(150deg, var(--asix) 33%, var(--daw) 66%, var(--dam) 100%);
+
+}
+
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-size: 14px;
+	text-align: left;
+	background: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  thead {
+	background-color: #2a258ed1; /* Blau fosc suavitzat */
+	color: white;
+  }
+  
+  th, td {
+	padding: 10px 12px;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd; /* Afegim línies verticals */
+  }
+  
+  th:last-child, td:last-child {
+	border-right: none; /* Eliminar la línia de la última columna */
+  }
+  
+  tbody tr:nth-child(2),   tbody tr:nth-child(3) {
+	background: #f1faff;
+  }
+  
+  .td_fort {
+	background: #227a91d1; /* Blau suau */
+	font-weight: normal;
+	color: #fff;
+  }
+  
+  tfoot {
+	background: #0ca67dd1; /* Color més clar per al footer */
+	color: white;
+	font-size: 13px;
+	text-align: left;
+  }
+  
+  tfoot td {
+	padding: 10px 20px;
+	border-top: 2px solid white;
+  }
+  
+
+
+.header-container{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
+}
+
+header .menu{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .menu nav ul{
+	display:flex;
+}
+
+header .menu nav ul li{
+	list-style: none;
+	margin-left: 40px;
+}
+
+header .menu nav ul li a{
+	color: var(--white);
+	text-decoration:none;
+	transition: all ease-in-out 0.2s;
+
+}
+
+header .menu nav ul li a:hover{
+	border-bottom: 1px solid var(--white);
+	padding-bottom: 8px;
+	transition: all ease-in-out 0.2s;
+}
+
+header .menu .logo{
+	width: 180px;
+}
+
+header .contingut{
+	margin-top:60px !important;
+}
+
+header .container{
+	margin: 0 auto;
+	display: block;
+
+	text-align: center;
+}
+
+::selection{
+	background-color: var(--colorSecundariL);
+	color:var(--white);
+}
+
+.quadrats{
+	display:flex;
+	justify-content: center;
+	color:var(--black);
+	margin-top:60px;	
+}
+
+.ciclequadrat{
+	font-size: 20px;
+	color: var(--white);
+	width:130px;
+	height: 130px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	margin:0px 20px;
+	text-align: center;
+	padding:5px;
+}
+
+.titleQuadrat{
+	font-size: 28px;
+    font-weight: 600;
+    line-height: 34px;
+}
+
+#qdam, .dam{
+	background-color:var(--dam);
+}
+
+#qdaw, .daw{
+	background-color:var(--daw);
+}
+
+#qasix, .asix{
+	background-color:var(--asix);
+}
+
+.text span{
+	font-weight: bold;
+	color: var(--activeColor);
+}
+
+.calendari img {
+    background-color: #9994ac;
+    padding: 7px;
+    width: 50px;
+    margin-right: 15px;
+}
+
+.calendari ul li:nth-child(4) img{
+	background-color: var(--dam);
+}
+
+.calendari ul{
+	list-style: none;
+	margin: 0 auto;
+	padding: 0px;
+	width:max-content;
+}
+
+.calendari ul li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calendari h4{
+	margin-bottom:40px;
+}
+
+.colcicles a {
+    color: var(--white);
+    padding: 10px 20px;
+    border: 2px solid var(--white);
+	display: inline-block;
+	text-decoration: none;
+}
+
+.colcicles a:hover{
+	text-decoration:none;
+	background-color: var(--white);
+}
+
+.colcicles{
+	padding: 70px 30px;
+	text-align: center;
+	color: var(--white);
+}
+
+
+.cicles h5{
+	font-size: 45px;
+	margin-bottom: 30px;
+	font-weight: 700;
+}
+
+.cicles h6{
+	font-size: 20px;
+}
+
+footer h5{
+	font-weight: bold;
+}
+
+.logos_footer img {
+    width: 250px;
+}
+
+.logos_footer {
+    margin-top: 25px;
+}
+
+.logo_footer_div {
+    padding: 90px 0px;
+}
+
+.cicles .dam a:hover{
+	color: var(--dam);
+}
+
+.cicles .daw a:hover{
+	color:var(--daw);
+}
+
+.cicles .asix a:hover{
+	color:var(--asix);
+}
+
+footer{
+    color:var(--white);
+}
+
+footer iframe{
+	display:block;
+}
+
+.footerInfo{
+	margin-bottom:5px;
+}
+
+.footer1{
+	background-color: #252525;
+
+	padding: 50px 0px;
+}
+
+.footer2{
+	background-color: #1c1c1a;
+	padding: 15px 0px;
+}
+
+footer .footer1 i{
+	margin-right: 10px;
+	width: 20px;
+	text-align: center;
+}
+
+footer .logo{
+	width: 150px;
+	margin: 0px 0px 20px 0px;
+}
+
+footer ul{
+	margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.skills{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+	margin-top:30px;
+}
+
+.skills i {
+    margin: 0 5px;
+    font-size: 30px;
+	color: var(--white);
+}
+
+.speedJob, .calendari{
+	background-color: var(--grisClaret);
+	padding:90px 0px;
+}
+
+.quadratCaledari {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-weight: 600;
+	margin-right:15px;
+	min-width:50px !important;
+}
+
+a{
+	color: #2e4558;
+}
+
+a:hover{
+	color:var(--colorSecundariL);
+}
+
+
+footer a{
+	color: #ffffff;
+	text-decoration: none;
+	transition:1s;
+}
+
+footer a:hover{
+	text-decoration: line-through;
+	color: #ffffff;
+}
+
+.puntText{
+	margin-left:15px;
+}
+
+button.accordion-button:hover i {
+    transform: rotate(360deg);
+    transition: 0.5s;
+}
+
+.accordion-button:not(.collapsed) {
+	color: #000;
+	background-color: #f4f4f4;
+}
+
+.proces{
+	padding: 90px 0px;
+}
+
+.accordion-button:not(.collapsed)::after {
+
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.btnInscripcio {
+	color:var(--black);
+	margin-top: 65px;
+	padding: 15px 25px;
+	display: inline-block;
+	text-decoration: none;
+	border: 2px solid var(--white);
+	transition: all ease-in-out 0.2s;
+	font-weight: 600;
+	background-color: var(--white)
+}
+
+.btnInscripcio:hover{
+	text-decoration: none;
+	font-weight: 600;
+	color: var(--white);
+	border: 2px solid var(--activeColor);
+	background-color: var(--activeColor);
+	transition: all ease-in-out 0.2s;
+	
+}
+
+.empresesdual{
+	padding:90px 0px 50px 0px;
+}
+
+.empreses{
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.logoEmpreses img{
+	max-width:80%;
+	max-height:100px;
+	filter: grayscale(100%);
+	transition: 0.2s;
+}
+
+.logoEmpreses img:hover{
+	filter: grayscale(0%);
+}
+
+
+.logoEmpreses a{
+	text-align: center;
+}
+
+.logoEmpreses{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom:40px;
+	width:20%;
+}
+
+.logosEmpresesDual p{
+	text-align: center;
+}
+
+.logos_financ {
+	margin-bottom: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top:45px;
+	}
+	
+	.logos_financ img {
+	height: 60px;
+	margin: 0px 15px 40px 15px;
+	}
+
+@media screen and (min-width: 586px) and (max-width: 1020px) {
+
+}
+
+
+@media only screen and (max-width: 585px) {
+	.heading{
+		width: 100%;
+	}
+
+	h2{
+		font-size: 50px;
+	}
+	.calendari ul{
+		width:100%;
+	}
+
+	.logos_footer{
+		flex-direction: column;
+	}
+
+	.accordion{
+		margin-bottom:15px;
+	}
+
+
+	.ciclequadrat{
+		margin: 0px;
+	}
+
+	.footer1 .col-12{
+		margin-bottom:40px;
+	}
+
+	.menu nav{
+		display:none;
+	}
+
+	header .menu{
+		justify-content: center;
+	}
+
+	.logoEmpreses{
+		width:50%;
+	}
+
+	.canco{
+		background-attachment: unset;
+	}
+
+	/* Contenedor para hacer scroll en móviles */
+.table-container {
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch; /* Mejora el scroll en móviles */
+  }
+}
+

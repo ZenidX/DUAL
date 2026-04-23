@@ -1,0 +1,1157 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ITIC BCN//Defensas Projecte DUAL 2025-2026//CA
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Defensas Projecte DUAL ITIC BCN
+X-WR-TIMEZONE:Europe/Madrid
+BEGIN:VTIMEZONE
+TZID:Europe/Madrid
+BEGIN:STANDARD
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260422T143000
+DTEND;TZID=Europe/Madrid:20260422T145000
+SUMMARY:Dumont Córcoles\, Ismael (ASIX2BCOM) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Dumont Córcoles\, Ismael\nClasse: ASIX2BCOM\nTutor: Daniel García Jimén
+ ez\nTribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONA
+ MENT DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el 
+ projecte realitzat a l'empresa durant el periode de DUAL. Cal explicar els
+  objectius\, les tasques realitzades\, les tecnologies utilitzades\, els r
+ esultats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES 
+ (5 min):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre 
+ el projecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de de
+ fensar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA --
+ -\n\n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o s
+ imilar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferen
+ cia si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Dumont Córcoles, Ismael";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILT
+ O:2024_dumont.corcoles@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260422T143000-defensa-dumont-c-rcoles--ismael@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260422T145000
+DTEND;TZID=Europe/Madrid:20260422T151000
+SUMMARY:Murcia Arcas\, Oriol (ASIX2ACOM) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Murcia Arcas\, Oriol\nClasse: ASIX2ACOM\nTutor: Xavier Lara Moreno\nTribun
+ al: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA
+  DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte r
+ ealitzat a l'empresa durant el periode de DUAL. Cal explicar els objectius
+ \, les tasques realitzades\, les tecnologies utilitzades\, els resultats o
+ btinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n
+    El tribunal (coordinadors i tutor) formulara preguntes sobre el project
+ e\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i j
+ ustificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dos
+ sier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\
+ nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'i
+ ndica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Murcia Arcas, Oriol";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:202
+ 3_oriol.murcia@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260422T145000-defensa-murcia-arcas--oriol@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260422T151000
+DTEND;TZID=Europe/Madrid:20260422T153000
+SUMMARY:López Martínez\, Marcos (ASIX2ACOM) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ López Martínez\, Marcos\nClasse: ASIX2ACOM\nTutor: Xavier Lara Moreno\nT
+ ribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT 
+ DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el proje
+ cte realitzat a l'empresa durant el periode de DUAL. Cal explicar els obje
+ ctius\, les tasques realitzades\, les tecnologies utilitzades\, els result
+ ats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 mi
+ n):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pr
+ ojecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensa
+ r i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n
+ - Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simila
+ r)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia s
+ i s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="López Martínez, Marcos";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILT
+ O:2023_marcos.lopez@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260422T151000-defensa-l-pez-mart-nez--marcos@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T140000
+DTEND;TZID=Europe/Madrid:20260505T142000
+SUMMARY:Caballero Enero\, Arnau (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Caballero Enero\, Arnau\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTribun
+ al: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA
+  DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte r
+ ealitzat a l'empresa durant el periode de DUAL. Cal explicar els objectius
+ \, les tasques realitzades\, les tecnologies utilitzades\, els resultats o
+ btinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n
+    El tribunal (coordinadors i tutor) formulara preguntes sobre el project
+ e\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i j
+ ustificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dos
+ sier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\
+ nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'i
+ ndica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Caballero Enero, Arnau";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ 2024_arnau.caballero@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T140000-defensa-caballero-enero--arnau@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T142000
+DTEND;TZID=Europe/Madrid:20260505T144000
+SUMMARY:Colet Ayllo\, Daniel (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Colet Ayllo\, Daniel\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTribunal:
+  Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA DE
+ FENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte real
+ itzat a l'empresa durant el periode de DUAL. Cal explicar els objectius\, 
+ les tasques realitzades\, les tecnologies utilitzades\, els resultats obti
+ nguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n   
+ El tribunal (coordinadors i tutor) formulara preguntes sobre el projecte\,
+  el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i just
+ ificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dossie
+ r de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\nDu
+ racio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'indi
+ ca)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Colet Ayllo, Daniel";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:202
+ 4_daniel.colet@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T142000-defensa-colet-ayllo--daniel@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T144000
+DTEND;TZID=Europe/Madrid:20260505T150000
+SUMMARY:Fernández Marino\, Javier (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Fernández Marino\, Javier\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTri
+ bunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE
+  LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el project
+ e realitzat a l'empresa durant el periode de DUAL. Cal explicar els object
+ ius\, les tasques realitzades\, les tecnologies utilitzades\, els resultat
+ s obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min)
+ :\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proj
+ ecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar 
+ i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- 
+ Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)
+ \n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si 
+ s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Fernández Marino, Javier";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAIL
+ TO:2024_javier.fernandez@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T144000-defensa-fern-ndez-marino--javier@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T150000
+DTEND;TZID=Europe/Madrid:20260505T152000
+SUMMARY:García Martínez\, Pablo (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ García Martínez\, Pablo\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTrib
+ unal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE 
+ LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte
+  realitzat a l'empresa durant el periode de DUAL. Cal explicar els objecti
+ us\, les tasques realitzades\, les tecnologies utilitzades\, els resultats
+  obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):
+ \n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proje
+ cte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i
+  justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- D
+ ossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\
+ n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s
+ 'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="García Martínez, Pablo";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILT
+ O:2024_pablo.garcia@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T150000-defensa-garc-a-mart-nez--pablo@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T154000
+DTEND;TZID=Europe/Madrid:20260505T160000
+SUMMARY:Mas Sales\, Pau (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Mas Sales\, Pau\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTribunal: Mari
+ a Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA DEFENSA
+  ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte realitzat
+  a l'empresa durant el periode de DUAL. Cal explicar els objectius\, les t
+ asques realitzades\, les tecnologies utilitzades\, els resultats obtinguts
+  i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n   El tr
+ ibunal (coordinadors i tutor) formulara preguntes sobre el projecte\, el d
+ ossier i l'experiencia a l'empresa. L'alumne haura de defensar i justifica
+ r les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dossier de 
+ seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\nDuracio
+  total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Mas Sales, Pau";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:2024_pau
+ .mas@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T154000-defensa-mas-sales--pau@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T164000
+DTEND;TZID=Europe/Madrid:20260505T170000
+SUMMARY:Noval Juanola\, Lluis (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Noval Juanola\, Lluis\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTribunal
+ : Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA D
+ EFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte rea
+ litzat a l'empresa durant el periode de DUAL. Cal explicar els objectius\,
+  les tasques realitzades\, les tecnologies utilitzades\, els resultats obt
+ inguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n  
+  El tribunal (coordinadors i tutor) formulara preguntes sobre el projecte\
+ , el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i jus
+ tificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dossi
+ er de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\nD
+ uracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'ind
+ ica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Noval Juanola, Lluis";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:20
+ 24_lluis.noval@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T164000-defensa-noval-juanola--lluis@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T170000
+DTEND;TZID=Europe/Madrid:20260505T172000
+SUMMARY:Oñate Villagrasa\, Aitana (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Oñate Villagrasa\, Aitana\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTri
+ bunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE
+  LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el project
+ e realitzat a l'empresa durant el periode de DUAL. Cal explicar els object
+ ius\, les tasques realitzades\, les tecnologies utilitzades\, els resultat
+ s obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min)
+ :\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proj
+ ecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar 
+ i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- 
+ Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)
+ \n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si 
+ s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Oñate Villagrasa, Aitana";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAIL
+ TO:2024_aitana.onate@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T170000-defensa-o-ate-villagrasa--aitana@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T172000
+DTEND;TZID=Europe/Madrid:20260505T174000
+SUMMARY:Ozuna Peña\, Josther Alinton (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Ozuna Peña\, Josther Alinton\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\n
+ Tribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT
+  DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el proj
+ ecte realitzat a l'empresa durant el periode de DUAL. Cal explicar els obj
+ ectius\, les tasques realitzades\, les tecnologies utilitzades\, els resul
+ tats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 m
+ in):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el p
+ rojecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defens
+ ar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\
+ n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simil
+ ar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia 
+ si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Ozuna Peña, Josther Alinton";ROLE=REQ-PARTICIPANT;RSVP=TRUE:M
+ AILTO:2024_jostheralinton.ozuna@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T172000-defensa-ozuna-pe-a--josther-alinton@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T174000
+DTEND;TZID=Europe/Madrid:20260505T180000
+SUMMARY:Perrone \, Valentin (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Perrone \, Valentin\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTribunal: 
+ Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA DEF
+ ENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte reali
+ tzat a l'empresa durant el periode de DUAL. Cal explicar els objectius\, l
+ es tasques realitzades\, les tecnologies utilitzades\, els resultats obtin
+ guts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n   E
+ l tribunal (coordinadors i tutor) formulara preguntes sobre el projecte\, 
+ el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i justi
+ ficar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dossier
+  de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\nDur
+ acio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'indic
+ a)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Perrone , Valentin";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:2024
+ _valentin.perrone@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T174000-defensa-perrone---valentin@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T180000
+DTEND;TZID=Europe/Madrid:20260505T182000
+SUMMARY:Tarira Siia\, Brian Douglas (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Tarira Siia\, Brian Douglas\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTr
+ ibunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT D
+ E LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projec
+ te realitzat a l'empresa durant el periode de DUAL. Cal explicar els objec
+ tius\, les tasques realitzades\, les tecnologies utilitzades\, els resulta
+ ts obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min
+ ):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pro
+ jecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar
+  i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n-
+  Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar
+ )\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si
+  s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Tarira Siia, Brian Douglas";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAI
+ LTO:2223_brian.tarira@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T180000-defensa-tarira-siia--brian-douglas@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260505T182000
+DTEND;TZID=Europe/Madrid:20260505T184000
+SUMMARY:Blasco Molné\, Pol (ASIX2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Blasco Molné\, Pol\nClasse: ASIX2A\nTutor: Xavier Lara Moreno\nTribunal: 
+ Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA DEF
+ ENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte reali
+ tzat a l'empresa durant el periode de DUAL. Cal explicar els objectius\, l
+ es tasques realitzades\, les tecnologies utilitzades\, els resultats obtin
+ guts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n   E
+ l tribunal (coordinadors i tutor) formulara preguntes sobre el projecte\, 
+ el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i justi
+ ficar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dossier
+  de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\nDur
+ acio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'indic
+ a)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Blasco Molné, Pol";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:2023
+ _pol.blasco@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260505T182000-defensa-blasco-moln---pol@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T140000
+DTEND;TZID=Europe/Madrid:20260506T142000
+SUMMARY:Alonso Vialá\, Unai (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Alonso Vialá\, Unai\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nTrib
+ unal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE 
+ LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte
+  realitzat a l'empresa durant el periode de DUAL. Cal explicar els objecti
+ us\, les tasques realitzades\, les tecnologies utilitzades\, els resultats
+  obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):
+ \n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proje
+ cte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i
+  justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- D
+ ossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\
+ n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s
+ 'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Alonso Vialá, Unai";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:222
+ 3_unai.alonso@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T140000-defensa-alonso-vial---unai@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T142000
+DTEND;TZID=Europe/Madrid:20260506T144000
+SUMMARY:Bakali Bakali\, Youssef (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Bakali Bakali\, Youssef\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nT
+ ribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT 
+ DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el proje
+ cte realitzat a l'empresa durant el periode de DUAL. Cal explicar els obje
+ ctius\, les tasques realitzades\, les tecnologies utilitzades\, els result
+ ats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 mi
+ n):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pr
+ ojecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensa
+ r i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n
+ - Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simila
+ r)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia s
+ i s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Bakali Bakali, Youssef";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ 2024_youssef.bakali@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T142000-defensa-bakali-bakali--youssef@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T144000
+DTEND;TZID=Europe/Madrid:20260506T150000
+SUMMARY:Colomé Fernández\, Éric (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Colomé Fernández\, Éric\nClasse: ASIX2B\nTutor: Daniel García Jiménez
+ \nTribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAME
+ NT DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el pr
+ ojecte realitzat a l'empresa durant el periode de DUAL. Cal explicar els o
+ bjectius\, les tasques realitzades\, les tecnologies utilitzades\, els res
+ ultats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5
+  min):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el
+  projecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defe
+ nsar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\
+ n\n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o sim
+ ilar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferenci
+ a si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Colomé Fernández, Éric";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAIL
+ TO:2023_eric.colome@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T144000-defensa-colom--fern-ndez---ric@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T150000
+DTEND;TZID=Europe/Madrid:20260506T152000
+SUMMARY:Córdoba Bañol\, David (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Córdoba Bañol\, David\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nT
+ ribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT 
+ DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el proje
+ cte realitzat a l'empresa durant el periode de DUAL. Cal explicar els obje
+ ctius\, les tasques realitzades\, les tecnologies utilitzades\, els result
+ ats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 mi
+ n):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pr
+ ojecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensa
+ r i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n
+ - Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simila
+ r)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia s
+ i s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Córdoba Bañol, David";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ 2024_david.cordoba@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T150000-defensa-c-rdoba-ba-ol--david@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T154000
+DTEND;TZID=Europe/Madrid:20260506T160000
+SUMMARY:Gondal Batool\, Sheharyar Ali (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Gondal Batool\, Sheharyar Ali\nClasse: ASIX2B\nTutor: Daniel García Jimé
+ nez\nTribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCION
+ AMENT DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el
+  projecte realitzat a l'empresa durant el periode de DUAL. Cal explicar el
+ s objectius\, les tasques realitzades\, les tecnologies utilitzades\, els 
+ resultats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES
+  (5 min):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre
+  el projecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de d
+ efensar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA -
+ --\n\n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o 
+ similar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconfere
+ ncia si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Gondal Batool, Sheharyar Ali";ROLE=REQ-PARTICIPANT;RSVP=TRUE:M
+ AILTO:2024_sheharyar.gondal@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T154000-defensa-gondal-batool--sheharyar-ali@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T160000
+DTEND;TZID=Europe/Madrid:20260506T162000
+SUMMARY:Jaraiz Bravo\, Nicolás (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Jaraiz Bravo\, Nicolás\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nT
+ ribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT 
+ DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el proje
+ cte realitzat a l'empresa durant el periode de DUAL. Cal explicar els obje
+ ctius\, les tasques realitzades\, les tecnologies utilitzades\, els result
+ ats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 mi
+ n):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pr
+ ojecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensa
+ r i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n
+ - Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simila
+ r)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia s
+ i s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Jaraiz Bravo, Nicolás";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ 2024_nicolas.jaraiz@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T160000-defensa-jaraiz-bravo--nicol-s@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T162000
+DTEND;TZID=Europe/Madrid:20260506T164000
+SUMMARY:Maggiorotto Boix\, Gianluca (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Maggiorotto Boix\, Gianluca\nClasse: ASIX2B\nTutor: Daniel García Jiméne
+ z\nTribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAM
+ ENT DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el p
+ rojecte realitzat a l'empresa durant el periode de DUAL. Cal explicar els 
+ objectius\, les tasques realitzades\, les tecnologies utilitzades\, els re
+ sultats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (
+ 5 min):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre e
+ l projecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de def
+ ensar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---
+ \n\n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o si
+ milar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferenc
+ ia si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Maggiorotto Boix, Gianluca";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAI
+ LTO:2024_gianluca.maggiorotto@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T162000-defensa-maggiorotto-boix--gianluca@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T164000
+DTEND;TZID=Europe/Madrid:20260506T170000
+SUMMARY:Perez Paulino\, Andrés (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Perez Paulino\, Andrés\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nT
+ ribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT 
+ DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el proje
+ cte realitzat a l'empresa durant el periode de DUAL. Cal explicar els obje
+ ctius\, les tasques realitzades\, les tecnologies utilitzades\, els result
+ ats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 mi
+ n):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pr
+ ojecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensa
+ r i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n
+ - Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simila
+ r)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia s
+ i s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Perez Paulino, Andrés";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ 2024_andres.perez@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T164000-defensa-perez-paulino--andr-s@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T170000
+DTEND;TZID=Europe/Madrid:20260506T172000
+SUMMARY:Sabata Vives\, Carla (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Sabata Vives\, Carla\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nTrib
+ unal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE 
+ LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte
+  realitzat a l'empresa durant el periode de DUAL. Cal explicar els objecti
+ us\, les tasques realitzades\, les tecnologies utilitzades\, els resultats
+  obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):
+ \n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proje
+ cte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i
+  justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- D
+ ossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\
+ n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s
+ 'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Sabata Vives, Carla";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:202
+ 4_carla.sabata@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T170000-defensa-sabata-vives--carla@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T172000
+DTEND;TZID=Europe/Madrid:20260506T174000
+SUMMARY:Sama Morillas\, Raul (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Sama Morillas\, Raul\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nTrib
+ unal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE 
+ LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte
+  realitzat a l'empresa durant el periode de DUAL. Cal explicar els objecti
+ us\, les tasques realitzades\, les tecnologies utilitzades\, els resultats
+  obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):
+ \n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proje
+ cte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i
+  justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- D
+ ossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\
+ n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s
+ 'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Sama Morillas, Raul";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:222
+ 3_raul.sama@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T172000-defensa-sama-morillas--raul@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T174000
+DTEND;TZID=Europe/Madrid:20260506T180000
+SUMMARY:Sullka\, Maria Cecilia (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Sullka\, Maria Cecilia\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nTr
+ ibunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT D
+ E LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projec
+ te realitzat a l'empresa durant el periode de DUAL. Cal explicar els objec
+ tius\, les tasques realitzades\, les tecnologies utilitzades\, els resulta
+ ts obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min
+ ):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pro
+ jecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar
+  i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n-
+  Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar
+ )\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si
+  s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Sullka, Maria Cecilia";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:2
+ 024_cecilia.sullka@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T174000-defensa-sullka--maria-cecilia@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260506T180000
+DTEND;TZID=Europe/Madrid:20260506T182000
+SUMMARY:Viagel López\, Jorge (ASIX2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Viagel López\, Jorge\nClasse: ASIX2B\nTutor: Daniel García Jiménez\nTri
+ bunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE
+  LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el project
+ e realitzat a l'empresa durant el periode de DUAL. Cal explicar els object
+ ius\, les tasques realitzades\, les tecnologies utilitzades\, els resultat
+ s obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min)
+ :\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proj
+ ecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar 
+ i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- 
+ Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)
+ \n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si 
+ s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Viagel López, Jorge";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:20
+ 24_jorge.viagel@iticbcn.cat
+ATTENDEE;CN=Daniel García Jiménez;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:d
+ aniel.garcia@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260506T180000-defensa-viagel-l-pez--jorge@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260511T172000
+DTEND;TZID=Europe/Madrid:20260511T174000
+SUMMARY:de la Cruz Pagà\, Guillem (DAW2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ de la Cruz Pagà\, Guillem\nClasse: DAW2B\nTutor: Juan Manuel Sánchez Bel
+ \nTribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAME
+ NT DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el pr
+ ojecte realitzat a l'empresa durant el periode de DUAL. Cal explicar els o
+ bjectius\, les tasques realitzades\, les tecnologies utilitzades\, els res
+ ultats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5
+  min):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el
+  projecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defe
+ nsar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\
+ n\n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o sim
+ ilar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferenci
+ a si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="de la Cruz Pagà, Guillem";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAIL
+ TO:2024_guillem.delacruz@iticbcn.cat
+ATTENDEE;CN=Juan Manuel Sánchez Bel;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ juanmanuel.sanchez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260511T172000-defensa-de-la-cruz-pag---guillem@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260511T174000
+DTEND;TZID=Europe/Madrid:20260511T180000
+SUMMARY:Llorens Espín\, Erik (DAW2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Llorens Espín\, Erik\nClasse: DAW2B\nTutor: Juan Manuel Sánchez Bel\nTri
+ bunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE
+  LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el project
+ e realitzat a l'empresa durant el periode de DUAL. Cal explicar els object
+ ius\, les tasques realitzades\, les tecnologies utilitzades\, els resultat
+ s obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min)
+ :\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proj
+ ecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar 
+ i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- 
+ Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)
+ \n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si 
+ s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Llorens Espín, Erik";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:20
+ 24_erik.llorens@iticbcn.cat
+ATTENDEE;CN=Juan Manuel Sánchez Bel;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ juanmanuel.sanchez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260511T174000-defensa-llorens-esp-n--erik@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260511T180000
+DTEND;TZID=Europe/Madrid:20260511T182000
+SUMMARY:Lloret Mateos\, Lucía (DAW2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Lloret Mateos\, Lucía\nClasse: DAW2B\nTutor: Juan Manuel Sánchez Bel\nTr
+ ibunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT D
+ E LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projec
+ te realitzat a l'empresa durant el periode de DUAL. Cal explicar els objec
+ tius\, les tasques realitzades\, les tecnologies utilitzades\, els resulta
+ ts obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min
+ ):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pro
+ jecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar
+  i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n-
+  Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar
+ )\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si
+  s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Lloret Mateos, Lucía";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:2
+ 024_lucia.lloret@iticbcn.cat
+ATTENDEE;CN=Juan Manuel Sánchez Bel;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ juanmanuel.sanchez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260511T180000-defensa-lloret-mateos--luc-a@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260511T182000
+DTEND;TZID=Europe/Madrid:20260511T184000
+SUMMARY:Rubio Rosales\, Aitor (DAW2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Rubio Rosales\, Aitor\nClasse: DAW2B\nTutor: Juan Manuel Sánchez Bel\nTri
+ bunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE
+  LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el project
+ e realitzat a l'empresa durant el periode de DUAL. Cal explicar els object
+ ius\, les tasques realitzades\, les tecnologies utilitzades\, els resultat
+ s obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min)
+ :\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proj
+ ecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar 
+ i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- 
+ Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)
+ \n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si 
+ s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Rubio Rosales, Aitor";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:20
+ 24_aitor.rubio@iticbcn.cat
+ATTENDEE;CN=Juan Manuel Sánchez Bel;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ juanmanuel.sanchez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260511T182000-defensa-rubio-rosales--aitor@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260511T184000
+DTEND;TZID=Europe/Madrid:20260511T190000
+SUMMARY:Sevilla Medina\, Adrian (DAW2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Sevilla Medina\, Adrian\nClasse: DAW2B\nTutor: Juan Manuel Sánchez Bel\nT
+ ribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT 
+ DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el proje
+ cte realitzat a l'empresa durant el periode de DUAL. Cal explicar els obje
+ ctius\, les tasques realitzades\, les tecnologies utilitzades\, els result
+ ats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 mi
+ n):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el pr
+ ojecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensa
+ r i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n
+ - Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simila
+ r)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia s
+ i s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Sevilla Medina, Adrian";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ 2024_adrian.sevilla@iticbcn.cat
+ATTENDEE;CN=Juan Manuel Sánchez Bel;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:
+ juanmanuel.sanchez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260511T184000-defensa-sevilla-medina--adrian@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260513T142000
+DTEND;TZID=Europe/Madrid:20260513T144000
+SUMMARY:Arias Piferrer\, Judit (DAW2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Arias Piferrer\, Judit\nClasse: DAW2A\nTutor: Roger Sobrino Gil\nTribunal:
+  Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA DE
+ FENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte real
+ itzat a l'empresa durant el periode de DUAL. Cal explicar els objectius\, 
+ les tasques realitzades\, les tecnologies utilitzades\, els resultats obti
+ nguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n   
+ El tribunal (coordinadors i tutor) formulara preguntes sobre el projecte\,
+  el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i just
+ ificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dossie
+ r de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\nDu
+ racio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'indi
+ ca)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Arias Piferrer, Judit";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:2
+ 024_judit.arias@iticbcn.cat
+ATTENDEE;CN=Roger Sobrino Gil;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:roger.s
+ obrino@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260513T142000-defensa-arias-piferrer--judit@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260513T144000
+DTEND;TZID=Europe/Madrid:20260513T150000
+SUMMARY:Bosch i Pérez\, Pau (DAW2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Bosch i Pérez\, Pau\nClasse: DAW2A\nTutor: Roger Sobrino Gil\nTribunal: M
+ aria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA DEFE
+ NSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte realit
+ zat a l'empresa durant el periode de DUAL. Cal explicar els objectius\, le
+ s tasques realitzades\, les tecnologies utilitzades\, els resultats obting
+ uts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n   El
+  tribunal (coordinadors i tutor) formulara preguntes sobre el projecte\, e
+ l dossier i l'experiencia a l'empresa. L'alumne haura de defensar i justif
+ icar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dossier 
+ de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\nDura
+ cio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'indica
+ )
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Bosch i Pérez, Pau";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:202
+ 4_pau.bosch@iticbcn.cat
+ATTENDEE;CN=Roger Sobrino Gil;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:roger.s
+ obrino@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260513T144000-defensa-bosch-i-p-rez--pau@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260513T150000
+DTEND;TZID=Europe/Madrid:20260513T152000
+SUMMARY:Sanchez Salas\, Cristina (DAW2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Sanchez Salas\, Cristina\nClasse: DAW2A\nTutor: Roger Sobrino Gil\nTribuna
+ l: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA 
+ DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte re
+ alitzat a l'empresa durant el periode de DUAL. Cal explicar els objectius\
+ , les tasques realitzades\, les tecnologies utilitzades\, els resultats ob
+ tinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n 
+   El tribunal (coordinadors i tutor) formulara preguntes sobre el projecte
+ \, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i ju
+ stificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Doss
+ ier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\n
+ Duracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'in
+ dica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Sanchez Salas, Cristina";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO
+ :2024_cristina.sanchez@iticbcn.cat
+ATTENDEE;CN=Roger Sobrino Gil;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:roger.s
+ obrino@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260513T150000-defensa-sanchez-salas--cristina@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260513T152000
+DTEND;TZID=Europe/Madrid:20260513T154000
+SUMMARY:Sau López\, Joan (DAW2A) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Sau López\, Joan\nClasse: DAW2A\nTutor: Roger Sobrino Gil\nTribunal: Mari
+ a Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE LA DEFENSA
+  ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte realitzat
+  a l'empresa durant el periode de DUAL. Cal explicar els objectius\, les t
+ asques realitzades\, les tecnologies utilitzades\, els resultats obtinguts
+  i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\n   El tr
+ ibunal (coordinadors i tutor) formulara preguntes sobre el projecte\, el d
+ ossier i l'experiencia a l'empresa. L'alumne haura de defensar i justifica
+ r les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Dossier de 
+ seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n\nDuracio
+  total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Sau López, Joan";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:2024_j
+ oan.sau@iticbcn.cat
+ATTENDEE;CN=Roger Sobrino Gil;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:roger.s
+ obrino@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260513T152000-defensa-sau-l-pez--joan@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260514T174000
+DTEND;TZID=Europe/Madrid:20260514T180000
+SUMMARY:González Díaz\, Francisco (DAM2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ González Díaz\, Francisco\nClasse: DAM2B\nTutor: David Fernàndez Solé\
+ nTribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMEN
+ T DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el pro
+ jecte realitzat a l'empresa durant el periode de DUAL. Cal explicar els ob
+ jectius\, les tasques realitzades\, les tecnologies utilitzades\, els resu
+ ltats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 
+ min):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el 
+ projecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defen
+ sar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n
+ \n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simi
+ lar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia
+  si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="González Díaz, Francisco";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAI
+ LTO:2024_francisco.gonzalez@iticbcn.cat
+ATTENDEE;CN=David Fernàndez Solé;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:da
+ vid.fernandez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260514T174000-defensa-gonz-lez-d-az--francisco@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260514T180000
+DTEND;TZID=Europe/Madrid:20260514T182000
+SUMMARY:González Márquez\, Iván (DAM2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ González Márquez\, Iván\nClasse: DAM2B\nTutor: David Fernàndez Solé\n
+ Tribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT
+  DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el proj
+ ecte realitzat a l'empresa durant el periode de DUAL. Cal explicar els obj
+ ectius\, les tasques realitzades\, les tecnologies utilitzades\, els resul
+ tats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 m
+ in):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre el p
+ rojecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defens
+ ar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\
+ n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o simil
+ ar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia 
+ si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="González Márquez, Iván";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAIL
+ TO:2024_ivan.gonzalez@iticbcn.cat
+ATTENDEE;CN=David Fernàndez Solé;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:da
+ vid.fernandez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260514T180000-defensa-gonz-lez-m-rquez--iv-n@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260514T182000
+DTEND;TZID=Europe/Madrid:20260514T184000
+SUMMARY:Jiménez Amigó\, Eric (DAM2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Jiménez Amigó\, Eric\nClasse: DAM2B\nTutor: David Fernàndez Solé\nTrib
+ unal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE 
+ LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte
+  realitzat a l'empresa durant el periode de DUAL. Cal explicar els objecti
+ us\, les tasques realitzades\, les tecnologies utilitzades\, els resultats
+  obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):
+ \n   El tribunal (coordinadors i tutor) formulara preguntes sobre el proje
+ cte\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i
+  justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- D
+ ossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\
+ n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s
+ 'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Jiménez Amigó, Eric";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:2
+ 024_eric.jimenez@iticbcn.cat
+ATTENDEE;CN=David Fernàndez Solé;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:da
+ vid.fernandez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260514T182000-defensa-jim-nez-amig---eric@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260514T192000
+DTEND;TZID=Europe/Madrid:20260514T194000
+SUMMARY:Melguizo Sebastiá\, Carolina (DAM2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Melguizo Sebastiá\, Carolina\nClasse: DAM2B\nTutor: David Fernàndez Sol
+ é\nTribunal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONA
+ MENT DE LA DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el 
+ projecte realitzat a l'empresa durant el periode de DUAL. Cal explicar els
+  objectius\, les tasques realitzades\, les tecnologies utilitzades\, els r
+ esultats obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES 
+ (5 min):\n   El tribunal (coordinadors i tutor) formulara preguntes sobre 
+ el projecte\, el dossier i l'experiencia a l'empresa. L'alumne haura de de
+ fensar i justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA --
+ -\n\n- Dossier de seguiment\n- Presentacio (PowerPoint\, Google Slides o s
+ imilar)\n\nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferen
+ cia si s'indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Melguizo Sebastiá, Carolina";ROLE=REQ-PARTICIPANT;RSVP=TRUE:M
+ AILTO:2023_carolina.melguizo@iticbcn.cat
+ATTENDEE;CN=David Fernàndez Solé;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:da
+ vid.fernandez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260514T192000-defensa-melguizo-sebasti---carolina@iticbcn.cat
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Madrid:20260514T194000
+DTEND;TZID=Europe/Madrid:20260514T200000
+SUMMARY:Muñoz Baena\, Miguel (DAM2B) - Defensa Projecte DUAL
+DESCRIPTION:CONVOCATORIA DE DEFENSA DEL PROJECTE DUAL 2025-2026\n\nAlumne: 
+ Muñoz Baena\, Miguel\nClasse: DAM2B\nTutor: David Fernàndez Solé\nTribu
+ nal: Maria Olivella Romagosa / Xavier Lara Moreno\n\n--- FUNCIONAMENT DE L
+ A DEFENSA ---\n\n1. PRESENTACIO (10 min):\n   L'alumne exposa el projecte 
+ realitzat a l'empresa durant el periode de DUAL. Cal explicar els objectiu
+ s\, les tasques realitzades\, les tecnologies utilitzades\, els resultats 
+ obtinguts i les competencies adquirides.\n\n2. TORN DE PREGUNTES (5 min):\
+ n   El tribunal (coordinadors i tutor) formulara preguntes sobre el projec
+ te\, el dossier i l'experiencia a l'empresa. L'alumne haura de defensar i 
+ justificar les decisions preses.\n\n--- DOCUMENTACIO REQUERIDA ---\n\n- Do
+ ssier de seguiment\n- Presentacio (PowerPoint\, Google Slides o similar)\n
+ \nDuracio total: 20 minuts\nLloc: ITIC Barcelona (o videoconferencia si s'
+ indica)
+ORGANIZER;CN=ITIC Barcelona:MAILTO:xavi.lara@iticbcn.cat
+ATTENDEE;CN="Muñoz Baena, Miguel";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:20
+ 24_miguel.munoz@iticbcn.cat
+ATTENDEE;CN=David Fernàndez Solé;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:da
+ vid.fernandez@iticbcn.cat
+ATTENDEE;CN=Maria Olivella Romagosa;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:m
+ aria.olivella@iticbcn.cat
+ATTENDEE;CN=Xavier Lara Moreno;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:xavi.l
+ ara@iticbcn.cat
+STATUS:CONFIRMED
+UID:20260514T194000-defensa-mu-oz-baena--miguel@iticbcn.cat
+END:VEVENT
+END:VCALENDAR

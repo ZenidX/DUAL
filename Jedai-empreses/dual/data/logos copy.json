@@ -1,0 +1,90 @@
+{
+  "logosEmpreses": [{
+    "id": 1, 
+    "img": "2021logonetdriver.png",
+    "url": "https://www.netdriver.es/",
+    "alt": "logo net driver"
+  },
+  {
+  	"id": 2,
+  	"img": "2021logomadsystems.jpg",
+  	"url": "https://madsystems.coop/",
+  	"alt": "logo madsystems"
+  },{
+    "id": 3, 
+    "img": "2021logodeisoltec.png",
+    "url": "https://www.dst.es/",
+    "alt": "logo deisoltec"
+  },{
+    "id": 4, 
+    "img": "2021logotallerdemusics.jpg",
+    "url": "https://tallerdemusics.com",
+    "alt": "logo taller de músic"
+  },{
+  	"id": 5,
+  	"img": "2021logoitequia.png",
+  	"url": "https://itequia.com/",
+  	"alt": "logo itequia"
+  },{
+  	"id": 6,
+  	"img": "2021logosocsap.png",
+  	"url": "https://socsap.com/",
+  	"alt": "logo socsap"
+  },{
+  	"id": 7,
+  	"img": "2021logogmedia.png",
+  	"url": "https://www.gmedia.es/",
+  	"alt": "logo gmedia"
+  },{
+  	"id": 8,
+  	"img": "2021logomiramcloud.png",
+  	"url": "https://miram.cloud",
+  	"alt": "logo miriamcloud"
+  },{
+  	"id": 9,
+  	"img": "2021logointerfacesafeaccess.png",
+  	"url": "https://interface.cat/",
+  	"alt": "logo interface safeaccess"
+  },{
+  	"id": 10,
+  	"img": "2021logoiul.png",
+  	"url": "https://iul-instruments.com/",
+  	"alt": "logo iul"
+  },{
+  	"id": 11,
+  	"img": "2021logonetdriver.png",
+  	"url": "https://www.houndline.com/",
+  	"alt": "logo houndline"
+  },{
+  	"id": 12,
+  	"img": "2021logogps.jpg",
+  	"url": "https://gps-plan.com/",
+  	"alt": "logo gps-plan"
+  },{
+  	"id": 13,
+  	"img": "2021logoneotica.png",
+  	"url": "https://www.neotica.net/",
+  	"alt": "logo neotica"
+  },{
+	"id": 14,
+	"img": "2021logo123compareme.png",
+	"url": "https://123compare.me",
+	"alt": "logo 123compare"
+},{
+	"id": 15,
+	"img": "2021logobasetis.png",
+	"url": "https://www.basetis.com/",
+	"alt": "logo basetis"
+},{
+	"id": 16,
+	"img": "2021logoackstorm.png",
+	"url": "http://www.ackstorm.com",
+	"alt": "logo ackstorm"
+},{
+	"id": 17,
+	"img": "2021logokumux.jpg",
+	"url": "https://kumux.io/",
+	"alt": "logo kumux"
+}
+  
+]}

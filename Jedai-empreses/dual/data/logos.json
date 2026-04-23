@@ -1,0 +1,106 @@
+{
+	"logosEmpreses": [
+		{"img": "logo_altaguardia.png",
+		  "url": "https://www.altaguardia.com/",
+		  "alt": "Alta guarda"	
+	  },
+	  {"img": "logo_alten.png",
+		  "url": "https://www.alten.es/",
+		  "alt": "Alten"	
+	  },
+	  {"img": "logo_basetis.png",
+		  "url": "https://www.basetis.com/ca/",
+		  "alt": "Basetis"
+	  },
+	  {"img": "logo_comunicae.png",
+		  "url": "https://www.comunicae.es/",
+		  "alt": "Comunicae"	
+	  },
+	  {"img": "logo_eosconnectivity.png",
+		  "url": "https://www.eosconnectivity.com/",
+		  "alt": "Eos connectivity"
+	  },
+	  {"img": "logo_gps.jpg",
+		  "url": "https://boldworkplanner.com/",
+		  "alt": "Global Planning Solutions"
+	  },
+	  {"img": "logo_grupohostienda.png",
+		  "url": "https://hostienda.com/",
+		  "alt": "Grupo Hostienda"	
+	  },
+	  {"img": "logo_inetum.png",
+		  "url": "https://www.inetum.com/es",
+		  "alt": "Inetum"	
+	  },
+	  {"img": "logo_itequia.png",
+		  "url": "https://itequia.com/ca/",
+		  "alt": "Itequia"	
+	  },
+	  {"img": "logo_almato.jpg",
+		"url": "https://www.almato.com/",
+		"alt": "Almato"	
+	},
+	  {"img": "logo_MacServiceBcn.png",
+		  "url": "https://macservicebcn.com/",
+		  "alt": "MacService Barcelona"	
+	  },
+	  {"img": "logo_neotica.png",
+		  "url": "https://www.neotica.net/",
+		  "alt": "Neotica"	
+	  },
+	  {"img": "logo_nttdata.png",
+		  "url": "https://www.nttdata.com/global/en/",
+		  "alt": "NTT data"	
+	  },
+	  {"img": "logo_nubeame.png",
+		  "url": "https://www.nubeame.com/",
+		  "alt": "Nubéame"	
+	  },
+	  {"img": "logo_pukkas.png",
+		  "url": "https://pukkas.com/",
+		  "alt": "Pukkas"	
+	  },
+	  {"img": "logo_socsap.png",
+		  "url": "https://www.socsap.com/",
+		  "alt": "SocSap"	
+	  },
+	  {"img": "logo_thatzad.png",
+		  "url": "https://www.thatzad.com/",
+		  "alt": "Thatzad - That's Advertising"	
+	  }
+	  ,
+	  {"img": "logo_pue.png",
+		  "url": "https://www.pue.es/",
+		  "alt": "PUE: Servicios integrales en consultoría y formación IT"	
+	  },
+	  {"img": "logo_schneider.png",
+		  "url": "https://www.se.com/es/es/",
+		  "alt": "Schneider Electric"	
+	  },
+	  {"img": "logo_avannubo.png",
+		  "url": "https://avannubo.com/",
+		  "alt": "AVANCEM AMB VOSTE, SL"	
+	  },
+	  {"img": "logo_pmfarma.png",
+		  "url": "https://www.pmfarma.es/",
+		  "alt": "PMFarma"	
+	  },
+	  {"img": "logo_keonn.png",
+		  "url": "https://keonn.com/",
+		  "alt": "Keonn"	
+	  },
+	  {"img": "logo_comsa.png",
+		  "url": "https://www.comsa.com/",
+		  "alt": "Comsa"	
+	  },
+	  {"img": "logo_cuatroochenta.jpg",
+		  "url": "https://cuatroochenta.com/",
+		  "alt": "Cuatro ochenta"	
+	  },
+	  {"img": "logo_dedalus.png",
+		  "url": "https://www.dedalus.com/spain/es/",
+		  "alt": "Dedalus"	
+	  }
+	]}
+  
+  

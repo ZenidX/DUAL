@@ -1,0 +1,2742 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proposa el teu projecte · ITICBCN 2026-27</title>
+  <meta name="description"
+    content="Empreses: proposeu un projecte o repte real i trobem el perfil d'alumnat adequat per desenvolupar-lo. Dual intensiva 1000-1200 h.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap">
+
+  <style>
+    :root {
+      --brand: #2f299f;
+      --brand-dark: #1a1a2e;
+      --brand-soft: #ece9ff;
+      --brand-softer: #fbfaff;
+      --accent-orange: #ff8a2b;
+      --accent-orange-dark: #c96613;
+      --accent-orange-soft: #fffaf3;
+      --accent-green: #14a86a;
+      --accent-green-dark: #0e7a4d;
+      --accent-green-soft: #f6fcf9;
+      --accent-pink: #e6478b;
+      --accent-pink-dark: #a72a63;
+      --accent-pink-soft: #fdf3f8;
+      --accent-teal: #0aa89a;
+      --accent-teal-dark: #077568;
+      --accent-teal-soft: #eefbf9;
+      --accent-gold: #d49b12;
+      --accent-gold-dark: #8c6603;
+      --accent-gold-soft: #fdf7e6;
+      --text: #1a1a2e;
+      --text-soft: #4a4a6a;
+      --text-muted: #8a8aa8;
+      --border: #e4e1f7;
+      --border-strong: #d0cbe8;
+      --bg: #f4f4f7;
+      --white: #ffffff;
+      --radius: 12px;
+      --radius-sm: 6px;
+      --shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.06), 0 1px 2px rgba(26, 26, 46, 0.04);
+      --shadow-md: 0 4px 12px rgba(26, 26, 46, 0.08), 0 2px 4px rgba(26, 26, 46, 0.04);
+      --shadow-lg: 0 20px 40px rgba(47, 41, 159, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Layout ---------- */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .container-narrow {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .site-header img { width: 180px; }
+
+    .header-cta {
+      background: var(--brand);
+      color: var(--white);
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .header-cta:hover {
+      background: var(--brand-dark);
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, #2f299f 0%, #5a4be0 100%);
+      color: var(--white);
+      padding: 80px 0 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .pill {
+      display: inline-block;
+      background: var(--white);
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .pill-soft {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.15;
+      margin: 20px 0 16px 0;
+    }
+
+    .hero p.lead {
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.5;
+      color: #e9e6ff;
+      max-width: 640px;
+      margin: 0 0 32px 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--brand);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    /* ---------- Section base ---------- */
+    section { padding: 80px 0; }
+
+    .section-head { text-align: center; margin-bottom: 48px; }
+
+    .section-head h2 {
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin: 12px 0 12px 0;
+      color: var(--brand-dark);
+    }
+
+    .section-head p {
+      font-size: 17px;
+      color: var(--text-soft);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    /* ---------- Dual intensiva callout ---------- */
+    .dual-callout {
+      background: var(--brand-dark);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .dual-callout .badge-big {
+      font-size: 40px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .dual-callout .badge-big small {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #c9c4ea;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .dual-callout h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+    }
+
+    .dual-callout p {
+      margin: 0;
+      color: #c9c4ea;
+      font-size: 15px;
+    }
+
+    .dual-callout-text { flex: 1; min-width: 260px; }
+
+    /* ---------- Profile cards ---------- */
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .profile-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      border-top: 5px solid var(--brand);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .profile-card .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .profile-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      color: var(--brand-dark);
+      line-height: 1.3;
+    }
+
+    .profile-card .subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      margin: 0 0 14px 0;
+    }
+
+    .profile-card p {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-soft);
+      margin: 0 0 16px 0;
+    }
+
+    .profile-card .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .profile-card .tech-list span {
+      font-size: 11px;
+      font-weight: 500;
+      background: var(--brand-softer);
+      color: var(--brand);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    /* Color variants */
+    .profile-card.c-orange { border-top-color: var(--accent-orange); }
+    .profile-card.c-orange .icon { background: var(--accent-orange-soft); color: var(--accent-orange-dark); }
+    .profile-card.c-orange h3 { color: var(--accent-orange-dark); }
+    .profile-card.c-orange .tech-list span { background: var(--accent-orange-soft); color: var(--accent-orange-dark); }
+
+    .profile-card.c-green { border-top-color: var(--accent-green); }
+    .profile-card.c-green .icon { background: var(--accent-green-soft); color: var(--accent-green-dark); }
+    .profile-card.c-green h3 { color: var(--accent-green-dark); }
+    .profile-card.c-green .tech-list span { background: var(--accent-green-soft); color: var(--accent-green-dark); }
+
+    .profile-card.c-pink { border-top-color: var(--accent-pink); }
+    .profile-card.c-pink .icon { background: var(--accent-pink-soft); color: var(--accent-pink-dark); }
+    .profile-card.c-pink h3 { color: var(--accent-pink-dark); }
+    .profile-card.c-pink .tech-list span { background: var(--accent-pink-soft); color: var(--accent-pink-dark); }
+
+    .profile-card.c-teal { border-top-color: var(--accent-teal); }
+    .profile-card.c-teal .icon { background: var(--accent-teal-soft); color: var(--accent-teal-dark); }
+    .profile-card.c-teal h3 { color: var(--accent-teal-dark); }
+    .profile-card.c-teal .tech-list span { background: var(--accent-teal-soft); color: var(--accent-teal-dark); }
+
+    .profile-card.c-gold { border-top-color: var(--accent-gold); }
+    .profile-card.c-gold .icon { background: var(--accent-gold-soft); color: var(--accent-gold-dark); }
+    .profile-card.c-gold h3 { color: var(--accent-gold-dark); }
+    .profile-card.c-gold .tech-list span { background: var(--accent-gold-soft); color: var(--accent-gold-dark); }
+
+    /* ---------- Collaboration options (3 vies) ---------- */
+    .collab-options { background: var(--white); }
+
+    .intro-block {
+      max-width: 760px;
+      margin: 0 auto 48px auto;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-soft);
+    }
+
+    .intro-block p { margin: 0 0 14px 0; }
+    .intro-block p:last-child { margin-bottom: 0; }
+    .intro-block strong { color: var(--text); }
+
+    .collab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .collab-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      border-left: 5px solid var(--brand);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .collab-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .collab-badge {
+      display: inline-block;
+      background: var(--brand);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+
+    .collab-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 0 0 12px 0;
+      color: var(--brand-dark);
+    }
+
+    .collab-card > p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      margin: 0 0 16px 0;
+    }
+
+    .collab-card ul {
+      list-style: none;
+      padding: 0;
+      margin: auto 0 0 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .collab-card ul li {
+      padding: 12px 0;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .collab-card ul li:last-child { border-bottom: 0; }
+
+    .collab-card .li-icon {
+      flex-shrink: 0;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    /* Variants — card color matches email campaign */
+    .collab-card.c-purple {
+      background: var(--brand-softer);
+      border-color: var(--brand-soft);
+      border-left-color: var(--brand);
+    }
+    .collab-card.c-purple h3 { color: var(--brand); }
+    .collab-card.c-purple .collab-badge { background: var(--brand); }
+    .collab-card.c-purple ul { border-top-color: var(--brand-soft); }
+    .collab-card.c-purple ul li { border-bottom-color: var(--brand-soft); }
+
+    .collab-card.c-orange {
+      background: var(--accent-orange-soft);
+      border-color: #ffe4cc;
+      border-left-color: var(--accent-orange);
+    }
+    .collab-card.c-orange h3 { color: var(--accent-orange-dark); }
+    .collab-card.c-orange .collab-badge { background: var(--accent-orange); }
+    .collab-card.c-orange ul { border-top-color: #ffe4cc; }
+    .collab-card.c-orange ul li { border-bottom-color: #ffe4cc; }
+
+    .collab-card.c-green {
+      background: var(--accent-green-soft);
+      border-color: #cfe9d8;
+      border-left-color: var(--accent-green);
+    }
+    .collab-card.c-green h3 { color: var(--accent-green-dark); }
+    .collab-card.c-green .collab-badge { background: var(--accent-green); }
+    .collab-card.c-green ul { border-top-color: #cfe9d8; }
+    .collab-card.c-green ul li { border-bottom-color: #cfe9d8; }
+
+    .audience-block {
+      margin-top: 48px;
+      padding: 24px 28px;
+      background: var(--brand-softer);
+      border: 1px solid var(--brand-soft);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .audience-block h3 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin: 0 0 8px 0;
+    }
+
+    .audience-block p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+      margin: 0;
+    }
+
+    /* ---------- Form ---------- */
+    .form-section { background: var(--white); }
+
+    .form-wrapper {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-step {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-step:first-child { padding-top: 0; }
+    .form-step:last-child { padding-bottom: 0; border-bottom: 0; }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-header h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin: 0;
+    }
+
+    .step-header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 2px 0 0 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .field { display: flex; flex-direction: column; }
+    .field.col-2 { grid-column: span 2; }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .field label .req { color: var(--accent-pink); font-weight: 700; }
+
+    .field .hint {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .field input[type="text"],
+    .field input[type="email"],
+    .field input[type="tel"],
+    .field input[type="url"],
+    .field input[type="number"],
+    .field input[type="date"],
+    .field select,
+    .field textarea {
+      padding: 12px 14px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      width: 100%;
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.55;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(47, 41, 159, 0.12);
+    }
+
+    .field input:invalid:not(:placeholder-shown) { border-color: var(--accent-pink); }
+
+    /* Radios / checkboxes as cards */
+    .option-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .option-cards.cols-2 { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+
+    .option-cards input[type="radio"],
+    .option-cards input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .option-cards label {
+      display: block;
+      padding: 16px;
+      border: 2px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      position: relative;
+    }
+
+    .option-cards label strong {
+      display: block;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--brand-dark);
+      margin-bottom: 4px;
+    }
+
+    .option-cards input[type="radio"]:checked + label,
+    .option-cards input[type="checkbox"]:checked + label {
+      border-color: var(--brand);
+      background: var(--brand-softer);
+    }
+
+    .option-cards input[type="checkbox"]:checked + label::after {
+      content: "✓";
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 20px;
+      height: 20px;
+      background: var(--brand);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    .option-cards input[type="radio"]:focus-visible + label,
+    .option-cards input[type="checkbox"]:focus-visible + label {
+      box-shadow: 0 0 0 3px rgba(47, 41, 159, 0.25);
+    }
+
+    .option-cards label:hover { border-color: var(--brand); }
+
+    .subquestion {
+      margin-top: 24px;
+    }
+
+    .subquestion > label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .subquestion .hint-inline {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Tech chips */
+    .tech-groups { display: flex; flex-direction: column; gap: 24px; }
+
+    .tech-group h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-soft);
+      margin: 0 0 12px 0;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      position: relative;
+    }
+
+    .chip input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .chip label {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1.5px solid var(--border-strong);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-soft);
+      cursor: pointer;
+      transition: all 0.15s;
+      user-select: none;
+    }
+
+    .chip label:hover { border-color: var(--brand); color: var(--brand); }
+
+    .chip input[type="checkbox"]:checked + label {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: var(--white);
+    }
+
+    .chip input[type="checkbox"]:focus-visible + label {
+      box-shadow: 0 0 0 3px rgba(47, 41, 159, 0.25);
+    }
+
+    .custom-tech-input {
+      margin-top: 12px;
+    }
+
+    /* File drop zone */
+    .dropzone {
+      border: 2px dashed var(--border-strong);
+      border-radius: var(--radius);
+      padding: 32px 20px;
+      text-align: center;
+      transition: background 0.15s, border-color 0.15s;
+      cursor: pointer;
+      background: var(--brand-softer);
+    }
+
+    .dropzone.dragover {
+      border-color: var(--brand);
+      background: var(--brand-soft);
+    }
+
+    .dropzone p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .dropzone strong { color: var(--brand); }
+
+    .dropzone svg {
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 12px auto;
+      color: var(--brand);
+      display: block;
+    }
+
+    .dropzone input[type="file"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 1px;
+      height: 1px;
+    }
+
+    .file-list {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: var(--brand-softer);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+    }
+
+    .file-item .file-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .file-item .file-name span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .file-item button {
+      background: transparent;
+      border: 0;
+      color: var(--accent-pink-dark);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      padding: 0 4px;
+    }
+
+    /* Checkbox / consent */
+    .consent {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-soft);
+    }
+
+    .consent input[type="checkbox"] {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--brand);
+      flex-shrink: 0;
+    }
+
+    /* Submit */
+    .form-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .form-footer .btn-submit {
+      background: var(--brand);
+      color: var(--white);
+      font-size: 16px;
+      padding: 16px 36px;
+    }
+
+    .form-footer .btn-submit:hover {
+      background: var(--brand-dark);
+      transform: translateY(-1px);
+    }
+
+    .form-footer .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-footer .helper {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Success overlay */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+
+    .success-state.active { display: block; }
+
+    .success-state svg {
+      width: 64px;
+      height: 64px;
+      color: var(--accent-green);
+      margin: 0 auto 24px auto;
+      display: block;
+    }
+
+    .success-state h3 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .success-state p {
+      font-size: 16px;
+      color: var(--text-soft);
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .form-container.sent .form-wrapper > form { display: none; }
+    .form-container.sent .success-state { display: block; }
+
+    /* ---------- Next steps ---------- */
+    .next-steps {
+      background: var(--brand-softer);
+    }
+
+    .next-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .next-step {
+      background: var(--white);
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .next-step .num {
+      width: 36px;
+      height: 36px;
+      background: var(--brand);
+      color: var(--white);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .next-step h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .next-step p {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ---------- Footer ---------- */
+    footer.site-footer {
+      background: var(--brand-dark);
+      color: var(--white);
+      padding: 64px 0 24px 0;
+    }
+
+    footer.site-footer a { color: #c9c4ea; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8f8ab8;
+      margin: 0 0 14px 0;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      font-size: 14px;
+      color: #e9e6ff;
+      margin: 0 0 6px 0;
+      display: block;
+    }
+
+    .footer-col .role {
+      color: #8f8ab8;
+      font-size: 13px;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 13px;
+      color: #8f8ab8;
+      text-align: center;
+    }
+
+    /* ---------- Responsive ---------- */
+    /* ---------- Dualiza detail section ---------- */
+    .dualiza-section { background: var(--brand-softer); }
+
+    .dualiza-banner {
+      background: linear-gradient(135deg, #2f299f 0%, #5a4be0 100%);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .dualiza-banner h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin: 8px 0 8px 0;
+      line-height: 1.2;
+    }
+
+    .dualiza-banner p { margin: 0; color: #e9e6ff; font-size: 15px; }
+
+    .dualiza-deadline {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .dualiza-deadline .label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #c9c4ea;
+      font-weight: 700;
+    }
+
+    .dualiza-deadline .date {
+      font-size: 24px;
+      font-weight: 900;
+      margin: 6px 0 0 0;
+      line-height: 1.2;
+    }
+
+    .dualiza-deadline .time {
+      font-size: 13px;
+      color: #c9c4ea;
+      margin-top: 4px;
+    }
+
+    .modalities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .modality-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      border-top: 5px solid var(--brand);
+    }
+
+    .modality-card.in-red { border-top-color: var(--accent-orange); }
+
+    .modality-card h4 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--brand);
+      margin: 0 0 8px 0;
+    }
+
+    .modality-card.in-red h4 { color: var(--accent-orange-dark); }
+
+    .modality-card h3 {
+      font-size: 20px;
+      font-weight: 900;
+      margin: 0 0 12px 0;
+      color: var(--brand-dark);
+    }
+
+    .modality-card .amount {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--brand);
+      line-height: 1;
+      margin: 0 0 4px 0;
+    }
+
+    .modality-card.in-red .amount { color: var(--accent-orange-dark); }
+
+    .modality-card .amount-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .modality-card dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .modality-card dt {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .modality-card dd {
+      margin: 2px 0 0 0;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Criteria bars */
+    .criteria-block {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+
+    .criteria-block h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      margin: 0 0 6px 0;
+    }
+
+    .criteria-block > p {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin: 0 0 20px 0;
+    }
+
+    .criteria-list { display: flex; flex-direction: column; gap: 16px; }
+
+    .criterion {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .criterion-text {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .criterion-text strong { display: block; font-weight: 700; color: var(--brand-dark); margin-bottom: 2px; }
+
+    .criterion-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .bar-track {
+      width: 120px;
+      height: 8px;
+      background: var(--brand-soft);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--brand);
+      border-radius: 999px;
+    }
+
+    .bar-pct {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand);
+      min-width: 36px;
+      text-align: right;
+    }
+
+    /* Timeline */
+    .timeline {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+
+    .timeline h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      margin: 0 0 24px 0;
+    }
+
+    .timeline-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 16px;
+      background: var(--brand-softer);
+      border-left: 3px solid var(--brand);
+      border-radius: var(--radius-sm);
+    }
+
+    .timeline-item .when {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item .what {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      line-height: 1.35;
+      margin: 0 0 4px 0;
+    }
+
+    .timeline-item .who {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .timeline-item.highlight {
+      background: var(--accent-orange-soft);
+      border-left-color: var(--accent-orange);
+    }
+
+    .timeline-item.highlight .when,
+    .timeline-item.highlight .what { color: var(--accent-orange-dark); }
+
+    /* Mini-FAQ */
+    .faq {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .faq h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      margin: 0 0 20px 0;
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .faq details:last-child { border-bottom: 0; }
+
+    .faq summary {
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 0;
+    }
+
+    .faq summary::-webkit-details-marker { display: none; }
+
+    .faq summary::after {
+      content: "+";
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--brand);
+      transition: transform 0.15s;
+      line-height: 1;
+    }
+
+    .faq details[open] summary::after { content: "−"; }
+
+    .faq details p {
+      margin: 10px 0 0 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-soft);
+    }
+
+    .faq details p a { font-weight: 700; }
+
+    @media (max-width: 640px) {
+      section { padding: 56px 0; }
+      .hero { padding: 56px 0 72px 0; }
+      .form-wrapper { padding: 24px; }
+      .field.col-2 { grid-column: span 1; }
+      .site-header .container { gap: 8px; }
+      .site-header img { width: 150px; }
+      .header-cta { padding: 8px 14px; font-size: 13px; }
+      .dual-callout { flex-direction: column; align-items: flex-start; text-align: left; }
+      .dualiza-banner { grid-template-columns: 1fr; }
+      .criterion { grid-template-columns: 1fr; }
+      .bar-track { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="https://agora.xtec.cat/iticbcn" target="_blank" rel="noopener">
+        <img
+          src="https://mcusercontent.com/26836b93b3853b37a4c30a37a/images/99d1192e-1771-e917-a0f2-238a98783ee5.png"
+          alt="ITICBCN">
+      </a>
+      <a class="header-cta" href="#formulari">Proposa un projecte</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="pill pill-soft">Convocatòria 2026-2027 · Oberta</span>
+        <h1>Porta el teu repte a l'aula.<br>Fem projectes junts.</h1>
+        <p class="lead">
+          L'<strong style="color:#fff">Institut TIC de Barcelona</strong> obre el
+          període per recollir <strong style="color:#fff">necessitats i
+          oportunitats de projectes</strong> d'empreses i entitats. Tres vies per
+          col·laborar amb el nostre alumnat d'Informàtica — amb estades formatives
+          de fins a <strong style="color:#fff">1.000-1.200 hores</strong> en règim
+          de <strong style="color:#fff">Dual Intensiva</strong>.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#formulari">Explica'ns el teu projecte</a>
+          <a class="btn btn-ghost" href="#vies">Veure les 3 vies</a>
+          <a class="btn btn-ghost" href="#dualiza">Detalls Ayudas Dualiza</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTRO + 3 VIES ==================== -->
+  <section id="vies" class="collab-options">
+    <div class="container">
+
+      <div class="intro-block">
+        <p>Hola,</p>
+        <p>
+          Estem preparant la programació de projectes i estades
+          <strong>2026-2027</strong> i ens agradaria comptar amb la vostra empresa.
+          Tenim <strong>tres formats de col·laboració</strong> molt diferents entre si
+          — trieu el que millor us encaixi (o parlem-ne i el dissenyem a mida):
+        </p>
+      </div>
+
+      <div class="collab-grid">
+
+        <!-- Opció 1 — Dualiza -->
+        <article class="collab-card c-purple">
+          <span class="collab-badge">Opció 1 · Ajudes Dualiza · X Convocatòria</span>
+          <h3>Projectes amb finançament fins a 25.000 €</h3>
+          <p>
+            La <strong>X Convocatòria Ayudas Dualiza 2026-2027</strong>
+            (CaixaBank Dualiza + FPEmpresa + Fundación Deloitte) finança
+            projectes de col·laboració real entre centre i empresa, amb impacte
+            en algun dels <strong>17 ODS</strong> de l'Agenda 2030.
+          </p>
+          <ul>
+            <li>
+              <span class="li-icon" aria-hidden="true">💶</span>
+              <strong>Projecte local:</strong> fins a 10.000 € (1 província/CCAA)<br>
+              <strong>Projecte en xarxa:</strong> fins a 25.000 € (≥ 2 CCAA, màx. 10.000 €/centre)
+            </li>
+            <li>
+              <span class="li-icon" aria-hidden="true">✅</span>
+              <strong>Finançable:</strong> material fungible, equipament específic,
+              formació de tutors, logística, dietes i difusió.
+            </li>
+            <li>
+              <span class="li-icon" aria-hidden="true">🤝</span>
+              <strong>Rol de l'empresa:</strong> impulsora activa del projecte
+              (disseny i/o execució) — queda exclòs el rol de mer proveïdor.
+            </li>
+            <li>
+              <span class="li-icon" aria-hidden="true">⏰</span>
+              <strong>Termini:</strong> 28 de maig de 2026 (23:59h).
+              Execució: 1 set 2026 – 31 jul 2027. Més avall trobareu tots els detalls.
+            </li>
+          </ul>
+          <p style="margin:16px 0 0 0;">
+            <a href="#dualiza" style="font-size:14px;font-weight:700;">
+              Veure detalls de la convocatòria →
+            </a>
+          </p>
+        </article>
+
+        <!-- Opció 2 — FP Dual -->
+        <article class="collab-card c-orange">
+          <span class="collab-badge">Opció 2 · FP Dual</span>
+          <h3>Projecte a l'empresa amb el nostre alumnat</h3>
+          <p>
+            Si teniu un <strong>projecte o necessitat real</strong> que pot
+            desenvolupar-se dins la vostra organització, podem encaixar-lo
+            com a estada formativa dels estudiants:
+          </p>
+          <ul>
+            <li>
+              <strong>Dual intensiva</strong> — el projecte es fa principalment a l'empresa.
+            </li>
+            <li>
+              <strong>Dual general</strong> — combina empresa i centre.
+            </li>
+            <li>
+              <strong>Projecte només dual</strong> — el projecte continua i es treballa a classe.
+            </li>
+            <li>
+              <span class="li-icon" aria-hidden="true">🎯</span>
+              Ideal per validar idees, fer proves de concepte, desenvolupar
+              eines internes o cobrir necessitats concretes amb talent júnior
+              tutoritzat.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Opció 3 — Repte real -->
+        <article class="collab-card c-green">
+          <span class="collab-badge">Opció 3 · Repte real</span>
+          <h3>Un repte d'empresa per a l'alumnat</h3>
+          <p>
+            Sense necessitat de fer dual, ens podeu proposar un
+            <strong>repte real</strong> — un cas d'ús, un problema tècnic, una
+            proposta d'I+D+i — que puguem treballar a l'aula.
+          </p>
+          <ul>
+            <li>
+              La vostra implicació seria una <strong>xerrada puntual</strong> o
+              consultes per resoldre dubtes de l'alumnat.
+            </li>
+            <li>
+              <span class="li-icon" aria-hidden="true">🤝</span>
+              És la via més lleugera i la que més empreses trien per
+              començar a conèixer-nos.
+            </li>
+          </ul>
+        </article>
+
+      </div>
+
+      <div class="audience-block">
+        <h3>A qui va dirigit?</h3>
+        <p>
+          Cicles d'<strong>Informàtica</strong> de l'ITICBCN: Grau Mitjà SMX
+          (Sistemes Microinformàtics i Xarxes), Graus Superiors ASIX, DAM i DAW,
+          i Cursos d'Especialització en Python i en Intel·ligència Artificial i
+          Big Data.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PROFILES ==================== -->
+  <section id="perfils">
+    <div class="container">
+
+      <div class="dual-callout">
+        <div class="badge-big">
+          1.000 – 1.200 h
+          <small>Dual Intensiva · Conveni de pràctiques</small>
+        </div>
+        <div class="dual-callout-text">
+          <h3>Temps suficient per construir alguna cosa real</h3>
+          <p>
+            Els estudiants s'incorporen a la vostra empresa amb un tutor del centre i un
+            tutor vostre, amb un projecte pactat des del primer dia. No és una visita:
+            és un equip més.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-head">
+        <span class="eyebrow">Perfils que sortiran del centre</span>
+        <h2>Què pot fer cada perfil a la vostra empresa?</h2>
+        <p>
+          Sis famílies de coneixement que cobreixen des del suport tècnic fins a la
+          intel·ligència artificial aplicada. Escolliu el que millor us encaixi — o
+          deixeu que us ho suggerim nosaltres a partir del vostre projecte.
+        </p>
+      </div>
+
+      <div class="profiles-grid">
+
+        <!-- SMX -->
+        <article class="profile-card c-orange">
+          <div class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <p class="subtitle">Grau mitjà</p>
+          <h3>Suport tècnic, equips i xarxes locals</h3>
+          <p>
+            Tècnic/a que instal·la i configura equips, munta xarxes d'oficina, dona
+            suport als usuaris i manté la infraestructura del dia a dia. Perfil
+            resolutiu per àrees IT internes.
+          </p>
+          <div class="tech-list">
+            <span>Hardware</span><span>Windows / Linux</span><span>Xarxes LAN</span>
+            <span>Helpdesk</span><span>Microsoft 365</span><span>Cablejat</span>
+          </div>
+        </article>
+
+        <!-- ASIX -->
+        <article class="profile-card">
+          <div class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M3 5v14a9 3 0 0 0 18 0V5"></path>
+              <path d="M3 12a9 3 0 0 0 18 0"></path>
+            </svg>
+          </div>
+          <p class="subtitle">Grau superior</p>
+          <h3>Administració de sistemes i DevOps</h3>
+          <p>
+            Cloud, contenidors, automatització i ciberseguretat. Munten pipelines
+            CI/CD, migracions a cloud, entorns Kubernetes i tot el que doni estabilitat
+            i escala a la vostra plataforma.
+          </p>
+          <div class="tech-list">
+            <span>Linux · Windows Server</span><span>Docker · K8s</span><span>AWS · Azure · GCP</span>
+            <span>CI/CD</span><span>Ansible · Terraform</span><span>Seguretat</span><span>BBDD</span>
+          </div>
+        </article>
+
+        <!-- DAM -->
+        <article class="profile-card c-pink">
+          <div class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <p class="subtitle">Grau superior</p>
+          <h3>Aplicacions mòbils i multiplataforma</h3>
+          <p>
+            Desenvolupament d'apps natives i híbrides per a Android i iOS, eines
+            internes d'escriptori i APIs de suport. Ideal per a productes mòbils
+            o utilitats corporatives.
+          </p>
+          <div class="tech-list">
+            <span>Android (Kotlin)</span><span>iOS (Swift)</span><span>Flutter</span>
+            <span>React Native</span><span>Java</span><span>APIs REST</span>
+          </div>
+        </article>
+
+        <!-- DAW -->
+        <article class="profile-card c-green">
+          <div class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <p class="subtitle">Grau superior</p>
+          <h3>Desenvolupament web full-stack</h3>
+          <p>
+            Portals, web apps, dashboards i backends. Des de SPAs modernes amb
+            React o Vue fins a CMS sota mida amb Laravel o Node. Perfil polivalent
+            per qualsevol producte web.
+          </p>
+          <div class="tech-list">
+            <span>HTML · CSS · JS</span><span>TypeScript</span><span>React · Vue · Angular</span>
+            <span>Node · Next.js</span><span>PHP · Laravel</span><span>WordPress</span><span>APIs REST</span>
+          </div>
+        </article>
+
+        <!-- Python -->
+        <article class="profile-card c-teal">
+          <div class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+          </div>
+          <p class="subtitle">Curs d'especialització</p>
+          <h3>Python avançat i automatització</h3>
+          <p>
+            Especialistes en Python per a backends ràpids amb FastAPI o Django,
+            scripts d'automatització, scraping, RPA i integració amb sistemes
+            externs. Productivitat en hores, no en setmanes.
+          </p>
+          <div class="tech-list">
+            <span>Python</span><span>FastAPI · Django · Flask</span><span>Scripting</span>
+            <span>RPA</span><span>Web scraping</span><span>Integracions API</span>
+          </div>
+        </article>
+
+        <!-- IA & Big Data -->
+        <article class="profile-card c-gold">
+          <div class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path>
+            </svg>
+          </div>
+          <p class="subtitle">Curs d'especialització</p>
+          <h3>Intel·ligència artificial i Big Data</h3>
+          <p>
+            Machine Learning, visió per computador, NLP, LLMs i analítica avançada.
+            Perfectes per a proves de concepte d'IA, models predictius, xatbots amb
+            LLMs o dashboards de negoci.
+          </p>
+          <div class="tech-list">
+            <span>ML · Deep Learning</span><span>TensorFlow · PyTorch</span><span>Computer Vision</span>
+            <span>NLP · LLMs</span><span>Spark · Hadoop</span><span>Power BI</span><span>Pandas</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DUALIZA DETALL ==================== -->
+  <section id="dualiza" class="dualiza-section">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">Opció 1 · Detall de la convocatòria</span>
+        <h2>Ayudas Dualiza 2026-2027 · X Convocatòria</h2>
+        <p>
+          Tot el que necessiteu saber per decidir si us encaixa aquesta via —
+          dotacions, què finança, criteris, terminis i preguntes freqüents.
+        </p>
+      </div>
+
+      <!-- Banner amb data límit -->
+      <div class="dualiza-banner">
+        <div>
+          <span class="pill pill-soft" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.3);">X Convocatòria · CaixaBank Dualiza + FPEmpresa</span>
+          <h3>Col·laboració real entre centre de FP i empresa · Impacte en ODS</h3>
+          <p>
+            Execució del projecte del <strong style="color:#fff">1 de setembre de 2026</strong>
+            al <strong style="color:#fff">31 de juliol de 2027</strong>.
+          </p>
+        </div>
+        <div class="dualiza-deadline">
+          <div class="label">Termini sol·licitud</div>
+          <div class="date">28 maig 2026</div>
+          <div class="time">23:59 h</div>
+        </div>
+      </div>
+
+      <!-- Modalitats -->
+      <div class="modalities-grid">
+
+        <article class="modality-card">
+          <h4>Modalitat A</h4>
+          <h3>Projecte local</h3>
+          <div class="amount">10.000 €</div>
+          <div class="amount-hint">Dotació màxima</div>
+          <dl>
+            <div>
+              <dt>Àmbit</dt>
+              <dd>Una mateixa província o comunitat autònoma.</dd>
+            </div>
+            <div>
+              <dt>Nº centres FP</dt>
+              <dd>Mínim 1 (centre líder). Opcional afegir-ne més.</dd>
+            </div>
+            <div>
+              <dt>Enfocament</dt>
+              <dd>Resposta a necessitats de l'ecosistema formatiu i productiu local.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="modality-card in-red">
+          <h4>Modalitat B</h4>
+          <h3>Projecte en xarxa</h3>
+          <div class="amount">25.000 €</div>
+          <div class="amount-hint">Dotació màxima · màx. 10.000 € per centre</div>
+          <dl>
+            <div>
+              <dt>Àmbit</dt>
+              <dd>Mínim 2 CCAA diferents.</dd>
+            </div>
+            <div>
+              <dt>Nº centres FP</dt>
+              <dd>Obligatori ≥ 2 centres de CCAA diferents.</dd>
+            </div>
+            <div>
+              <dt>Enfocament</dt>
+              <dd>Transferència d'aprenentatges i resposta a reptes compartits a nivell regional o estatal.</dd>
+            </div>
+          </dl>
+        </article>
+
+      </div>
+
+      <!-- Criteris d'avaluació -->
+      <div class="criteria-block">
+        <h3>Com s'avaluen els projectes</h3>
+        <p>
+          Pesos aproximats en la valoració d'un projecte <strong>local</strong> —
+          conèixer-los ajuda a dissenyar una proposta més robusta.
+        </p>
+        <div class="criteria-list">
+
+          <div class="criterion">
+            <div class="criterion-text">
+              <strong>Pla de treball i pressupost</strong>
+              Pertinença, objectius concrets, activitats detallades i pressupost coherent.
+            </div>
+            <div class="criterion-bar">
+              <div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div>
+              <div class="bar-pct">27 %</div>
+            </div>
+          </div>
+
+          <div class="criterion">
+            <div class="criterion-text">
+              <strong>Innovació</strong>
+              Metodologia, millora curricular, eines innovadores, nova solució concreta.
+            </div>
+            <div class="criterion-bar">
+              <div class="bar-track"><div class="bar-fill" style="width:82%;"></div></div>
+              <div class="bar-pct">22 %</div>
+            </div>
+          </div>
+
+          <div class="criterion">
+            <div class="criterion-text">
+              <strong>Impacte i sostenibilitat</strong>
+              Impacte en ODS (meta concreta), transformació social, ocupació, medi ambient.
+            </div>
+            <div class="criterion-bar">
+              <div class="bar-track"><div class="bar-fill" style="width:78%;"></div></div>
+              <div class="bar-pct">21 %</div>
+            </div>
+          </div>
+
+          <div class="criterion">
+            <div class="criterion-text">
+              <strong>Nivell de col·laboració i treball en xarxa</strong>
+              Diversitat de cicles, centres participants i entitats col·laboradores com a impulsores.
+            </div>
+            <div class="criterion-bar">
+              <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
+              <div class="bar-pct">19 %</div>
+            </div>
+          </div>
+
+          <div class="criterion">
+            <div class="criterion-text">
+              <strong>Transferibilitat</strong>
+              Accions concretes per difondre procesos i resultats dins i fora del centre.
+            </div>
+            <div class="criterion-bar">
+              <div class="bar-track"><div class="bar-fill" style="width:41%;"></div></div>
+              <div class="bar-pct">11 %</div>
+            </div>
+          </div>
+
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin:20px 0 0 0;">
+          En la modalitat <strong>en xarxa</strong>, la transferibilitat puja al 15 % i la
+          col·laboració baixa al 16 %. La resta d'apartats mantenen pràcticament els mateixos pesos.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <h3>Calendari de la convocatòria</h3>
+        <div class="timeline-items">
+          <div class="timeline-item highlight">
+            <div class="when">Maig 2026</div>
+            <p class="what">5 maig · Obertura</p>
+            <p class="who">Apertura del termini de sol·licituds online.</p>
+          </div>
+          <div class="timeline-item highlight">
+            <div class="when">Maig 2026</div>
+            <p class="what">28 maig 23:59h · Tancament</p>
+            <p class="who">Últim dia per presentar la sol·licitud.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="when">Juliol 2026</div>
+            <p class="what">Resolució</p>
+            <p class="who">1a quinzena — publicació dels projectes seleccionats.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="when">Set 2026</div>
+            <p class="what">1r pagament · 40 %</p>
+            <p class="who">Després de la docu inicial (1-15 set 2026).</p>
+          </div>
+          <div class="timeline-item">
+            <div class="when">Gen 2027</div>
+            <p class="what">Seguiment intermedi</p>
+            <p class="who">Informe de resultats + 2n pagament (40 %).</p>
+          </div>
+          <div class="timeline-item">
+            <div class="when">Set 2027</div>
+            <p class="what">Tancament · 15 set</p>
+            <p class="who">Memòria final · 3r pagament (20 %).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq" style="margin-top:48px;">
+        <h3>Preguntes freqüents</h3>
+
+        <details>
+          <summary>Quin paper ha de tenir l'empresa?</summary>
+          <p>
+            L'empresa ha d'actuar com a <strong>entitat col·laboradora impulsora</strong> —
+            amb rol actiu en el disseny i/o execució del projecte i coresponsabilitat de la seva bona marxa.
+            Queda <strong>exclòs</strong> el rol de mer proveïdor. No cal que siguin empreses:
+            també poden col·laborar fundacions, associacions, centres tecnològics, administracions
+            o cooperatives.
+          </p>
+        </details>
+
+        <details>
+          <summary>Què es pot finançar amb la subvenció?</summary>
+          <p>
+            Material fungible, equipament específic, formació de tutors (centre i empresa), cursos
+            de especialització, logística, dietes i desplaçaments del projecte, i accions de difusió.
+            <strong>No</strong> són finançables: beques o desplaçaments de l'alumnat en FP dual, IVA
+            (si no és cost real), publicitat a la pròpia web del centre, ni inversions/equips ja
+            existents al centre.
+          </p>
+        </details>
+
+        <details>
+          <summary>Com s'integra amb l'FP Dual?</summary>
+          <p>
+            No cal que el cicle s'imparteixi en modalitat dual-intensiva per concórrer a Dualiza.
+            El projecte es pot plantejar amb alumnat de 1r o 2n curs, i l'estada formativa a
+            l'empresa es contempla com un període integrat dins el nou model dual. Dualiza és
+            compatible amb qualsevol modalitat d'FP (a distància, dual general o dual intensiva).
+          </p>
+        </details>
+
+        <details>
+          <summary>Quants ODS ha d'impactar i com es mesura?</summary>
+          <p>
+            Com a <strong>mínim 1 ODS</strong> dels 17 de l'Agenda 2030, i es poden marcar
+            <strong>fins a 3</strong>. A la sol·licitud cal indicar <em>sobre quina meta específica</em>
+            de cada ODS s'espera impactar i <em>com</em>. Als informes de seguiment s'avalua si
+            aquest impacte s'està aconseguint.
+          </p>
+        </details>
+
+        <details>
+          <summary>Hi ha un nombre mínim d'alumnat?</summary>
+          <p>
+            No. No hi ha mínim, però la valoració té en compte el nombre de centres, titulacions,
+            alumnat i empreses participants. Com més gran sigui el projecte i més transferible
+            sigui, millor puntuació obté en els capítols de col·laboració i transferibilitat.
+          </p>
+        </details>
+
+        <details>
+          <summary>És compatible amb altres ajudes?</summary>
+          <p>
+            Sí. Les Ayudas Dualiza són compatibles amb altres subvencions, públiques o privades,
+            destinades al mateix projecte — sempre que la suma total d'ingressos no superi el
+            cost total del projecte. De fet, és compatible amb la subvenció de projectes d'innovació,
+            investigació aplicada i transferència del coneixement del Ministeri d'Educació, FP i Esports.
+          </p>
+        </details>
+
+        <details>
+          <summary>A qui correspon la propietat intel·lectual?</summary>
+          <p>
+            La propietat intel·lectual i els drets d'ús, explotació i/o reproducció
+            <strong>corresponen als centres de FP sol·licitants</strong>, que poden cedir-los a
+            altres organitzacions mitjançant l'acord corresponent. Ni CaixaBank Dualiza, ni FPEmpresa,
+            ni Fundación Deloitte tenen responsabilitat sobre la propietat intel·lectual.
+          </p>
+        </details>
+
+        <details>
+          <summary>Què passa després d'enviar la nostra proposta?</summary>
+          <p>
+            En menys de 48 h laborables ens posarem en contacte per concretar una reunió curta.
+            Si l'encaix és a Dualiza, preparem la sol·licitud conjuntament: el centre lidera i
+            gestiona la documentació. Necessitarem un <strong>document de consentiment</strong>
+            signat per la vostra empresa com a entitat col·laboradora (o una declaració de compromís
+            firmada per la direcció del centre si cal).
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FORM ==================== -->
+  <section id="formulari" class="form-section">
+    <div class="container-narrow">
+
+      <div class="section-head">
+        <span class="eyebrow">Formulari de proposta</span>
+        <h2>Explica'ns el teu projecte</h2>
+        <p>
+          No cal que el tingueu tot definit. Quant més concret, millor; quant més obert,
+          més marge per encaixar-ho — qualsevol forma ens va bé.
+        </p>
+      </div>
+
+      <div class="form-container" id="formContainer">
+        <div class="form-wrapper">
+          <!--
+            BACKEND INTEGRATION
+            -------------------
+            Escolliu una de les opcions i substituïu l'atribut action:
+
+            1) Formspree:  action="https://formspree.io/f/YOUR_ID"
+            2) Netlify:    afegir  data-netlify="true"  i  name="projecte-empresa"
+            3) Apps Script web app: action="https://script.google.com/macros/s/..."
+            4) Endpoint propi: action="https://api.iticbcn.cat/projectes"
+
+            El fallback per defecte (sense backend) mostra la pantalla "enviat"
+            amb les dades al console.log — útil per fer proves locals.
+          -->
+          <form id="projectForm"
+                action="#"
+                method="POST"
+                enctype="multipart/form-data"
+                novalidate>
+
+            <!-- STEP 1: empresa -->
+            <div class="form-step">
+              <div class="step-header">
+                <div class="step-number">1</div>
+                <div>
+                  <h3>La vostra empresa</h3>
+                  <p>Dades bàsiques per poder-vos contactar.</p>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field col-2">
+                  <label for="company_name">Nom de l'empresa <span class="req">*</span></label>
+                  <input type="text" id="company_name" name="company_name" required autocomplete="organization"
+                    placeholder="Ex: Empresa S.L.">
+                </div>
+                <div class="field">
+                  <label for="company_cif">CIF / NIF</label>
+                  <input type="text" id="company_cif" name="company_cif" placeholder="B12345678">
+                </div>
+                <div class="field">
+                  <label for="company_sector">Sector d'activitat</label>
+                  <input type="text" id="company_sector" name="company_sector"
+                    placeholder="Ex: SaaS · Retail · Logística">
+                </div>
+                <div class="field">
+                  <label for="company_size">Mida de l'empresa</label>
+                  <select id="company_size" name="company_size">
+                    <option value="">— Selecciona —</option>
+                    <option>Autònom / freelance</option>
+                    <option>Micro (fins a 10)</option>
+                    <option>Petita (10-49)</option>
+                    <option>Mitjana (50-249)</option>
+                    <option>Gran (250+)</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="company_web">Web</label>
+                  <input type="url" id="company_web" name="company_web" placeholder="https://...">
+                </div>
+                <div class="field col-2">
+                  <label for="company_address">Adreça (centre on es farien les pràctiques)</label>
+                  <input type="text" id="company_address" name="company_address"
+                    placeholder="Carrer, número, codi postal, població">
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: contacte -->
+            <div class="form-step">
+              <div class="step-header">
+                <div class="step-number">2</div>
+                <div>
+                  <h3>Persona de contacte</h3>
+                  <p>Qui és el punt de contacte per a aquest projecte.</p>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="contact_name">Nom i cognoms <span class="req">*</span></label>
+                  <input type="text" id="contact_name" name="contact_name" required autocomplete="name">
+                </div>
+                <div class="field">
+                  <label for="contact_role">Càrrec</label>
+                  <input type="text" id="contact_role" name="contact_role" placeholder="Ex: CTO, Responsable IT">
+                </div>
+                <div class="field">
+                  <label for="contact_email">Email <span class="req">*</span></label>
+                  <input type="email" id="contact_email" name="contact_email" required autocomplete="email">
+                </div>
+                <div class="field">
+                  <label for="contact_phone">Telèfon</label>
+                  <input type="tel" id="contact_phone" name="contact_phone" autocomplete="tel"
+                    placeholder="+34 ...">
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: tipus col·laboració + experiència Dual -->
+            <div class="form-step">
+              <div class="step-header">
+                <div class="step-number">3</div>
+                <div>
+                  <h3>Relació amb el programa Dual</h3>
+                  <p>Quines vies us interessen i quina experiència prèvia teniu amb nosaltres.</p>
+                </div>
+              </div>
+
+              <!-- Tipus col·laboració (multi-select) -->
+              <label style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px;display:block;">
+                Vies de col·laboració que us interessen <span class="req">*</span>
+                <span class="hint-inline">Podeu triar-ne més d'una. Si no ho teniu clar, marqueu "Parlem-ne".</span>
+              </label>
+
+              <div class="option-cards">
+                <div>
+                  <input type="checkbox" id="coltype_dualiza" name="collab_type[]" value="Dualiza">
+                  <label for="coltype_dualiza">
+                    <strong>Ajudes Dualiza</strong>
+                    Projecte subvencionat fins a 25.000 €, impacte en ODS.
+                  </label>
+                </div>
+                <div>
+                  <input type="checkbox" id="coltype_dual" name="collab_type[]" value="Dual intensiva">
+                  <label for="coltype_dual">
+                    <strong>Dual intensiva</strong>
+                    Estada formativa 1.000-1.200 h a la vostra empresa.
+                  </label>
+                </div>
+                <div>
+                  <input type="checkbox" id="coltype_challenge" name="collab_type[]" value="Repte puntual">
+                  <label for="coltype_challenge">
+                    <strong>Repte a l'aula</strong>
+                    Proposta per treballar al centre, amb xerrada vostra puntual.
+                  </label>
+                </div>
+                <div>
+                  <input type="checkbox" id="coltype_unsure" name="collab_type[]" value="Parlem-ne">
+                  <label for="coltype_unsure">
+                    <strong>Parlem-ne</strong>
+                    Expliqueu-nos el projecte i us suggerim la millor via.
+                  </label>
+                </div>
+              </div>
+
+              <!-- Coneixement del programa Dual -->
+              <div class="subquestion">
+                <label>Coneixeu el programa de Formació Professional Dual?</label>
+                <div class="option-cards cols-2">
+                  <div>
+                    <input type="radio" id="know_dual_yes" name="know_dual" value="Sí, el coneixem bé">
+                    <label for="know_dual_yes">
+                      <strong>Sí, el coneixem bé</strong>
+                      Sabem com funciona l'estada i el conveni.
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" id="know_dual_some" name="know_dual" value="N'hem sentit parlar">
+                    <label for="know_dual_some">
+                      <strong>N'hem sentit parlar</strong>
+                      Però ens caldria més informació.
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" id="know_dual_no" name="know_dual" value="No, és nou per a nosaltres">
+                    <label for="know_dual_no">
+                      <strong>No, és nou</strong>
+                      Ens ho podeu explicar des de zero.
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experiència prèvia amb estudiants -->
+              <div class="subquestion">
+                <label>Heu acollit estudiants en pràctiques anteriorment?</label>
+                <div class="option-cards cols-2">
+                  <div>
+                    <input type="radio" id="past_iticbcn" name="past_internships" value="Sí, d'ITICBCN">
+                    <label for="past_iticbcn">
+                      <strong>Sí, d'ITICBCN</strong>
+                      Ja hem col·laborat amb el centre.
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" id="past_other" name="past_internships" value="Sí, d'altres centres">
+                    <label for="past_other">
+                      <strong>Sí, d'altres centres</strong>
+                      Però no d'ITICBCN encara.
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" id="past_no" name="past_internships" value="No, seria la primera vegada">
+                    <label for="past_no">
+                      <strong>No, seria la primera</strong>
+                      Ens estrenaríem amb aquest projecte.
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Situació actual amb estudiants -->
+              <div class="subquestion">
+                <label>Teniu estudiants en pràctiques actualment a l'empresa?</label>
+                <div class="option-cards cols-2">
+                  <div>
+                    <input type="radio" id="now_yes_iticbcn" name="current_internships" value="Sí, d'ITICBCN">
+                    <label for="now_yes_iticbcn">
+                      <strong>Sí, d'ITICBCN</strong>
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" id="now_yes_other" name="current_internships" value="Sí, d'altres centres">
+                    <label for="now_yes_other">
+                      <strong>Sí, d'altres centres</strong>
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" id="now_no" name="current_internships" value="No">
+                    <label for="now_no">
+                      <strong>No, ara mateix no</strong>
+                    </label>
+                  </div>
+                </div>
+                <div class="field" style="margin-top:14px;">
+                  <label for="current_internships_detail">Detall (opcional)</label>
+                  <input type="text" id="current_internships_detail" name="current_internships_detail"
+                    placeholder="Ex: 2 estudiants de DAW d'ITICBCN fins a juny">
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 4: descripció projecte -->
+            <div class="form-step">
+              <div class="step-header">
+                <div class="step-number">4</div>
+                <div>
+                  <h3>El vostre projecte</h3>
+                  <p>Descriviu el repte, el problema a resoldre o l'oportunitat.</p>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field col-2">
+                  <label for="project_title">Títol curt <span class="req">*</span></label>
+                  <input type="text" id="project_title" name="project_title" required
+                    placeholder="Ex: Plataforma interna per gestionar comandes de proveïdors">
+                </div>
+                <div class="field col-2">
+                  <label for="project_description">Descripció <span class="req">*</span></label>
+                  <textarea id="project_description" name="project_description" required
+                    placeholder="Què voleu aconseguir? Quin problema resol? Hi ha alguna cosa ja feta o començaríem de zero? Quin impacte té per a l'empresa?"></textarea>
+                  <p class="hint">
+                    No cal entrar en detalls tècnics ni esmentar cap perfil concret —
+                    amb la tecnologia que seleccioneu a continuació ja tindrem prou per
+                    identificar l'encaix.
+                  </p>
+                </div>
+
+                <div class="field col-2">
+                  <label>Tecnologies implicades (podeu triar-ne diverses)</label>
+                  <div class="tech-groups">
+
+                    <div class="tech-group">
+                      <h4>Suport tècnic · Sistemes locals</h4>
+                      <div class="chip-list">
+                        <div class="chip"><input type="checkbox" id="t1" name="tech[]" value="Instal·lació i manteniment d'equips"><label for="t1">Instal·lació i manteniment d'equips</label></div>
+                        <div class="chip"><input type="checkbox" id="t2" name="tech[]" value="Xarxes locals (LAN, Wi-Fi)"><label for="t2">Xarxes locals (LAN, Wi-Fi)</label></div>
+                        <div class="chip"><input type="checkbox" id="t3" name="tech[]" value="Helpdesk i suport a usuaris"><label for="t3">Helpdesk i suport a usuaris</label></div>
+                        <div class="chip"><input type="checkbox" id="t4" name="tech[]" value="Microsoft 365 · Google Workspace"><label for="t4">Microsoft 365 · Google Workspace</label></div>
+                      </div>
+                    </div>
+
+                    <div class="tech-group">
+                      <h4>Infraestructura · DevOps · Cloud</h4>
+                      <div class="chip-list">
+                        <div class="chip"><input type="checkbox" id="t10" name="tech[]" value="Linux"><label for="t10">Linux</label></div>
+                        <div class="chip"><input type="checkbox" id="t11" name="tech[]" value="Windows Server · Active Directory"><label for="t11">Windows Server · AD</label></div>
+                        <div class="chip"><input type="checkbox" id="t12" name="tech[]" value="Virtualització (VMware, Proxmox)"><label for="t12">Virtualització</label></div>
+                        <div class="chip"><input type="checkbox" id="t13" name="tech[]" value="Docker"><label for="t13">Docker</label></div>
+                        <div class="chip"><input type="checkbox" id="t14" name="tech[]" value="Kubernetes"><label for="t14">Kubernetes</label></div>
+                        <div class="chip"><input type="checkbox" id="t15" name="tech[]" value="AWS"><label for="t15">AWS</label></div>
+                        <div class="chip"><input type="checkbox" id="t16" name="tech[]" value="Azure"><label for="t16">Azure</label></div>
+                        <div class="chip"><input type="checkbox" id="t17" name="tech[]" value="GCP"><label for="t17">GCP</label></div>
+                        <div class="chip"><input type="checkbox" id="t18" name="tech[]" value="CI/CD (GitLab, GitHub Actions, Jenkins)"><label for="t18">CI/CD</label></div>
+                        <div class="chip"><input type="checkbox" id="t19" name="tech[]" value="Ansible · Terraform"><label for="t19">Ansible · Terraform</label></div>
+                        <div class="chip"><input type="checkbox" id="t20" name="tech[]" value="Ciberseguretat"><label for="t20">Ciberseguretat</label></div>
+                        <div class="chip"><input type="checkbox" id="t21" name="tech[]" value="Monitorització (Prometheus, Grafana)"><label for="t21">Monitorització</label></div>
+                      </div>
+                    </div>
+
+                    <div class="tech-group">
+                      <h4>Backend · Bases de dades · APIs</h4>
+                      <div class="chip-list">
+                        <div class="chip"><input type="checkbox" id="t30" name="tech[]" value="MySQL · MariaDB"><label for="t30">MySQL · MariaDB</label></div>
+                        <div class="chip"><input type="checkbox" id="t31" name="tech[]" value="PostgreSQL"><label for="t31">PostgreSQL</label></div>
+                        <div class="chip"><input type="checkbox" id="t32" name="tech[]" value="MongoDB"><label for="t32">MongoDB</label></div>
+                        <div class="chip"><input type="checkbox" id="t33" name="tech[]" value="Redis"><label for="t33">Redis</label></div>
+                        <div class="chip"><input type="checkbox" id="t34" name="tech[]" value="APIs REST"><label for="t34">APIs REST</label></div>
+                        <div class="chip"><input type="checkbox" id="t35" name="tech[]" value="GraphQL"><label for="t35">GraphQL</label></div>
+                        <div class="chip"><input type="checkbox" id="t36" name="tech[]" value="Microserveis"><label for="t36">Microserveis</label></div>
+                      </div>
+                    </div>
+
+                    <div class="tech-group">
+                      <h4>Desenvolupament web</h4>
+                      <div class="chip-list">
+                        <div class="chip"><input type="checkbox" id="t40" name="tech[]" value="HTML · CSS · JavaScript"><label for="t40">HTML · CSS · JS</label></div>
+                        <div class="chip"><input type="checkbox" id="t41" name="tech[]" value="TypeScript"><label for="t41">TypeScript</label></div>
+                        <div class="chip"><input type="checkbox" id="t42" name="tech[]" value="React"><label for="t42">React</label></div>
+                        <div class="chip"><input type="checkbox" id="t43" name="tech[]" value="Vue"><label for="t43">Vue</label></div>
+                        <div class="chip"><input type="checkbox" id="t44" name="tech[]" value="Angular"><label for="t44">Angular</label></div>
+                        <div class="chip"><input type="checkbox" id="t45" name="tech[]" value="Node.js · Next.js"><label for="t45">Node.js · Next.js</label></div>
+                        <div class="chip"><input type="checkbox" id="t46" name="tech[]" value="PHP · Laravel · Symfony"><label for="t46">PHP · Laravel · Symfony</label></div>
+                        <div class="chip"><input type="checkbox" id="t47" name="tech[]" value="WordPress · Drupal"><label for="t47">WordPress · Drupal</label></div>
+                      </div>
+                    </div>
+
+                    <div class="tech-group">
+                      <h4>Apps mòbils i multiplataforma</h4>
+                      <div class="chip-list">
+                        <div class="chip"><input type="checkbox" id="t50" name="tech[]" value="Android (Kotlin · Java)"><label for="t50">Android</label></div>
+                        <div class="chip"><input type="checkbox" id="t51" name="tech[]" value="iOS (Swift)"><label for="t51">iOS</label></div>
+                        <div class="chip"><input type="checkbox" id="t52" name="tech[]" value="Flutter"><label for="t52">Flutter</label></div>
+                        <div class="chip"><input type="checkbox" id="t53" name="tech[]" value="React Native"><label for="t53">React Native</label></div>
+                        <div class="chip"><input type="checkbox" id="t54" name="tech[]" value="Apps d'escriptori (JavaFX, Electron)"><label for="t54">Escriptori</label></div>
+                      </div>
+                    </div>
+
+                    <div class="tech-group">
+                      <h4>Python · automatització</h4>
+                      <div class="chip-list">
+                        <div class="chip"><input type="checkbox" id="t60" name="tech[]" value="Python"><label for="t60">Python</label></div>
+                        <div class="chip"><input type="checkbox" id="t61" name="tech[]" value="Django · Flask · FastAPI"><label for="t61">Django · Flask · FastAPI</label></div>
+                        <div class="chip"><input type="checkbox" id="t62" name="tech[]" value="Scripting / automatització"><label for="t62">Scripting</label></div>
+                        <div class="chip"><input type="checkbox" id="t63" name="tech[]" value="Web scraping"><label for="t63">Web scraping</label></div>
+                        <div class="chip"><input type="checkbox" id="t64" name="tech[]" value="RPA"><label for="t64">RPA</label></div>
+                      </div>
+                    </div>
+
+                    <div class="tech-group">
+                      <h4>Intel·ligència artificial i dades</h4>
+                      <div class="chip-list">
+                        <div class="chip"><input type="checkbox" id="t70" name="tech[]" value="Machine Learning"><label for="t70">Machine Learning</label></div>
+                        <div class="chip"><input type="checkbox" id="t71" name="tech[]" value="Deep Learning (TensorFlow, PyTorch)"><label for="t71">Deep Learning</label></div>
+                        <div class="chip"><input type="checkbox" id="t72" name="tech[]" value="Computer Vision"><label for="t72">Computer Vision</label></div>
+                        <div class="chip"><input type="checkbox" id="t73" name="tech[]" value="NLP · LLMs (ChatGPT, Claude, Gemini)"><label for="t73">NLP · LLMs</label></div>
+                        <div class="chip"><input type="checkbox" id="t74" name="tech[]" value="Big Data (Spark, Hadoop)"><label for="t74">Big Data</label></div>
+                        <div class="chip"><input type="checkbox" id="t75" name="tech[]" value="Business Intelligence (Power BI, Tableau)"><label for="t75">Business Intelligence</label></div>
+                        <div class="chip"><input type="checkbox" id="t76" name="tech[]" value="Anàlisi de dades (Pandas, NumPy)"><label for="t76">Anàlisi de dades</label></div>
+                        <div class="chip"><input type="checkbox" id="t77" name="tech[]" value="ETL · Data engineering"><label for="t77">ETL · Data engineering</label></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="custom-tech-input field">
+                    <label for="tech_other">Altres tecnologies (opcional)</label>
+                    <input type="text" id="tech_other" name="tech_other"
+                      placeholder="Ex: Salesforce, Odoo, Unity, Arduino, ROS...">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- STEP 5: logística -->
+            <div class="form-step">
+              <div class="step-header">
+                <div class="step-number">5</div>
+                <div>
+                  <h3>Logística</h3>
+                  <p>Nombre d'estudiants, modalitat i quan voldríeu començar.</p>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="students_count">Nombre d'estudiants previst</label>
+                  <select id="students_count" name="students_count">
+                    <option value="">— Ens ho suggeriu vosaltres —</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3-5</option>
+                    <option>5+</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="work_mode">Modalitat de treball</label>
+                  <select id="work_mode" name="work_mode">
+                    <option value="">— Selecciona —</option>
+                    <option>Presencial</option>
+                    <option>Híbrid</option>
+                    <option>Remot</option>
+                    <option>Indiferent</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="start_date">Data preferent d'inici</label>
+                  <input type="date" id="start_date" name="start_date">
+                  <p class="hint">Les estades solen començar a partir de setembre/octubre.</p>
+                </div>
+                <div class="field">
+                  <label for="project_budget">Pressupost orientatiu (opcional)</label>
+                  <input type="text" id="project_budget" name="project_budget"
+                    placeholder="Ex: cap, 5.000 €, via Dualiza...">
+                </div>
+
+                <div class="field col-2">
+                  <label>Objectius de Desenvolupament Sostenible (només si voleu concórrer a Dualiza)</label>
+                  <div class="chip-list">
+                    <div class="chip"><input type="checkbox" id="ods4" name="ods[]" value="ODS 4 · Educació de qualitat"><label for="ods4">4 · Educació</label></div>
+                    <div class="chip"><input type="checkbox" id="ods5" name="ods[]" value="ODS 5 · Igualtat de gènere"><label for="ods5">5 · Igualtat</label></div>
+                    <div class="chip"><input type="checkbox" id="ods7" name="ods[]" value="ODS 7 · Energia neta"><label for="ods7">7 · Energia</label></div>
+                    <div class="chip"><input type="checkbox" id="ods8" name="ods[]" value="ODS 8 · Treball decent"><label for="ods8">8 · Treball</label></div>
+                    <div class="chip"><input type="checkbox" id="ods9" name="ods[]" value="ODS 9 · Indústria i innovació"><label for="ods9">9 · Indústria</label></div>
+                    <div class="chip"><input type="checkbox" id="ods10" name="ods[]" value="ODS 10 · Reducció de desigualtats"><label for="ods10">10 · Desigualtats</label></div>
+                    <div class="chip"><input type="checkbox" id="ods11" name="ods[]" value="ODS 11 · Ciutats sostenibles"><label for="ods11">11 · Ciutats</label></div>
+                    <div class="chip"><input type="checkbox" id="ods12" name="ods[]" value="ODS 12 · Consum responsable"><label for="ods12">12 · Consum</label></div>
+                    <div class="chip"><input type="checkbox" id="ods13" name="ods[]" value="ODS 13 · Acció pel clima"><label for="ods13">13 · Clima</label></div>
+                    <div class="chip"><input type="checkbox" id="ods17" name="ods[]" value="ODS 17 · Aliances"><label for="ods17">17 · Aliances</label></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 6: documentació -->
+            <div class="form-step">
+              <div class="step-header">
+                <div class="step-number">6</div>
+                <div>
+                  <h3>Documentació adjunta</h3>
+                  <p>Briefings, esborranys, diagrames, pressupostos... el que tingueu.</p>
+                </div>
+              </div>
+
+              <div class="field col-2">
+                <label class="dropzone" id="dropzone" for="project_files">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  <p><strong>Clica o arrossega</strong> els fitxers aquí</p>
+                  <p class="hint" style="margin-top:6px;">PDF, DOCX, imatges... màx. 10 MB per fitxer</p>
+                  <input type="file" id="project_files" name="project_files[]" multiple
+                    accept=".pdf,.doc,.docx,.txt,.odt,.png,.jpg,.jpeg,.gif,.svg,.ppt,.pptx,.xls,.xlsx,.csv,.zip">
+                </label>
+                <div class="file-list" id="fileList" aria-live="polite"></div>
+              </div>
+            </div>
+
+            <!-- STEP 7: consent + submit -->
+            <div class="form-step">
+              <label class="consent">
+                <input type="checkbox" id="gdpr" name="gdpr" required>
+                <span>
+                  Accepto que les meves dades siguin tractades per ITICBCN amb la finalitat
+                  de gestionar aquesta proposta de col·laboració. Les dades es conserven
+                  mentre el projecte es mantingui actiu i no se cedeixen a tercers.
+                  <span class="req">*</span>
+                </span>
+              </label>
+
+              <div class="form-footer">
+                <p class="helper">
+                  Els camps marcats amb <span class="req">*</span> són obligatoris.
+                </p>
+                <button class="btn btn-submit" type="submit" id="submitBtn">
+                  Enviar proposta →
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Success state -->
+          <div class="success-state" id="successState" role="status" aria-live="polite">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <h3>Gràcies! Hem rebut la vostra proposta.</h3>
+            <p>
+              En menys de 48 hores us escriurem per agendar una reunió curta i
+              validar encaix. Mentrestant, si teniu pressa, podeu escriure'ns
+              directament a
+              <a href="mailto:xavi.lara@iticbcn.cat?cc=david.fernandez@iticbcn.cat">xavi.lara@iticbcn.cat</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== NEXT STEPS ==================== -->
+  <section class="next-steps">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Què passa després</span>
+        <h2>Com funciona la col·laboració</h2>
+      </div>
+
+      <div class="next-steps-grid">
+        <div class="next-step">
+          <div class="num">1</div>
+          <h3>Rebem la proposta</h3>
+          <p>Un coordinador del centre la revisa i us contesta en 48 h laborables.</p>
+        </div>
+        <div class="next-step">
+          <div class="num">2</div>
+          <h3>Reunió d'encaix</h3>
+          <p>Una trobada curta (30-45 min) per afinar abast, perfil i calendari.</p>
+        </div>
+        <div class="next-step">
+          <div class="num">3</div>
+          <h3>Formalitzem</h3>
+          <p>Conveni de pràctiques o — si és Dualiza — preparem la sol·licitud junts.</p>
+        </div>
+        <div class="next-step">
+          <div class="num">4</div>
+          <h3>Engeguem</h3>
+          <p>Tutor d'empresa + tutor del centre acompanyen l'estudiant durant tota l'estada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <h4>Contacte principal</h4>
+          <p><strong>Xavi Lara Moreno</strong></p>
+          <p class="role">Coordinador de Pràctiques DUAL</p>
+          <a href="mailto:xavi.lara@iticbcn.cat">xavi.lara@iticbcn.cat</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacte tècnic</h4>
+          <p><strong>David Fernàndez Solé</strong></p>
+          <p class="role">Docent Informàtica</p>
+          <a href="mailto:david.fernandez@iticbcn.cat">david.fernandez@iticbcn.cat</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Institut TIC de Barcelona</h4>
+          <p>C/ Sancho de Ávila, 131</p>
+          <p>08018 Barcelona</p>
+          <a href="https://agora.xtec.cat/iticbcn" target="_blank" rel="noopener">agora.xtec.cat/iticbcn</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Segueix-nos</h4>
+          <a href="https://www.linkedin.com/school/iticbcn/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/iticbcn" target="_blank" rel="noopener">Instagram</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <em>© 2026 Institut TIC de Barcelona. Tots els drets reservats.</em>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ---------- File drop zone ----------
+      var fileInput = document.getElementById('project_files');
+      var dropzone = document.getElementById('dropzone');
+      var fileList = document.getElementById('fileList');
+      var filesStore = []; // We keep a JS list to be able to remove individual files.
+
+      function formatBytes(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+      }
+
+      function renderFiles() {
+        fileList.innerHTML = '';
+        filesStore.forEach(function (file, idx) {
+          var item = document.createElement('div');
+          item.className = 'file-item';
+          item.innerHTML =
+            '<div class="file-name">' +
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+                'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>' +
+                '<polyline points="14 2 14 8 20 8"></polyline>' +
+              '</svg>' +
+              '<span>' + file.name + ' <small style="color:var(--text-muted)">(' + formatBytes(file.size) + ')</small></span>' +
+            '</div>' +
+            '<button type="button" aria-label="Treure" data-idx="' + idx + '">&times;</button>';
+          fileList.appendChild(item);
+        });
+
+        // Sync files back into the input for native submit (not used with AJAX, but just in case).
+        try {
+          var dt = new DataTransfer();
+          filesStore.forEach(function (f) { dt.items.add(f); });
+          fileInput.files = dt.files;
+        } catch (e) { /* DataTransfer not supported — ignore */ }
+      }
+
+      function addFiles(fileList2) {
+        for (var i = 0; i < fileList2.length; i++) {
+          var f = fileList2[i];
+          if (f.size > 10 * 1024 * 1024) {
+            alert('El fitxer "' + f.name + '" supera els 10 MB i no s\'adjuntarà.');
+            continue;
+          }
+          filesStore.push(f);
+        }
+        renderFiles();
+      }
+
+      fileInput.addEventListener('change', function (e) {
+        addFiles(e.target.files);
+        // Reset the value so re-selecting the same file triggers change again
+        fileInput.value = '';
+      });
+
+      fileList.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-idx]');
+        if (!btn) return;
+        filesStore.splice(parseInt(btn.dataset.idx, 10), 1);
+        renderFiles();
+      });
+
+      ['dragenter', 'dragover'].forEach(function (evt) {
+        dropzone.addEventListener(evt, function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.add('dragover');
+        });
+      });
+
+      ['dragleave', 'drop'].forEach(function (evt) {
+        dropzone.addEventListener(evt, function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.remove('dragover');
+        });
+      });
+
+      dropzone.addEventListener('drop', function (e) {
+        if (e.dataTransfer && e.dataTransfer.files) {
+          addFiles(e.dataTransfer.files);
+        }
+      });
+
+      // ---------- Form submission ----------
+      var form = document.getElementById('projectForm');
+      var container = document.getElementById('formContainer');
+      var submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Client-side validation
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        // At least one "collab_type" checkbox must be checked
+        var collabChecked = form.querySelectorAll('input[name="collab_type[]"]:checked').length;
+        if (collabChecked === 0) {
+          alert('Marca com a mínim una via de col·laboració al pas 3.');
+          var firstCollab = form.querySelector('input[name="collab_type[]"]');
+          if (firstCollab) firstCollab.focus();
+          return;
+        }
+
+        var originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviant...';
+
+        var fd = new FormData(form);
+        // Replace the file input entries with our curated list
+        fd.delete('project_files[]');
+        filesStore.forEach(function (f) { fd.append('project_files[]', f, f.name); });
+
+        var action = form.getAttribute('action');
+        var shouldPost = action && action !== '#' && action.length > 1;
+
+        function showSuccess() {
+          container.classList.add('sent');
+          window.scrollTo({ top: container.offsetTop - 60, behavior: 'smooth' });
+        }
+
+        function showError(msg) {
+          alert('No s\'ha pogut enviar: ' + msg + '\n\nSi el problema persisteix, escriu-nos a xavi.lara@iticbcn.cat');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+
+        if (!shouldPost) {
+          // No backend configured — log to console and show success so the UI is testable locally.
+          console.log('[DEMO MODE] Backend no configurat. Dades del formulari:');
+          for (var pair of fd.entries()) { console.log(pair[0], pair[1]); }
+          setTimeout(showSuccess, 400);
+          return;
+        }
+
+        fetch(action, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (res.ok) { showSuccess(); }
+          else { return res.text().then(function (t) { showError(t || ('Error ' + res.status)); }); }
+        }).catch(function (err) {
+          showError(err.message || 'Error de xarxa');
+        });
+      });
+
+    })();
+  </script>
+
+</body>
+
+</html>

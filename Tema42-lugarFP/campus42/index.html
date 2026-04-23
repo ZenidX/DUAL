@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus 42 &mdash; La Revoluci&oacute;n Educativa sin Profesores | JEDAI XII ITIC BCN</title>
+    <style>
+        :root {
+            --primary: #0d0d0d;
+            --primary-light: #2d2d2d;
+            --accent: #00babc;
+            --accent-dark: #009a9c;
+            --accent-glow: rgba(0, 186, 188, 0.15);
+            --bg: #f5f5f5;
+            --bg-card: #ffffff;
+            --text: #1a1a1a;
+            --text-light: #666666;
+            --border: #e0e0e0;
+            --success: #38a169;
+            --warning: #ed8936;
+            --danger: #e53e3e;
+            --purple: #805ad5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: repeating-linear-gradient(
+                45deg, transparent, transparent 35px,
+                rgba(0,186,188,0.03) 35px, rgba(0,186,188,0.03) 70px
+            );
+        }
+        header::after {
+            content: '42';
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12rem;
+            font-weight: 900;
+            opacity: 0.06;
+            color: var(--accent);
+            line-height: 1;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            position: relative;
+        }
+        header h1 span {
+            color: var(--accent);
+        }
+        header .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.85;
+            position: relative;
+            margin-top: 0.3rem;
+        }
+        header .badges {
+            position: relative;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        header .badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        .badge-accent { background: var(--accent); color: var(--primary); }
+        .badge-outline { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
+
+        /* Nav */
+        nav {
+            background: var(--primary);
+            padding: 0.7rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.4rem 0.7rem;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+        nav a:hover { background: var(--accent); color: var(--primary); }
+
+        /* Main */
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* Sections */
+        section { margin-bottom: 3rem; }
+        section h2 {
+            color: var(--primary);
+            font-size: 1.7rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        section h3 {
+            color: var(--primary-light);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+        section h4 {
+            font-size: 1.05rem;
+            margin: 1rem 0 0.5rem;
+            font-weight: 600;
+        }
+        p { margin-bottom: 1rem; }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .card .card-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .card h4 { color: var(--primary); margin-bottom: 0.5rem; }
+        .card p { font-size: 0.92rem; color: var(--text-light); margin-bottom: 0; }
+        .card .tag {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent-dark);
+            font-size: 0.75rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Campus cards */
+        .campus-card {
+            border-top: 4px solid var(--accent);
+            position: relative;
+        }
+        .campus-card .campus-year {
+            position: absolute;
+            top: 0.8rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        /* Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.9rem;
+        }
+        thead { background: var(--primary); color: white; }
+        th { padding: 0.8rem 1rem; text-align: left; font-weight: 600; }
+        td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
+        tr:hover { background: var(--accent-glow); }
+
+        /* Stats */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .stat-box .number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-dark);
+            line-height: 1;
+        }
+        .stat-box .label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+        .stat-box.dark {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+        .stat-box.dark .number { color: var(--accent); }
+        .stat-box.dark .label { color: rgba(255,255,255,0.75); }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 1.5rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--purple));
+            border-radius: 3px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.85rem;
+            top: 1.2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .year {
+            font-weight: 800;
+            color: var(--accent-dark);
+            font-size: 0.9rem;
+        }
+        .timeline-item h4 { margin-top: 0.2rem; }
+
+        /* Piscine visual */
+        .piscine-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        .phase {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+            position: relative;
+        }
+        .phase .phase-num {
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 800;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        .phase h4 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+        .phase p { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0; }
+
+        /* Holy Graph visual */
+        .graph-path {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .graph-node {
+            background: var(--primary);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: nowrap;
+        }
+        .graph-node.highlight { background: var(--accent); color: var(--primary); }
+        .graph-arrow { color: var(--text-light); font-size: 1rem; }
+
+        /* Callout */
+        .callout {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.5rem;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+        }
+        .callout.warning { border-left-color: var(--warning); }
+        .callout.danger { border-left-color: var(--danger); }
+
+        /* Highlight box */
+        .highlight-box {
+            background: linear-gradient(135deg, #e6fffa, #ebf8ff);
+            border: 1px solid #81e6d9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box.dark {
+            background: linear-gradient(135deg, var(--primary), #1a1a2e);
+            border: none;
+            color: white;
+        }
+        .highlight-box.dark h4 { color: var(--accent); }
+        .highlight-box.dark p { color: rgba(255,255,255,0.85); }
+
+        /* World map text */
+        .world-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .region {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .region h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-dark);
+        }
+        .region ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .region li {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            padding: 0.15rem 0;
+        }
+        .region li::before {
+            content: '\25B8';
+            color: var(--accent);
+            margin-right: 0.4rem;
+        }
+
+        /* Pros/Cons */
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .pros, .cons {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        .pros { border-top: 4px solid var(--success); }
+        .cons { border-top: 4px solid var(--danger); }
+        .pros h4 { color: var(--success); }
+        .cons h4 { color: var(--danger); }
+        .pros li::marker { color: var(--success); }
+        .cons li::marker { color: var(--danger); }
+
+        ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+        li { margin-bottom: 0.3rem; }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+        footer strong { color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6rem; }
+            header::after { display: none; }
+            section h2 { font-size: 1.3rem; }
+            nav a { font-size: 0.72rem; padding: 0.3rem 0.5rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .pros-cons { grid-template-columns: 1fr; }
+            .piscine-phases { grid-template-columns: 1fr; }
+        }
+
+        @media print {
+            nav { display: none; }
+            header { padding: 1.5rem; }
+            .card:hover { transform: none; }
+            section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Campus <span>42</span></h1>
+    <p class="subtitle">La revoluci&oacute;n educativa sin profesores, sin clases y sin matr&iacute;cula</p>
+    <div class="badges">
+        <span class="badge badge-accent">JEDAI XII &mdash; ITIC BCN</span>
+        <span class="badge badge-outline">Peer-to-Peer Learning</span>
+        <span class="badge badge-outline">50+ Campus Mundiales</span>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#origen">Origen</a></li>
+        <li><a href="#modelo">Modelo</a></li>
+        <li><a href="#piscine">La Piscine</a></li>
+        <li><a href="#curriculum">Curr&iacute;culum</a></li>
+        <li><a href="#espana">42 en Espa&ntilde;a</a></li>
+        <li><a href="#red">Red Global</a></li>
+        <li><a href="#admision">Admisi&oacute;n</a></li>
+        <li><a href="#reconocimiento">Reconocimiento</a></li>
+        <li><a href="#comparativa">42 vs FP</a></li>
+        <li><a href="#criticas">Cr&iacute;ticas</a></li>
+        <li><a href="#conclusiones">Conclusiones</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <!-- 1. ORIGEN -->
+    <section id="origen">
+        <h2>1. Origen: La Respuesta de Xavier Niel</h2>
+        <p>
+            En 2013, el multimillonario franc&eacute;s <strong>Xavier Niel</strong>, fundador de la teleco Free (Grupo Iliad),
+            puso en marcha una de las apuestas educativas m&aacute;s radicales del siglo XXI. Convencido de que el sistema
+            educativo tradicional franc&eacute;s no produc&iacute;a suficientes ingenieros de software &mdash; y de que el talento
+            exist&iacute;a fuera del circuito acad&eacute;mico convencional &mdash; invirti&oacute; personalmente <strong>~70 millones
+            de euros</strong> para crear una escuela de programaci&oacute;n completamente gratuita, sin profesores y sin requisitos
+            acad&eacute;micos previos.
+        </p>
+        <p>
+            La llam&oacute; <strong>42</strong>, en referencia a <em>The Hitchhiker's Guide to the Galaxy</em> de Douglas Adams,
+            donde 42 es &laquo;la respuesta a la pregunta fundamental sobre la vida, el universo y todo lo dem&aacute;s&raquo;.
+        </p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="year">Marzo 2013</span>
+                <h4>Anuncio p&uacute;blico</h4>
+                <p>Xavier Niel presenta el proyecto 42 junto a Nicolas Sadirac (ex-director de Epitech).</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">Noviembre 2013</span>
+                <h4>Apertura de 42 Paris</h4>
+                <p>El campus abre en el 96 Boulevard Bessi&egrave;res, Paris 17e, con cientos de estaciones iMac.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2016</span>
+                <h4>42 Silicon Valley</h4>
+                <p>Primera expansi&oacute;n internacional, en Fremont (California).</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">Junio 2019</span>
+                <h4>42 Madrid</h4>
+                <p>Primera sede en Espa&ntilde;a, impulsada por Fundaci&oacute;n Telef&oacute;nica en el Distrito Telef&oacute;nica.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2020</span>
+                <h4>42 Barcelona</h4>
+                <p>Apertura en el Distrito 22@, Poblenou. Tambi&eacute;n con Fundaci&oacute;n Telef&oacute;nica.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2022-2025</span>
+                <h4>Expansi&oacute;n global</h4>
+                <p>La red supera los 50 campus en m&aacute;s de 30 pa&iacute;ses en todos los continentes habitados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. MODELO PEDAGOGICO -->
+    <section id="modelo">
+        <h2>2. Modelo Pedag&oacute;gico: Los Tres &laquo;Sin&raquo;</h2>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">&#128683;</div>
+                <h4>Sin Profesores</h4>
+                <p>No hay docentes, ni clases magistrales, ni libros de texto. Los estudiantes aprenden resolviendo
+                    proyectos, consultando a sus compa&ntilde;eros y buscando recursos por su cuenta.</p>
+                <span class="tag">Peer-to-Peer</span>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#128218;</div>
+                <h4>Sin Clases</h4>
+                <p>No hay horarios fijos, ni aulas, ni semestres. El campus est&aacute; abierto <strong>24 horas, 7 d&iacute;as
+                    a la semana</strong>. Cada estudiante avanza a su propio ritmo.</p>
+                <span class="tag">24/7</span>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#128176;</div>
+                <h4>Sin Matr&iacute;cula</h4>
+                <p>La formaci&oacute;n es <strong>completamente gratuita</strong>. Financiada por la dotaci&oacute;n del fundador
+                    y los socios locales de cada campus (como Fundaci&oacute;n Telef&oacute;nica en Espa&ntilde;a).</p>
+                <span class="tag">Gratuito</span>
+            </div>
+        </div>
+
+        <h3>Aprendizaje Peer-to-Peer</h3>
+        <p>
+            El m&eacute;todo pedag&oacute;gico fundamental de 42 es el <strong>aprendizaje entre iguales</strong>. Cuando un
+            estudiante se atasca, no acude a un profesor: pregunta a otro estudiante. Cuando completa un proyecto,
+            no lo corrige un docente: lo eval&uacute;an <strong>2-3 compa&ntilde;eros</strong> siguiendo una escala de correcci&oacute;n
+            estructurada. El evaluador aprende tanto como el evaluado.
+        </p>
+
+        <h3>Evaluaci&oacute;n entre pares</h3>
+        <ul>
+            <li>Los evaluadores siguen una <strong>correction scale</strong> proporcionada por la plataforma.</li>
+            <li>El evaluado debe <strong>defender su trabajo</strong> y explicar sus decisiones t&eacute;cnicas.</li>
+            <li>Complementada por <strong>Moulinette</strong>, un sistema automatizado de verificaci&oacute;n de c&oacute;digo que detecta plagios y ejecuta tests.</li>
+            <li>Ambas partes obtienen puntos de evaluaci&oacute;n (<em>correction points</em>), esenciales para desbloquear futuras evaluaciones.</li>
+        </ul>
+
+        <h3>Gamificaci&oacute;n</h3>
+        <div class="card-grid">
+            <div class="card">
+                <h4>XP y Niveles</h4>
+                <p>Los estudiantes ganan <strong>puntos de experiencia (XP)</strong> al completar proyectos.
+                    El XP acumulado sube el <strong>nivel</strong> (del 0 al 21). Alcanzar el nivel 21 es excepcional
+                    y representa dominio total.</p>
+            </div>
+            <div class="card">
+                <h4>Logros y Coaliciones</h4>
+                <p>Sistema de <strong>achievements</strong> por hitos alcanzados. Los estudiantes se agrupan en
+                    <strong>coaliciones</strong> que compiten entre s&iacute; acumulando puntos colectivos.</p>
+            </div>
+        </div>
+
+        <h3>El Blackhole: El Reloj que no para</h3>
+        <div class="highlight-box dark">
+            <h4>&#9899; El Sistema Blackhole</h4>
+            <p>
+                Cada estudiante tiene un <strong>temporizador de cuenta atr&aacute;s</strong>. Completar proyectos a&ntilde;ade d&iacute;as
+                al temporizador. Si el contador llega a cero, el estudiante es &laquo;absorbido por el Blackhole&raquo; &mdash;
+                <strong>efectivamente expulsado del programa</strong>.
+            </p>
+            <p style="margin-bottom:0;">
+                El Blackhole garantiza un ritmo m&iacute;nimo de progresi&oacute;n y evita el estancamiento indefinido.
+                Es tambi&eacute;n una de las fuentes de <strong>mayor presi&oacute;n y estr&eacute;s</strong> para los estudiantes.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. LA PISCINE -->
+    <section id="piscine">
+        <h2>3. La Piscine: Lanzarse a la Piscina</h2>
+        <p>
+            La <strong>Piscine</strong> (<em>piscina</em> en franc&eacute;s) es el proceso de selecci&oacute;n legendario de 42:
+            una inmersi&oacute;n de <strong>26 d&iacute;as</strong> donde los candidatos son &laquo;lanzados al agua&raquo; sin
+            instrucci&oacute;n previa. No se eval&uacute;a lo que sabes, sino tu <strong>capacidad de aprender, tu resiliencia
+            y tu motivaci&oacute;n</strong>.
+        </p>
+
+        <div class="stats-row">
+            <div class="stat-box dark">
+                <div class="number">26</div>
+                <div class="label">D&iacute;as de inmersi&oacute;n</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">12-16h</div>
+                <div class="label">Horas de trabajo/d&iacute;a</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">C</div>
+                <div class="label">Lenguaje base</div>
+            </div>
+            <div class="stat-box dark">
+                <div class="number">20-30%</div>
+                <div class="label">Tasa de aceptaci&oacute;n</div>
+            </div>
+        </div>
+
+        <h3>Fases del proceso de admisi&oacute;n</h3>
+        <div class="piscine-phases">
+            <div class="phase">
+                <div class="phase-num">1</div>
+                <h4>Registro online</h4>
+                <p>Inscripci&oacute;n en la web del campus. Sin requisitos acad&eacute;micos.</p>
+            </div>
+            <div class="phase">
+                <div class="phase-num">2</div>
+                <h4>Tests online</h4>
+                <p>Juegos de l&oacute;gica y memoria. No son pruebas de programaci&oacute;n.</p>
+            </div>
+            <div class="phase">
+                <div class="phase-num">3</div>
+                <h4>La Piscine</h4>
+                <p>26 d&iacute;as intensivos. Ejercicios diarios, proyectos semanales, ex&aacute;menes.</p>
+            </div>
+            <div class="phase">
+                <div class="phase-num">4</div>
+                <h4>Selecci&oacute;n</h4>
+                <p>Basada en progresi&oacute;n, resiliencia y colaboraci&oacute;n. No solo en resultados t&eacute;cnicos.</p>
+            </div>
+        </div>
+
+        <h3>&iquest;Qu&eacute; se hace durante la Piscine?</h3>
+        <ul>
+            <li><strong>D&iacute;a 1:</strong> Comandos b&aacute;sicos de shell (terminal). La mayor&iacute;a nunca ha abierto una.</li>
+            <li><strong>Semana 1:</strong> Fundamentos de C: variables, bucles, funciones.</li>
+            <li><strong>Semana 2-3:</strong> Punteros, asignaci&oacute;n de memoria, estructuras de datos.</li>
+            <li><strong>Semana 4:</strong> Proyectos m&aacute;s complejos, ex&aacute;menes cronometrados sin internet.</li>
+            <li><strong>Constante:</strong> Evaluaciones entre pares, colaboraci&oacute;n (pero copiar est&aacute; prohibido y detectado).</li>
+        </ul>
+
+        <div class="callout">
+            <strong>Criterio clave:</strong> Un candidato que empieza mal pero mejora dr&aacute;sticamente puede ser
+            seleccionado por encima de alguien que empieza bien pero se estanca. La Piscine mide la
+            <strong>curva de aprendizaje</strong>, no el punto de partida.
+        </div>
+    </section>
+
+    <!-- 4. CURRICULUM -->
+    <section id="curriculum">
+        <h2>4. El Curr&iacute;culum: The Holy Graph</h2>
+        <p>
+            El <strong>Holy Graph</strong> es el mapa visual de todo el curr&iacute;culum de 42: un grafo ramificado e
+            interconectado de proyectos. Comienza con un <strong>Common Core</strong> (tronco com&uacute;n) obligatorio
+            y luego se bifurca en especializaciones.
+        </p>
+
+        <h3>Common Core &mdash; Proyectos principales</h3>
+        <div class="graph-path">
+            <span class="graph-node highlight">Libft</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node">ft_printf</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node">get_next_line</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node highlight">Born2beRoot</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node">push_swap</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node">pipex</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node highlight">so_long</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node">minishell</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node highlight">Philosophers</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node">NetPractice</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node highlight">cub3D</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node">CPP 00-09</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node highlight">Inception</span>
+            <span class="graph-arrow">&rarr;</span>
+            <span class="graph-node highlight">ft_transcendence</span>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4>Libft</h4>
+                <p>Construir tu propia biblioteca de C reimplementando funciones de la biblioteca est&aacute;ndar. El primer gran reto.</p>
+            </div>
+            <div class="card">
+                <h4>minishell</h4>
+                <p>Crear un shell simplificado tipo bash. Proyecto colaborativo mayor que ense&ntilde;a procesos, pipes y se&ntilde;ales.</p>
+            </div>
+            <div class="card">
+                <h4>Philosophers</h4>
+                <p>El cl&aacute;sico problema de los fil&oacute;sofos comensales. Concurrencia, threads y mutexes.</p>
+            </div>
+            <div class="card">
+                <h4>cub3D / miniRT</h4>
+                <p>Motor de raycasting (estilo Wolfenstein 3D) o ray tracing. Programaci&oacute;n gr&aacute;fica desde cero.</p>
+            </div>
+            <div class="card">
+                <h4>Inception</h4>
+                <p>Infraestructura multi-contenedor con Docker. Administraci&oacute;n de sistemas y DevOps.</p>
+            </div>
+            <div class="card">
+                <h4>ft_transcendence</h4>
+                <p>Proyecto final: aplicaci&oacute;n web full-stack (Pong multijugador con auth, chat, base de datos). El culmen del Common Core.</p>
+            </div>
+        </div>
+
+        <h3>Especializaciones post-Common Core</h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">&#128274;</div>
+                <h4>Ciberseguridad</h4>
+                <p>Seguridad ofensiva y defensiva, criptograf&iacute;a, an&aacute;lisis de vulnerabilidades.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#127918;</div>
+                <h4>Gr&aacute;ficos / Videojuegos</h4>
+                <p>Motores gr&aacute;ficos, renderizado, desarrollo de juegos.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#127760;</div>
+                <h4>Desarrollo Web</h4>
+                <p>Frontend, backend, full-stack, APIs, arquitectura web.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#9881;</div>
+                <h4>DevOps / SysAdmin</h4>
+                <p>Infraestructura, CI/CD, orquestaci&oacute;n, cloud.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#129302;</div>
+                <h4>IA / Machine Learning</h4>
+                <p>Aprendizaje autom&aacute;tico, redes neuronales, procesamiento de datos.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#128241;</div>
+                <h4>Desarrollo M&oacute;vil</h4>
+                <p>Apps nativas e h&iacute;bridas, iOS, Android.</p>
+            </div>
+        </div>
+
+        <h3>Pr&aacute;cticas obligatorias</h3>
+        <p>
+            Los estudiantes deben completar al menos <strong>dos pr&aacute;cticas en empresa</strong> (stages) de 4-6 meses cada una,
+            generalmente tras alcanzar ciertos niveles. Muchos reciben ofertas laborales de sus empresas de pr&aacute;cticas.
+        </p>
+
+        <div class="callout">
+            <strong>Duraci&oacute;n total:</strong> El curr&iacute;culum completo est&aacute; dise&ntilde;ado para <strong>3-5 a&ntilde;os</strong>,
+            pero al ser auto-dirigido, algunos lo completan m&aacute;s r&aacute;pido. Muchos empiezan a trabajar antes de terminar.
+        </div>
+    </section>
+
+    <!-- 5. 42 EN ESPANA -->
+    <section id="espana">
+        <h2>5. 42 en Espa&ntilde;a</h2>
+        <p>
+            Espa&ntilde;a cuenta con <strong>cuatro campus de la red 42</strong>, tres de ellos impulsados por
+            <strong>Fundaci&oacute;n Telef&oacute;nica</strong> como parte de su compromiso con la educaci&oacute;n digital
+            y la reducci&oacute;n de la brecha de competencias tecnol&oacute;gicas.
+        </p>
+
+        <div class="card-grid">
+            <div class="card campus-card">
+                <span class="campus-year">2019</span>
+                <div class="card-icon">&#127479;&#127480;</div>
+                <h4>42 Madrid</h4>
+                <p>
+                    <strong>Ubicaci&oacute;n:</strong> Distrito Telef&oacute;nica, Las Tablas (norte de Madrid).<br>
+                    <strong>Capacidad:</strong> ~900 estudiantes simultaneos.<br>
+                    <strong>Socio:</strong> Fundaci&oacute;n Telef&oacute;nica.<br>
+                    Primera sede de 42 en Espa&ntilde;a y una de las mayores del mundo.
+                </p>
+                <span class="tag">Primera en Espa&ntilde;a</span>
+            </div>
+
+            <div class="card campus-card">
+                <span class="campus-year">2020</span>
+                <div class="card-icon">&#127479;&#127480;</div>
+                <h4>42 Barcelona</h4>
+                <p>
+                    <strong>Ubicaci&oacute;n:</strong> Distrito 22@, Poblenou (Edificio Imagina).<br>
+                    <strong>Socio:</strong> Fundaci&oacute;n Telef&oacute;nica.<br>
+                    En el coraz&oacute;n del distrito de innovaci&oacute;n tecnol&oacute;gica de Barcelona.
+                </p>
+                <span class="tag">Distrito 22@ &mdash; Tech Hub</span>
+            </div>
+
+            <div class="card campus-card">
+                <span class="campus-year">~2022</span>
+                <div class="card-icon">&#127479;&#127480;</div>
+                <h4>42 M&aacute;laga</h4>
+                <p>
+                    <strong>Socio:</strong> Fundaci&oacute;n Telef&oacute;nica.<br>
+                    Tercera sede Telef&oacute;nica en Espa&ntilde;a, ampliando la cobertura al sur peninsular.
+                </p>
+                <span class="tag">Expansi&oacute;n sur</span>
+            </div>
+
+            <div class="card campus-card">
+                <span class="campus-year">Independiente</span>
+                <div class="card-icon">&#127479;&#127480;</div>
+                <h4>42 Urduliz</h4>
+                <p>
+                    <strong>Ubicaci&oacute;n:</strong> Urduliz, Vizcaya (Pa&iacute;s Vasco).<br>
+                    <strong>Socio:</strong> Diputaci&oacute;n Foral de Bizkaia.<br>
+                    Opera de forma independiente de los campus de Telef&oacute;nica.
+                </p>
+                <span class="tag">Pa&iacute;s Vasco</span>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>Todos comparten el mismo ADN</h4>
+            <p style="margin-bottom:0;">
+                Los cuatro campus usan el mismo curr&iacute;culum, la misma plataforma (intranet 42) y el mismo modelo
+                pedag&oacute;gico. Las diferencias son locales: ecosistema empresarial, idioma predominante de la
+                comunidad (castellano/catal&aacute;n/euskera + ingl&eacute;s como lingua franca) y partnerships con
+                empresas del entorno.
+            </p>
+        </div>
+    </section>
+
+    <!-- 6. RED GLOBAL -->
+    <section id="red">
+        <h2>6. La Red Global 42</h2>
+
+        <div class="stats-row">
+            <div class="stat-box dark">
+                <div class="number">50+</div>
+                <div class="label">Campus en el mundo</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">30+</div>
+                <div class="label">Pa&iacute;ses</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">6</div>
+                <div class="label">Continentes</div>
+            </div>
+            <div class="stat-box dark">
+                <div class="number">2013</div>
+                <div class="label">A&ntilde;o de fundaci&oacute;n</div>
+            </div>
+        </div>
+
+        <div class="world-grid">
+            <div class="region">
+                <h4>&#127466;&#127482; Europa</h4>
+                <ul>
+                    <li>Francia: Paris, Lyon, Nice, Perpignan, Angoul&ecirc;me</li>
+                    <li>Espa&ntilde;a: Madrid, Barcelona, M&aacute;laga, Urduliz</li>
+                    <li>Alemania: Wolfsburg, Berl&iacute;n, Heilbronn</li>
+                    <li>Italia: Roma, Florencia</li>
+                    <li>Portugal: Lisboa, Porto</li>
+                    <li>Austria, Rep. Checa, Turqu&iacute;a, UK, Pa&iacute;ses Bajos, B&eacute;lgica, Suiza, Finlandia...</li>
+                </ul>
+            </div>
+            <div class="region">
+                <h4>&#127757; Am&eacute;ricas</h4>
+                <ul>
+                    <li>EE.UU.: San Francisco / Silicon Valley</li>
+                    <li>Brasil: S&atilde;o Paulo, Belo Horizonte, R&iacute;o</li>
+                    <li>Canad&aacute;: Qu&eacute;bec</li>
+                </ul>
+            </div>
+            <div class="region">
+                <h4>&#127759; Asia-Pac&iacute;fico</h4>
+                <ul>
+                    <li>Jap&oacute;n: Tokio</li>
+                    <li>Corea del Sur: Se&uacute;l</li>
+                    <li>Tailandia, Malasia, Singapur</li>
+                    <li>Australia: Adelaide</li>
+                </ul>
+            </div>
+            <div class="region">
+                <h4>&#127758; Oriente Medio y &Aacute;frica</h4>
+                <ul>
+                    <li>EAU: Abu Dhabi</li>
+                    <li>Jordania: Amm&aacute;n</li>
+                    <li>Armenia: Erev&aacute;n</li>
+                    <li>Marruecos: 1337 (partner)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Modelo de expansi&oacute;n</h3>
+        <p>
+            Cada campus se establece mediante una <strong>alianza local</strong> con un gobierno, fundaci&oacute;n o gran
+            corporaci&oacute;n que financia y opera el campus. <strong>42 Network</strong> (Paris) proporciona el marco
+            pedag&oacute;gico, el curr&iacute;culum, la plataforma tecnol&oacute;gica y la marca. Es un modelo similar a una
+            franquicia, pero sin &aacute;nimo de lucro.
+        </p>
+        <div class="callout">
+            <strong>Ejemplos de socios:</strong> Fundaci&oacute;n Telef&oacute;nica (Espa&ntilde;a), Volkswagen (42 Wolfsburg),
+            Gobierno de Abu Dhabi (42 Abu Dhabi), Dieter Schwarz Foundation (42 Heilbronn).
+        </div>
+    </section>
+
+    <!-- 7. ADMISION -->
+    <section id="admision">
+        <h2>7. Requisitos de Admisi&oacute;n</h2>
+
+        <div class="highlight-box dark">
+            <h4>La puerta m&aacute;s abierta de la educaci&oacute;n tecnol&oacute;gica</h4>
+            <p style="margin-bottom:0;">
+                42 no pide <strong>ning&uacute;n t&iacute;tulo previo</strong>. No pide expediente acad&eacute;mico, ni curr&iacute;culum,
+                ni carta de motivaci&oacute;n, ni entrevista. El &uacute;nico requisito es tener <strong>18 a&ntilde;os o m&aacute;s</strong>
+                (sin l&iacute;mite superior de edad) y superar el proceso de selecci&oacute;n.
+            </p>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Requisito</th>
+                        <th>42</th>
+                        <th>FP Grado Medio</th>
+                        <th>FP Grado Superior</th>
+                        <th>Universidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Edad m&iacute;nima</strong></td>
+                        <td>18 a&ntilde;os</td>
+                        <td>~16 a&ntilde;os</td>
+                        <td>~18 a&ntilde;os</td>
+                        <td>~18 a&ntilde;os</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Titulaci&oacute;n previa</strong></td>
+                        <td>Ninguna</td>
+                        <td>T&iacute;tulo ESO</td>
+                        <td>Bachillerato/CFGM</td>
+                        <td>Bachillerato + EBAU</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Experiencia programaci&oacute;n</strong></td>
+                        <td>No necesaria</td>
+                        <td>No necesaria</td>
+                        <td>No necesaria</td>
+                        <td>No necesaria</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Proceso de selecci&oacute;n</strong></td>
+                        <td>Piscine (26 d&iacute;as)</td>
+                        <td>Nota media</td>
+                        <td>Nota media</td>
+                        <td>Nota EBAU</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coste</strong></td>
+                        <td>Gratuito</td>
+                        <td>Gratuito (p&uacute;blico)</td>
+                        <td>Gratuito (p&uacute;blico)</td>
+                        <td>700-2.000+ &euro;/a&ntilde;o</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 8. RECONOCIMIENTO -->
+    <section id="reconocimiento">
+        <h2>8. Reconocimiento y Resultados</h2>
+
+        <h3>Acreditaci&oacute;n oficial</h3>
+        <div class="card-grid">
+            <div class="card">
+                <h4>&#127467;&#127479; Francia</h4>
+                <p>Certificaci&oacute;n <strong>RNCP Nivel 7</strong> (equivalente a M&aacute;ster, Bac+5) en el Repertorio
+                    Nacional de Certificaciones Profesionales.</p>
+                <span class="tag">Reconocido oficialmente</span>
+            </div>
+            <div class="card">
+                <h4>&#127466;&#127480; Espa&ntilde;a</h4>
+                <p><strong>No otorga t&iacute;tulo oficial</strong> de FP ni universitario. Opera fuera del sistema
+                    educativo formal. Reconocimiento informal por la industria tech.</p>
+                <span class="tag">Sin acreditaci&oacute;n oficial</span>
+            </div>
+        </div>
+
+        <h3>Valoraci&oacute;n de la industria</h3>
+        <p>
+            A pesar de la falta de t&iacute;tulo oficial en la mayor&iacute;a de pa&iacute;ses, los graduados de 42 son
+            <strong>altamente valorados</strong> por la industria tecnol&oacute;gica. Empresas que reclutan activamente:
+        </p>
+        <div class="graph-path">
+            <span class="graph-node">Google</span>
+            <span class="graph-node">Amazon</span>
+            <span class="graph-node">Microsoft</span>
+            <span class="graph-node highlight">Telef&oacute;nica</span>
+            <span class="graph-node">IBM</span>
+            <span class="graph-node">Capgemini</span>
+            <span class="graph-node">Accenture</span>
+            <span class="graph-node">Ubisoft</span>
+            <span class="graph-node">Airbus</span>
+            <span class="graph-node">Criteo</span>
+            <span class="graph-node">Doctolib</span>
+            <span class="graph-node highlight">BNP Paribas</span>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-box dark">
+                <div class="number">80-100%</div>
+                <div class="label">Empleabilidad reportada (6 meses)</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">Competitivos</div>
+                <div class="label">Salarios comparables a Grandes &Eacute;coles</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. COMPARATIVA 42 vs FP -->
+    <section id="comparativa">
+        <h2>9. 42 frente a la FP Tradicional</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dimensi&oacute;n</th>
+                        <th>Campus 42</th>
+                        <th>FP (CFGS DAW/DAM/ASIR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Coste</strong></td>
+                        <td>Gratuito</td>
+                        <td>Gratuito (p&uacute;blico) o bajo coste</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Profesorado</strong></td>
+                        <td>Ninguno (peer-to-peer)</td>
+                        <td>Profesores titulados, rol central</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Horario</strong></td>
+                        <td>Libre, 24/7, autodirigido</td>
+                        <td>Horario fijo, calendario acad&eacute;mico</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Curr&iacute;culum</strong></td>
+                        <td>Proyectos (Holy Graph), muy enfocado en programaci&oacute;n</td>
+                        <td>M&oacute;dulos estructurados, m&aacute;s amplio (redes, BBDD, sistemas)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Duraci&oacute;n</strong></td>
+                        <td>3-5 a&ntilde;os (flexible)</td>
+                        <td>2 a&ntilde;os (fijo)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>T&iacute;tulo oficial</strong></td>
+                        <td>No (en Espa&ntilde;a)</td>
+                        <td>S&iacute; &mdash; T&eacute;cnico Superior reconocido</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acceso a universidad</strong></td>
+                        <td>No da acceso directo</td>
+                        <td>Acceso directo + convalidaciones</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Requisitos de entrada</strong></td>
+                        <td>Solo 18+ y pasar la Piscine</td>
+                        <td>Bachillerato o CFGM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Evaluaci&oacute;n</strong></td>
+                        <td>Peer evaluation + tests automatizados</td>
+                        <td>Profesores, ex&aacute;menes, proyectos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Soft skills</strong></td>
+                        <td>Integradas: colaboraci&oacute;n, comunicaci&oacute;n, resiliencia</td>
+                        <td>Variable, generalmente secundarias</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contacto empresarial</strong></td>
+                        <td>Pr&aacute;cticas obligatorias + partnerships fuertes</td>
+                        <td>FCT (380-400h) + FP Dual</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gamificaci&oacute;n</strong></td>
+                        <td>Central: XP, niveles, Blackhole, coaliciones</td>
+                        <td>Generalmente ausente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Empleo p&uacute;blico</strong></td>
+                        <td>No cualifica (sin t&iacute;tulo oficial)</td>
+                        <td>S&iacute; cualifica para oposiciones</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout warning">
+            <strong>Punto cr&iacute;tico:</strong> En Espa&ntilde;a, la falta de t&iacute;tulo oficial de 42 impide el acceso a
+            empleo p&uacute;blico, oposiciones, y roles que legalmente requieren cualificaciones espec&iacute;ficas.
+            La FP, con su t&iacute;tulo de T&eacute;cnico Superior, ofrece esta garant&iacute;a.
+        </div>
+    </section>
+
+    <!-- 10. CRITICAS -->
+    <section id="criticas">
+        <h2>10. Luces y Sombras</h2>
+
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>&#9989; Fortalezas</h4>
+                <ul>
+                    <li>Completamente <strong>gratuito</strong></li>
+                    <li>Accesible sin titulaci&oacute;n previa</li>
+                    <li>Produce profesionales <strong>aut&oacute;nomos y resolutivos</strong></li>
+                    <li>Altamente valorado por la industria tech</li>
+                    <li>Fuerte conexi&oacute;n empresa (pr&aacute;cticas obligatorias)</li>
+                    <li>Comunidad global de 50+ campus</li>
+                    <li>Flexibilidad total de horarios</li>
+                    <li>Gamificaci&oacute;n motivadora (XP, niveles)</li>
+                    <li>Diversidad de perfiles y backgrounds</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>&#10060; Debilidades</h4>
+                <ul>
+                    <li><strong>Sin t&iacute;tulo oficial</strong> en Espa&ntilde;a</li>
+                    <li>Entorno de <strong>alta presi&oacute;n</strong> (Blackhole)</li>
+                    <li>Tasas de abandono elevadas (<strong>30-50%</strong>)</li>
+                    <li>Riesgo de burnout y problemas de salud mental</li>
+                    <li>Dedicaci&oacute;n completa dificulta trabajar simult&aacute;neamente</li>
+                    <li>Sin profesores: posibles <strong>malos h&aacute;bitos sin corregir</strong></li>
+                    <li>Evaluaci&oacute;n entre pares puede ser inconsistente</li>
+                    <li>Brecha de g&eacute;nero (predominancia masculina)</li>
+                    <li>Excluye a personas con cargas familiares/econ&oacute;micas</li>
+                    <li>Curr&iacute;culum centrado en programaci&oacute;n, cobertura te&oacute;rica limitada</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. CONCLUSIONES -->
+    <section id="conclusiones">
+        <h2>11. Conclusiones</h2>
+
+        <div class="highlight-box dark">
+            <h4>42: Un experimento que funciona &mdash; con matices</h4>
+            <p>
+                Campus 42 ha demostrado que es posible formar ingenieros de software de alto nivel
+                sin profesores, sin clases y sin matr&iacute;cula. Su modelo peer-to-peer produce
+                profesionales <strong>aut&oacute;nomos, resilientes y altamente empleables</strong>.
+            </p>
+            <p style="margin-bottom:0;">
+                Sin embargo, no es la soluci&oacute;n universal. Su <strong>falta de acreditaci&oacute;n oficial</strong>
+                en Espa&ntilde;a, su alta exigencia y sus tasas de abandono lo hacen complementario
+                &mdash; no sustitutivo &mdash; de la Formaci&oacute;n Profesional reglada.
+            </p>
+        </div>
+
+        <p>Puntos clave para el debate:</p>
+        <ul>
+            <li><strong>42 y FP no son rivales</strong>: son opciones complementarias que responden a perfiles distintos.</li>
+            <li>42 es ideal para quienes buscan <strong>autonom&iacute;a total</strong>, est&aacute;n dispuestos a la alta intensidad y priorizan la empleabilidad en el sector tech privado.</li>
+            <li>La FP es ideal para quienes valoran la <strong>acreditaci&oacute;n oficial</strong>, una formaci&oacute;n m&aacute;s estructurada, pasarelas a la universidad y acceso al empleo p&uacute;blico.</li>
+            <li>Ambos modelos comparten el objetivo de <strong>conectar educaci&oacute;n y mercado laboral</strong> de forma directa y pr&aacute;ctica.</li>
+            <li>La existencia de 42 desaf&iacute;a al sistema educativo tradicional a <strong>replantearse sus m&eacute;todos</strong>: m&aacute;s proyectos, m&aacute;s colaboraci&oacute;n, m&aacute;s contacto con la empresa.</li>
+        </ul>
+
+        <div class="callout">
+            <strong>Para los estudiantes del ITIC:</strong> Conocer el modelo 42 no significa elegir entre
+            42 y FP. Significa entender que <strong>el aprendizaje autodirigido, la colaboraci&oacute;n y la
+            resoluci&oacute;n de problemas reales</strong> son las competencias que el mercado laboral exige,
+            independientemente del camino educativo que se elija.
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p><strong>JEDAI XII &mdash; ITIC BCN</strong></p>
+    <p>Jornadas de Encuentro y Divulgaci&oacute;n de Aplicaciones Inform&aacute;ticas</p>
+    <p style="margin-top: 0.8rem; font-size: 0.78rem; opacity: 0.7;">
+        Monogr&aacute;fico: Campus 42 &mdash; La Revoluci&oacute;n Educativa sin Profesores | 2025-2026
+    </p>
+</footer>
+
+</body>
+</html>

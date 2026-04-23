@@ -2,7 +2,21 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)",
+      "Bash(python -c \"import PyPDF2; print\\(''ok''\\)\")",
+      "Bash(python -c \"import pdfplumber; print\\(''ok''\\)\")",
+      "Bash(python -c \"import fitz; print\\(''ok''\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(gh run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(python3:*)",
+      "Bash(git *)",
+      "Bash(gh --version)"
     ]
   }
 }

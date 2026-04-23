@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerarios Profesionales en Inform&aacute;tica | JEDAI XII ITIC BCN</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2b6cb0;
+            --accent: #9f44d3;
+            --accent-dark: #7b2faf;
+            --bg: #f7fafc;
+            --bg-card: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --info: #3182ce;
+            --warning: #ed8936;
+            --fp: #ed8936;
+            --uni: #3182ce;
+            --auto: #38a169;
+            --boot: #e53e3e;
+            --c42: #00babc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2d1b69 0%, #9f44d3 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: repeating-linear-gradient(
+                45deg, transparent, transparent 35px,
+                rgba(255,255,255,0.03) 35px, rgba(255,255,255,0.03) 70px
+            );
+        }
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        header .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            position: relative;
+        }
+        .back-link {
+            position: absolute;
+            top: 1.2rem; left: 1.5rem;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            z-index: 10;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: white; }
+
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 2px solid var(--border);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        nav a:hover, nav a:focus {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Main */
+        main {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* Sections */
+        section { margin-bottom: 3rem; }
+        section h2 {
+            color: var(--primary);
+            font-size: 1.7rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        section h3 {
+            color: var(--primary-light);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+        p { margin-bottom: 1rem; }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+        .card .icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+        .card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        .card p { font-size: 0.92rem; color: var(--text-light); margin-bottom: 0; }
+        .card.border-uni { border-top: 4px solid var(--uni); }
+        .card.border-fp { border-top: 4px solid var(--fp); }
+        .card.border-auto { border-top: 4px solid var(--auto); }
+        .card.border-boot { border-top: 4px solid var(--boot); }
+        .card.border-c42 { border-top: 4px solid var(--c42); }
+
+        /* Flow diagram */
+        .flow-diagram {
+            background: var(--primary);
+            color: white;
+            border-radius: 14px;
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+        .flow-diagram pre {
+            font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.78rem;
+            line-height: 1.5;
+            white-space: pre;
+            text-align: center;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.9rem;
+        }
+        thead th {
+            background: var(--primary);
+            color: white;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        tbody td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tbody tr:hover { background: #f0f4ff; }
+        tbody tr:last-child td { border-bottom: none; }
+
+        /* Route number badge */
+        .route-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+        .route-num.uni { background: var(--uni); }
+        .route-num.fp { background: var(--fp); }
+        .route-num.auto { background: var(--auto); }
+        .route-num.boot { background: var(--boot); }
+        .route-num.c42 { background: var(--c42); }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin: 0.1rem;
+        }
+        .tag-uni { background: #ebf4ff; color: var(--uni); }
+        .tag-fp { background: #fff5eb; color: var(--fp); }
+        .tag-auto { background: #f0fff4; color: var(--auto); }
+        .tag-boot { background: #fff5f5; color: var(--boot); }
+        .tag-c42 { background: #e6fffa; color: var(--c42); }
+
+        /* Highlight boxes */
+        .highlight-box {
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box.insight {
+            background: #f0f4ff;
+            border-left: 4px solid var(--info);
+        }
+        .highlight-box.warning {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+        }
+        .highlight-box.success {
+            background: #f0fff4;
+            border-left: 4px solid var(--success);
+        }
+        .highlight-box h4 { margin-bottom: 0.5rem; }
+        .highlight-box ul { margin-left: 1.2rem; margin-top: 0.5rem; }
+        .highlight-box li { margin-bottom: 0.3rem; font-size: 0.92rem; }
+
+        /* Stats */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .stat-card .label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 2rem;
+            font-size: 0.85rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .legend-dot {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Timeline path */
+        .path-container { margin: 1.5rem 0; }
+        .path-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0;
+            position: relative;
+        }
+        .path-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40px;
+            flex-shrink: 0;
+        }
+        .path-dot {
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            background: white;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+        .path-connector {
+            width: 2px;
+            flex-grow: 1;
+            background: var(--border);
+            min-height: 20px;
+        }
+        .path-content {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 0.8rem;
+            flex-grow: 1;
+        }
+        .path-content h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 0.3rem; }
+        .path-content p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0; }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+        footer strong { color: white; }
+
+        @media (max-width: 700px) {
+            header h1 { font-size: 1.6rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .flow-diagram pre { font-size: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../" class="back-link">&larr; Volver a Tema 42</a>
+        <h1>Itinerarios Profesionales en Inform&aacute;tica</h1>
+        <p class="subtitle">Mapa completo de rutas formativas y acceso al mercado laboral TIC en Espa&ntilde;a</p>
+        <span class="badge">Monogr&aacute;fico JEDAI XII</span>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#panorama">Panorama</a></li>
+            <li><a href="#puntos-entrada">Puntos de entrada</a></li>
+            <li><a href="#diagrama">Diagrama</a></li>
+            <li><a href="#bachillerato">Desde Bachillerato</a></li>
+            <li><a href="#fp-medio">Desde FP Grado Medio</a></li>
+            <li><a href="#eso">Desde ESO</a></li>
+            <li><a href="#autodidacta">Autodidacta</a></li>
+            <li><a href="#perfiles">Perfiles de salida</a></li>
+            <li><a href="#datos">Datos clave</a></li>
+            <li><a href="#conclusiones">Conclusiones</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- ==================== PANORAMA ==================== -->
+        <section id="panorama">
+            <h2>El panorama actual</h2>
+            <p>
+                El sector TIC en Espa&ntilde;a ofrece m&uacute;ltiples v&iacute;as de acceso. No existe un &uacute;nico camino para convertirse en profesional de la inform&aacute;tica: desde la universidad tradicional hasta la autoformaci&oacute;n pura, pasando por la Formaci&oacute;n Profesional, los bootcamps y modelos alternativos como Campus 42. Cada itinerario tiene sus ventajas, duraci&oacute;n, coste y perfil de empleabilidad.
+            </p>
+            <p>
+                Este monogr&aacute;fico mapea <strong>todas las rutas posibles</strong> para que un estudiante &mdash;o alguien en reconversi&oacute;n profesional&mdash; pueda tomar una decisi&oacute;n informada sobre su camino en el mundo TIC.
+            </p>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="number">25+</div>
+                    <div class="label">Itinerarios identificados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">5</div>
+                    <div class="label">V&iacute;as formativas principales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">9</div>
+                    <div class="label">Perfiles profesionales de salida</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">+90%</div>
+                    <div class="label">Empleabilidad FP Inform&aacute;tica</div>
+                </div>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item"><div class="legend-dot" style="background:var(--uni)"></div> Universidad</div>
+                <div class="legend-item"><div class="legend-dot" style="background:var(--fp)"></div> Formaci&oacute;n Profesional</div>
+                <div class="legend-item"><div class="legend-dot" style="background:var(--boot)"></div> Bootcamp</div>
+                <div class="legend-item"><div class="legend-dot" style="background:var(--c42)"></div> Campus 42 / Alternativa</div>
+                <div class="legend-item"><div class="legend-dot" style="background:var(--auto)"></div> Autodidacta</div>
+            </div>
+        </section>
+
+        <!-- ==================== PUNTOS DE ENTRADA ==================== -->
+        <section id="puntos-entrada">
+            <h2>Puntos de entrada al sistema</h2>
+            <p>Todo comienza desde uno de estos tres puntos de partida educativos:</p>
+
+            <div class="card-grid">
+                <div class="card border-uni">
+                    <div class="icon">&#127891;</div>
+                    <h4>Bachillerato completado (18 a&ntilde;os)</h4>
+                    <p>Acceso completo: universidad, CFGS directo, bootcamps, Campus 42 y autoformaci&oacute;n. Es el punto de partida con m&aacute;s opciones abiertas.</p>
+                </div>
+                <div class="card border-fp">
+                    <div class="icon">&#128295;</div>
+                    <h4>ESO completada (16 a&ntilde;os)</h4>
+                    <p>Acceso a CFGM (Grado Medio). Desde ah&iacute; se abre la puerta a CFGS y, con convalidaciones, a la universidad. Tambi&eacute;n bootcamps y autoformaci&oacute;n.</p>
+                </div>
+                <div class="card border-auto">
+                    <div class="icon">&#127793;</div>
+                    <h4>Sin titulaci&oacute;n formal</h4>
+                    <p>Autoformaci&oacute;n, certificaciones vendor, portfolio p&uacute;blico, contribuciones open source. Ruta viable pero que exige m&aacute;s disciplina y demostraci&oacute;n de competencias.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DIAGRAMA ==================== -->
+        <section id="diagrama">
+            <h2>Diagrama de flujo general</h2>
+            <p>Visi&oacute;n global de c&oacute;mo se conectan todos los itinerarios:</p>
+
+            <div class="flow-diagram">
+<pre>
+                                &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+                                &#9474;   ESO (16)  &#9474;
+                                &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+                 &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+                 &#9660;                &#9660;                   &#9660;
+          &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;  &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;    &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+          &#9474; Bachillerato &#9474;  &#9474;  CFGM SMR  &#9474;    &#9474;  Autodidacta  &#9474;
+          &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;  &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;    &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+       &#9484;&#9472;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;      &#9474;                     &#9474;
+       &#9660;    &#9660;         &#9660;      &#9660;                     &#9660;
+  &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;  &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+  &#9474;Universi&#9474;&#9474; CFGS &#9474;&#9474; Boot-&#9474;&#9474;   42/  &#9474;  &#9474; Certificac.  &#9474;
+  &#9474;  dad   &#9474;&#9474; DAW/ &#9474;&#9474; camp &#9474;&#9474; Alter. &#9474;  &#9474; + Portfolio  &#9474;
+  &#9474;        &#9474;&#9474; DAM/ &#9474;&#9474;      &#9474;&#9474;        &#9474;  &#9474;              &#9474;
+  &#9474;        &#9474;&#9474; ASIR &#9474;&#9474;      &#9474;&#9474;        &#9474;  &#9474;              &#9474;
+  &#9492;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9496;&#9492;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9496;&#9492;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9496;&#9492;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9496;  &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+       &#9474;        &#9474;       &#9474;        &#9474;                &#9474;
+       &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+                            &#9660;
+  &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+  &#9474;                    MERCADO LABORAL                         &#9474;
+  &#9474;                                                              &#9474;
+  &#9474; &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488; &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488; &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488; &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;  &#9474;
+  &#9474; &#9474; Consultor&iacute;a &#9474; &#9474;  Empresa  &#9474; &#9474; Startup &#9474; &#9474; Freelance &#9474;  &#9474;
+  &#9474; &#9474; (formaci&oacute;n  &#9474; &#9474;  producto &#9474; &#9474;         &#9474; &#9474;          &#9474;  &#9474;
+  &#9474; &#9474;  interna)  &#9474; &#9474;           &#9474; &#9474;         &#9474; &#9474;          &#9474;  &#9474;
+  &#9474; &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496; &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496; &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496; &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;  &#9474;
+  &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+</pre>
+            </div>
+        </section>
+
+        <!-- ==================== DESDE BACHILLERATO ==================== -->
+        <section id="bachillerato">
+            <h2>Itinerarios desde Bachillerato</h2>
+            <p>Con el Bachillerato completado se abren todas las puertas. Estos son los 13 itinerarios principales:</p>
+
+            <h3>V&iacute;a universitaria</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:40px">#</th>
+                            <th>Ruta formativa</th>
+                            <th>Entrada al mercado laboral</th>
+                            <th>Duraci&oacute;n aprox.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="route-num uni">1</span></td>
+                            <td>Grado en Inform&aacute;tica</td>
+                            <td>Pr&aacute;cticas curriculares &rarr; contrato en la misma empresa</td>
+                            <td>4 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num uni">2</span></td>
+                            <td>Grado en Inform&aacute;tica</td>
+                            <td>Consultor&iacute;a que forma internamente (Accenture, Capgemini, NTT Data, Indra...)</td>
+                            <td>4 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num uni">3</span></td>
+                            <td>Grado en Inform&aacute;tica + autoformaci&oacute;n en tecnolog&iacute;a espec&iacute;fica + certificaci&oacute;n</td>
+                            <td>Empresa producto / startup como especialista</td>
+                            <td>4-5 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num uni">4</span></td>
+                            <td>Grado en Inform&aacute;tica + M&aacute;ster especializado (IA, Ciberseguridad, Big Data)</td>
+                            <td>Perfil especialista de alto valor</td>
+                            <td>5-6 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num uni">5</span></td>
+                            <td>Grado en Inform&aacute;tica + CFGS simult&aacute;neo o posterior</td>
+                            <td>Perfil h&iacute;brido te&oacute;rico-pr&aacute;ctico, muy valorado</td>
+                            <td>4-6 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num uni">6</span></td>
+                            <td>Grado NO inform&aacute;tico (ADE, Matem&aacute;ticas, F&iacute;sica...) + Bootcamp</td>
+                            <td>Reconversi&oacute;n: junior developer con perfil multidisciplinar</td>
+                            <td>4-5 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num uni">7</span></td>
+                            <td>Grado NO inform&aacute;tico + M&aacute;ster en Inform&aacute;tica / Data</td>
+                            <td>Cambio de carrera con base acad&eacute;mica s&oacute;lida</td>
+                            <td>5-6 a&ntilde;os</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>V&iacute;a Formaci&oacute;n Profesional Superior (directo)</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:40px">#</th>
+                            <th>Ruta formativa</th>
+                            <th>Entrada al mercado laboral</th>
+                            <th>Duraci&oacute;n aprox.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="route-num fp">8</span></td>
+                            <td>CFGS: DAW, DAM o ASIR</td>
+                            <td>Pr&aacute;cticas FCT &rarr; contrato directo</td>
+                            <td>2 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num fp">9</span></td>
+                            <td>CFGS + autoformaci&oacute;n + certificaciones vendor (AWS, Azure, Cisco...)</td>
+                            <td>Perfil especialista sin necesidad de universidad</td>
+                            <td>2-3 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num fp">10</span></td>
+                            <td>CFGS &rarr; Universidad (con convalidaciones de hasta 60 ECTS)</td>
+                            <td>Ruta completa: pr&aacute;ctica + teor&iacute;a, perfil muy s&oacute;lido</td>
+                            <td>4-5 a&ntilde;os</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>V&iacute;as alternativas</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:40px">#</th>
+                            <th>Ruta formativa</th>
+                            <th>Entrada al mercado laboral</th>
+                            <th>Duraci&oacute;n aprox.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="route-num boot">11</span></td>
+                            <td>Bootcamp intensivo (3-6 meses): Ironhack, Le Wagon, Codespace...</td>
+                            <td>Entrada r&aacute;pida como junior web developer</td>
+                            <td>3-6 meses</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num c42">12</span></td>
+                            <td>Campus 42 u otra formaci&oacute;n alternativa peer-to-peer</td>
+                            <td>Perfil muy pr&aacute;ctico, valorado en startups y empresas tech</td>
+                            <td>1-3 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num auto">13</span></td>
+                            <td>Autoformaci&oacute;n pura + portfolio + certificaciones</td>
+                            <td>Entrada por demostraci&oacute;n de skills, sin t&iacute;tulo formal</td>
+                            <td>Variable</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box insight">
+                <h4>Dato clave: la consultor&iacute;a como puerta masiva</h4>
+                <p>Las grandes consultoras (Accenture, Capgemini, NTT Data, Indra, Everis...) absorben una parte significativa de los reci&eacute;n graduados universitarios y de FP. Ofrecen formaci&oacute;n interna en tecnolog&iacute;as espec&iacute;ficas, aunque con condiciones laborales a menudo por debajo del mercado. Muchos profesionales las usan como <strong>trampolín de 1-2 a&ntilde;os</strong> antes de saltar a empresa producto.</p>
+            </div>
+        </section>
+
+        <!-- ==================== DESDE FP GRADO MEDIO ==================== -->
+        <section id="fp-medio">
+            <h2>Itinerarios desde FP Grado Medio (sin Bachillerato)</h2>
+            <p>El CFGM en Sistemas Microinform&aacute;ticos y Redes (SMR) es el punto de partida t&eacute;cnico m&aacute;s habitual a los 16 a&ntilde;os. Desde ah&iacute;:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:40px">#</th>
+                            <th>Ruta formativa</th>
+                            <th>Entrada al mercado laboral</th>
+                            <th>Duraci&oacute;n aprox.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="route-num fp">14</span></td>
+                            <td>CFGM (SMR) &rarr; CFGS (DAW / DAM / ASIR)</td>
+                            <td>Pr&aacute;cticas FCT &rarr; contrato como t&eacute;cnico</td>
+                            <td>4 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num fp">15</span></td>
+                            <td>CFGM (SMR) &rarr; CFGS &rarr; Universidad (convalidaciones)</td>
+                            <td>Ruta ascendente completa: de t&eacute;cnico a ingeniero</td>
+                            <td>6-7 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num fp">16</span></td>
+                            <td>CFGM (SMR) &rarr; directamente al mercado laboral</td>
+                            <td>Soporte t&eacute;cnico / Helpdesk nivel 1</td>
+                            <td>2 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num auto">17</span></td>
+                            <td>CFGM (SMR) + autoformaci&oacute;n + certificaciones (Cisco, Microsoft, AWS)</td>
+                            <td>Salto a roles especializados: redes, sistemas, cloud</td>
+                            <td>2-3 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num boot">18</span></td>
+                            <td>CFGM (SMR) &rarr; Bootcamp de desarrollo</td>
+                            <td>Reconversi&oacute;n de sistemas a desarrollo web/m&oacute;vil</td>
+                            <td>2.5-3 a&ntilde;os</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num c42">19</span></td>
+                            <td>CFGM (SMR) &rarr; Campus 42 / formaci&oacute;n alternativa</td>
+                            <td>Perfil pr&aacute;ctico sin pasar por CFGS ni universidad</td>
+                            <td>3-5 a&ntilde;os</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box success">
+                <h4>La ruta FP Medio &rarr; FP Superior: la m&aacute;s eficiente</h4>
+                <p>La combinaci&oacute;n CFGM + CFGS es uno de los itinerarios con mejor relaci&oacute;n <strong>tiempo invertido / empleabilidad</strong>. En 4 a&ntilde;os (2+2) el estudiante tiene dos t&iacute;tulos oficiales, experiencia pr&aacute;ctica con las FCT y una tasa de inserci&oacute;n laboral superior al 90% en la familia de inform&aacute;tica.</p>
+            </div>
+
+            <!-- Timeline visual: ruta ascendente -->
+            <h3>Ejemplo: Ruta ascendente completa (CFGM &rarr; CFGS &rarr; Universidad)</h3>
+            <div class="path-container">
+                <div class="path-item">
+                    <div class="path-line">
+                        <div class="path-dot" style="border-color:var(--fp)"></div>
+                        <div class="path-connector"></div>
+                    </div>
+                    <div class="path-content">
+                        <h4>CFGM Sistemas Microinform&aacute;ticos y Redes &mdash; 2 a&ntilde;os</h4>
+                        <p>Base t&eacute;cnica: montaje, redes locales, sistemas operativos, seguridad b&aacute;sica. Pr&aacute;cticas FCT en empresa.</p>
+                    </div>
+                </div>
+                <div class="path-item">
+                    <div class="path-line">
+                        <div class="path-dot" style="border-color:var(--fp)"></div>
+                        <div class="path-connector"></div>
+                    </div>
+                    <div class="path-content">
+                        <h4>CFGS DAW / DAM / ASIR &mdash; 2 a&ntilde;os</h4>
+                        <p>Especializaci&oacute;n: desarrollo web, desarrollo multiplataforma o administraci&oacute;n de sistemas. Segunda ronda de FCT.</p>
+                    </div>
+                </div>
+                <div class="path-item">
+                    <div class="path-line">
+                        <div class="path-dot" style="border-color:var(--uni)"></div>
+                        <div class="path-connector"></div>
+                    </div>
+                    <div class="path-content">
+                        <h4>Grado Universitario (con convalidaciones) &mdash; 2-3 a&ntilde;os</h4>
+                        <p>Se pueden convalidar hasta 60 ECTS del CFGS. El grado se reduce significativamente. Base te&oacute;rica s&oacute;lida en algor&iacute;tmica, arquitectura, IA.</p>
+                    </div>
+                </div>
+                <div class="path-item">
+                    <div class="path-line">
+                        <div class="path-dot" style="border-color:var(--success)"></div>
+                        <div class="path-connector" style="background:transparent"></div>
+                    </div>
+                    <div class="path-content">
+                        <h4>Mercado laboral &mdash; Perfil muy completo</h4>
+                        <p>Doble perspectiva pr&aacute;ctica (FP) y te&oacute;rica (universidad). Experiencia real en empresas desde las FCT. Perfil diferenciado y muy demandado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DESDE ESO ==================== -->
+        <section id="eso">
+            <h2>Itinerarios desde ESO (sin Bachillerato)</h2>
+            <p>Con la ESO completada, la v&iacute;a m&aacute;s directa al sector TIC es el Grado Medio:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:40px">#</th>
+                            <th>Ruta formativa</th>
+                            <th>Siguiente paso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="route-num fp">20</span></td>
+                            <td>ESO &rarr; CFGM en SMR directamente</td>
+                            <td>Contin&uacute;a como itinerarios 14-19 (v&eacute;ase secci&oacute;n anterior)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num fp">21</span></td>
+                            <td>ESO &rarr; Prueba de acceso a CFGS &rarr; CFGS directamente</td>
+                            <td>Salta el Grado Medio y accede a DAW/DAM/ASIR sin Bachillerato</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box warning">
+                <h4>La prueba de acceso a CFGS</h4>
+                <p>Permite acceder al Grado Superior <strong>sin haber cursado Bachillerato ni Grado Medio</strong>. Requisito: tener 19 a&ntilde;os (o 18 si se tiene un t&iacute;tulo de GM). Consta de una parte com&uacute;n (lengua, matem&aacute;ticas, ingl&eacute;s) y una parte espec&iacute;fica. Es una opci&oacute;n infrautilizada pero muy efectiva para quien tiene claro su objetivo.</p>
+            </div>
+        </section>
+
+        <!-- ==================== AUTODIDACTA ==================== -->
+        <section id="autodidacta">
+            <h2>Itinerarios autodidactas (sin titulaci&oacute;n formal)</h2>
+            <p>El sector TIC es uno de los pocos donde es posible construir una carrera sin ningún título oficial, basándose en habilidades demostrables:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:40px">#</th>
+                            <th>Ruta formativa</th>
+                            <th>Entrada al mercado laboral</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="route-num auto">22</span></td>
+                            <td>Plataformas online (Udemy, Coursera, freeCodeCamp, The Odin Project, Platzi...)</td>
+                            <td>Portfolio &rarr; Freelance &rarr; Empresa</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num auto">23</span></td>
+                            <td>Certificaciones vendor: AWS, Azure, GCP, Cisco (CCNA), CompTIA</td>
+                            <td>Entrada directa por certificaci&oacute;n reconocida en la industria</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num auto">24</span></td>
+                            <td>Contribuciones open source + portfolio p&uacute;blico en GitHub</td>
+                            <td>Contratado por reputaci&oacute;n t&eacute;cnica demostrable</td>
+                        </tr>
+                        <tr>
+                            <td><span class="route-num boot">25</span></td>
+                            <td>Bootcamp sin requisito de t&iacute;tulo previo</td>
+                            <td>Junior developer tras 3-6 meses intensivos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-grid">
+                <div class="card border-auto">
+                    <div class="icon">&#9989;</div>
+                    <h4>Ventajas del autodidacta</h4>
+                    <p>
+                        Flexibilidad total de horarios y ritmo. Coste muy bajo o gratuito.
+                        Aprendizaje centrado en tecnolog&iacute;as demandadas por el mercado actual.
+                        Posibilidad de empezar a trabajar en meses, no a&ntilde;os.
+                    </p>
+                </div>
+                <div class="card border-boot">
+                    <div class="icon">&#9888;&#65039;</div>
+                    <h4>Desaf&iacute;os del autodidacta</h4>
+                    <p>
+                        Requiere alta disciplina y capacidad de autogesti&oacute;n.
+                        Sin t&iacute;tulo oficial, el primer empleo es el m&aacute;s dif&iacute;cil de conseguir.
+                        Posibles lagunas en fundamentos (algoritmia, arquitectura, redes).
+                        Algunas ofertas filtran por t&iacute;tulo en el ATS.
+                    </p>
+                </div>
+            </div>
+
+            <div class="highlight-box success">
+                <h4>Certificaciones con mayor impacto en empleabilidad</h4>
+                <ul>
+                    <li><strong>Cloud:</strong> AWS Solutions Architect, Azure Fundamentals (AZ-900), Google Cloud Associate</li>
+                    <li><strong>Redes:</strong> Cisco CCNA, CompTIA Network+</li>
+                    <li><strong>Seguridad:</strong> CompTIA Security+, CEH, OSCP</li>
+                    <li><strong>Desarrollo:</strong> Meta Front-End Developer, Oracle Java SE</li>
+                    <li><strong>Datos:</strong> Google Data Analytics, Databricks, dbt</li>
+                    <li><strong>DevOps:</strong> Kubernetes (CKA/CKAD), Terraform Associate, Docker DCA</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== PERFILES DE SALIDA ==================== -->
+        <section id="perfiles">
+            <h2>Perfiles profesionales de salida</h2>
+            <p>Independientemente de la ruta elegida, los itinerarios convergen en estos grandes perfiles profesionales:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Perfil profesional</th>
+                            <th>Rutas m&aacute;s habituales</th>
+                            <th>Puesto de entrada t&iacute;pico</th>
+                            <th>Salario junior (Espa&ntilde;a)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Desarrollador web / m&oacute;vil</strong></td>
+                            <td>
+                                <span class="tag tag-uni">Universidad</span>
+                                <span class="tag tag-fp">CFGS DAW/DAM</span>
+                                <span class="tag tag-boot">Bootcamp</span>
+                                <span class="tag tag-c42">42</span>
+                                <span class="tag tag-auto">Autodidacta</span>
+                            </td>
+                            <td>Junior developer</td>
+                            <td>20-27K &euro;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Administrador de sistemas / redes</strong></td>
+                            <td>
+                                <span class="tag tag-fp">CFGM SMR</span>
+                                <span class="tag tag-fp">CFGS ASIR</span>
+                                <span class="tag tag-auto">Certificaciones</span>
+                            </td>
+                            <td>T&eacute;cnico de sistemas</td>
+                            <td>19-25K &euro;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consultor t&eacute;cnico</strong></td>
+                            <td>
+                                <span class="tag tag-uni">Universidad</span>
+                                <span class="tag tag-fp">CFGS</span>
+                            </td>
+                            <td>Consultor junior (formaci&oacute;n interna)</td>
+                            <td>21-26K &euro;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DevOps / Cloud Engineer</strong></td>
+                            <td>
+                                <span class="tag tag-uni">Universidad</span>
+                                <span class="tag tag-fp">CFGS ASIR</span>
+                                <span class="tag tag-auto">Certificaciones</span>
+                            </td>
+                            <td>Junior DevOps (tras 2-3 a&ntilde;os en sistemas)</td>
+                            <td>25-35K &euro;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ciberseguridad</strong></td>
+                            <td>
+                                <span class="tag tag-uni">Uni + M&aacute;ster</span>
+                                <span class="tag tag-fp">CFGS + Certs</span>
+                                <span class="tag tag-auto">CEH/OSCP</span>
+                            </td>
+                            <td>Analista SOC / Pentester junior</td>
+                            <td>22-30K &euro;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Engineer / Scientist</strong></td>
+                            <td>
+                                <span class="tag tag-uni">Uni (info/mates) + M&aacute;ster</span>
+                            </td>
+                            <td>Data analyst &rarr; Data engineer</td>
+                            <td>24-32K &euro;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Soporte t&eacute;cnico / Helpdesk</strong></td>
+                            <td>
+                                <span class="tag tag-fp">CFGM SMR</span>
+                            </td>
+                            <td>T&eacute;cnico nivel 1</td>
+                            <td>17-21K &euro;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>QA / Testing</strong></td>
+                            <td>
+                                <span class="tag tag-uni">Cualquier ruta</span>
+                                <span class="tag tag-auto">ISTQB</span>
+                            </td>
+                            <td>QA tester junior</td>
+                            <td>19-24K &euro;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>UX/UI Developer</strong></td>
+                            <td>
+                                <span class="tag tag-boot">Bootcamp</span>
+                                <span class="tag tag-auto">Autodidacta</span>
+                                <span class="tag tag-fp">DAW</span>
+                            </td>
+                            <td>Junior UI developer / designer</td>
+                            <td>20-26K &euro;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================== DATOS CLAVE ==================== -->
+        <section id="datos">
+            <h2>Datos clave del sector</h2>
+
+            <div class="card-grid">
+                <div class="card border-fp">
+                    <div class="icon">&#128200;</div>
+                    <h4>FP en auge</h4>
+                    <p>DAW y DAM tienen tasas de empleabilidad superiores al 90%. Muchas empresas prefieren CFGS sobre grado universitario para perfiles junior operativos.</p>
+                </div>
+                <div class="card border-auto">
+                    <div class="icon">&#128196;</div>
+                    <h4>Certificaciones vendor</h4>
+                    <p>Especialmente en cloud (AWS, Azure, GCP) y redes (Cisco). Pueden compensar la falta de t&iacute;tulo universitario y son muy valoradas en procesos de selecci&oacute;n.</p>
+                </div>
+                <div class="card border-auto">
+                    <div class="icon">&#128187;</div>
+                    <h4>Portfolio > T&iacute;tulo</h4>
+                    <p>Para desarrollo, un buen GitHub y portfolio personal puede abrir m&aacute;s puertas que el expediente acad&eacute;mico. Las empresas tech valoran lo que sabes hacer, no d&oacute;nde lo aprendiste.</p>
+                </div>
+                <div class="card border-uni">
+                    <div class="icon">&#127970;</div>
+                    <h4>Consultor&iacute;a como trampolín</h4>
+                    <p>Accenture, Capgemini, NTT Data, Indra... absorben gran parte de juniors (uni y FP) con formaci&oacute;n interna. Suelen usarse como trampolín de 1-2 a&ntilde;os.</p>
+                </div>
+                <div class="card border-c42">
+                    <div class="icon">&#128256;</div>
+                    <h4>Rutas no lineales</h4>
+                    <p>Cada vez m&aacute;s profesionales combinan rutas: FP + universidad, universidad no técnica + bootcamp, autodidacta + certificación. La trayectoria mixta es la nueva normalidad.</p>
+                </div>
+                <div class="card border-boot">
+                    <div class="icon">&#9889;</div>
+                    <h4>Velocidad vs. profundidad</h4>
+                    <p>Los bootcamps ofrecen la entrada m&aacute;s r&aacute;pida (3-6 meses), pero con menor profundidad. La universidad ofrece la formaci&oacute;n m&aacute;s profunda, pero la m&aacute;s lenta (4-6 a&ntilde;os).</p>
+                </div>
+            </div>
+
+            <h3>Comparativa de v&iacute;as formativas</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>V&iacute;a</th>
+                            <th>Duraci&oacute;n</th>
+                            <th>Coste</th>
+                            <th>T&iacute;tulo oficial</th>
+                            <th>Profundidad te&oacute;rica</th>
+                            <th>Pr&aacute;ctica real</th>
+                            <th>Empleabilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Universidad</strong></td>
+                            <td>4-6 a&ntilde;os</td>
+                            <td>Medio-alto</td>
+                            <td>S&iacute; (Grado/M&aacute;ster)</td>
+                            <td>&#11088;&#11088;&#11088;&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;&#11088;&#11088;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FP (CFGS)</strong></td>
+                            <td>2 a&ntilde;os</td>
+                            <td>Bajo</td>
+                            <td>S&iacute; (T&eacute;cnico Superior)</td>
+                            <td>&#11088;&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;&#11088;&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;&#11088;&#11088;&#11088;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bootcamp</strong></td>
+                            <td>3-6 meses</td>
+                            <td>Alto (5-12K&euro;)</td>
+                            <td>No</td>
+                            <td>&#11088;</td>
+                            <td>&#11088;&#11088;&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;&#11088;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Campus 42</strong></td>
+                            <td>1-3 a&ntilde;os</td>
+                            <td>Gratuito</td>
+                            <td>No</td>
+                            <td>&#11088;&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;&#11088;&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;&#11088;&#11088;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Autodidacta</strong></td>
+                            <td>Variable</td>
+                            <td>Bajo/Gratuito</td>
+                            <td>No (s&oacute;lo certs)</td>
+                            <td>&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;&#11088;</td>
+                            <td>&#11088;&#11088;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================== CONCLUSIONES ==================== -->
+        <section id="conclusiones">
+            <h2>Conclusiones</h2>
+
+            <div class="highlight-box insight">
+                <h4>No hay un &uacute;nico camino correcto</h4>
+                <p>El sector TIC es uno de los m&aacute;s meritocr&aacute;ticos: lo que importa es lo que sabes hacer, no (solo) d&oacute;nde lo aprendiste. Cada itinerario tiene su p&uacute;blico ideal:</p>
+                <ul>
+                    <li><strong>Quieres profundidad y base cient&iacute;fica</strong> &rarr; Universidad</li>
+                    <li><strong>Quieres eficiencia tiempo/resultado</strong> &rarr; FP (CFGS)</li>
+                    <li><strong>Quieres velocidad de entrada</strong> &rarr; Bootcamp</li>
+                    <li><strong>Quieres autonom&iacute;a total y coste cero</strong> &rarr; Campus 42 o autoformaci&oacute;n</li>
+                    <li><strong>Quieres lo mejor de todos los mundos</strong> &rarr; Combina rutas (FP + Uni, Uni + Certificaciones...)</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box success">
+                <h4>El factor diferencial: nunca dejar de aprender</h4>
+                <p>Independientemente del itinerario inicial, los profesionales TIC que m&aacute;s progresan son los que mantienen un <strong>aprendizaje continuo</strong>. La formaci&oacute;n inicial es el punto de partida, pero las tecnolog&iacute;as cambian tan r&aacute;pido que la autoformaci&oacute;n permanente es imprescindible en todas las rutas.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>JEDAI XII</strong> &mdash; ITIC BCN &mdash; Jornadas de Encuentro y Divulgaci&oacute;n de Aplicaciones Inform&aacute;ticas</p>
+        <p style="margin-top:0.5rem; font-size:0.75rem;">Monogr&aacute;fico: Itinerarios Profesionales en Inform&aacute;tica</p>
+    </footer>
+
+</body>
+</html>

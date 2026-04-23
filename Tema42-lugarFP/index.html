@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 42 &mdash; El Lugar de la FP | JEDAI XII ITIC BCN</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0d0d0d;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            text-align: center;
+        }
+        h1 span { color: #00babc; }
+        .subtitle {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            width: 100%;
+        }
+        a.card {
+            text-decoration: none;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 14px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s;
+            display: block;
+        }
+        a.card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+        }
+        a.card.fp { border-top: 4px solid #ed8936; }
+        a.card.fp:hover { background: #1a1510; border-color: #ed8936; }
+        a.card.c42 { border-top: 4px solid #00babc; }
+        a.card.c42:hover { background: #0a1a1a; border-color: #00babc; }
+        a.card.iti { border-top: 4px solid #9f44d3; }
+        a.card.iti:hover { background: #1a101f; border-color: #9f44d3; }
+        a.card.iti h2 { color: #9f44d3; }
+        .card .icon { font-size: 3rem; margin-bottom: 1rem; }
+        .card h2 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff; }
+        .card.fp h2 { color: #ed8936; }
+        .card.c42 h2 { color: #00babc; }
+        .card p { color: #999; font-size: 0.95rem; line-height: 1.6; }
+        .card .arrow {
+            display: inline-block;
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+            transition: color 0.2s;
+        }
+        a.card:hover .arrow { color: #fff; }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #555;
+            font-size: 0.8rem;
+        }
+        footer strong { color: #00babc; }
+        @media (max-width: 700px) {
+            h1 { font-size: 1.7rem; }
+            .cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tema <span>42</span>: El Lugar de la FP</h1>
+    <p class="subtitle">Monogr&aacute;ficos sobre educaci&oacute;n tecnol&oacute;gica &mdash; JEDAI XII ITIC BCN</p>
+
+    <div class="cards">
+        <a href="pro-fp/" class="card fp">
+            <div class="icon">&#127891;</div>
+            <h2>La Formaci&oacute;n Profesional</h2>
+            <p>
+                El lugar de la FP en el sistema educativo espa&ntilde;ol. Niveles, pasarelas a la universidad,
+                FP Dual, datos de empleabilidad, familias profesionales y la nueva Ley Org&aacute;nica 3/2022.
+            </p>
+            <span class="arrow">Explorar monogr&aacute;fico &rarr;</span>
+        </a>
+
+        <a href="campus42/" class="card c42">
+            <div class="icon">&#128187;</div>
+            <h2>Campus 42</h2>
+            <p>
+                La revoluci&oacute;n educativa sin profesores. Modelo peer-to-peer, la Piscine,
+                el Holy Graph, 42 en Espa&ntilde;a (Madrid, Barcelona, M&aacute;laga, Urduliz) y la red global de 50+ campus.
+            </p>
+            <span class="arrow">Explorar monogr&aacute;fico &rarr;</span>
+        </a>
+
+        <a href="itinerarios/" class="card iti">
+            <div class="icon">&#128204;</div>
+            <h2>Itinerarios Profesionales</h2>
+            <p>
+                Mapa completo de las 25+ rutas para entrar en el sector TIC: desde Bachillerato, FP, bootcamps,
+                Campus 42 o autodidacta. Perfiles de salida, comparativas y datos de empleabilidad.
+            </p>
+            <span class="arrow">Explorar monogr&aacute;fico &rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        <p><strong>JEDAI XII</strong> &mdash; ITIC BCN &mdash; Jornadas de Encuentro y Divulgaci&oacute;n de Aplicaciones Inform&aacute;ticas</p>
+    </footer>
+
+</body>
+</html>

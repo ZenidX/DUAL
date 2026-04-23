@@ -1,0 +1,17 @@
+Sí, puedes sincronizar un proyecto de Google Apps Script con un repositorio Git local utilizando clasp (Command Line Apps Script Projects). Esta herramienta oficial te permite desarrollar en tu editor local (como VS Code) y subir/descargar cambios entre tu máquina y el proyecto de Google Apps Script, gestionando el control de versiones con Git.
+YouTube
+YouTube
++1
+Pasos clave para la sincronización:
+Instalar CLASP: Requiere Node.js. Se instala mediante npm install -g @google/clasp.
+Iniciar sesión: Usa clasp login para autenticarte con tu cuenta de Google.
+Clonar/Crear proyecto: Utiliza clasp clone <scriptId> para descargar un proyecto existente o clasp create para uno nuevo.
+Integrar Git: Inicializa un repositorio local (git init) en la misma carpeta donde clasp descargó los archivos (.js y .json).
+Sincronizar: Usa clasp push para enviar cambios locales a Google y clasp pull para descargar cambios hechos en la web.
+Google for Developers
+Google for Developers
++4
+Esta metodología permite usar el control de versiones completo (commits, ramas) en tu proyecto de Apps Script.
+Google for Developers
+Google for Developers
++1

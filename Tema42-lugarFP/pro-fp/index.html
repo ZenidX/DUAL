@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Lugar de la FP en la Educaci&oacute;n | JEDAI XII ITIC BCN</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2b6cb0;
+            --accent: #ed8936;
+            --accent-dark: #dd6b20;
+            --bg: #f7fafc;
+            --bg-card: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --info: #3182ce;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 35px,
+                rgba(255,255,255,0.03) 35px,
+                rgba(255,255,255,0.03) 70px
+            );
+        }
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        header .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 2px solid var(--border);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        nav a:hover, nav a:focus {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Main */
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+        section h2 {
+            color: var(--primary);
+            font-size: 1.7rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        section h3 {
+            color: var(--primary-light);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+        section h4 {
+            color: var(--text);
+            font-size: 1.05rem;
+            margin: 1rem 0 0.5rem;
+            font-weight: 600;
+        }
+        p { margin-bottom: 1rem; }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+        .card .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        .card .tag {
+            display: inline-block;
+            background: #ebf4ff;
+            color: var(--primary-light);
+            font-size: 0.75rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Level cards */
+        .level-card {
+            border-left: 4px solid var(--accent);
+        }
+        .level-card.basica { border-left-color: #e53e3e; }
+        .level-card.medio { border-left-color: #ed8936; }
+        .level-card.superior { border-left-color: #38a169; }
+        .level-card.especializacion { border-left-color: #805ad5; }
+
+        /* Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.92rem;
+        }
+        thead {
+            background: var(--primary);
+            color: white;
+        }
+        th {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        tr:hover { background: #f0f7ff; }
+
+        /* Stats */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .stat-box .number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .stat-box .label {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+        .stat-box.highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+        }
+        .stat-box.highlight .number { color: var(--accent); }
+        .stat-box.highlight .label { color: rgba(255,255,255,0.85); }
+
+        /* Diagram - Education Flowchart */
+        .flow-diagram {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .flow-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 0.5rem 0;
+            flex-wrap: wrap;
+        }
+        .flow-box {
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            min-width: 160px;
+        }
+        .flow-box.obligatoria {
+            background: #c6f6d5;
+            color: #22543d;
+            border: 2px solid #38a169;
+        }
+        .flow-box.academica {
+            background: #bee3f8;
+            color: #1a365d;
+            border: 2px solid #3182ce;
+        }
+        .flow-box.fp {
+            background: #feebc8;
+            color: #744210;
+            border: 2px solid #ed8936;
+        }
+        .flow-box.trabajo {
+            background: #fed7d7;
+            color: #742a2a;
+            border: 2px solid #e53e3e;
+        }
+        .flow-box.especial {
+            background: #e9d8fd;
+            color: #44337a;
+            border: 2px solid #805ad5;
+        }
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+        .flow-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-align: center;
+            margin: 0.3rem 0;
+        }
+        .flow-divider {
+            width: 100%;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            padding: 0.3rem;
+            font-weight: 600;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: linear-gradient(135deg, #ebf8ff, #e6fffa);
+            border: 1px solid #81e6d9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-color: #f6e05e;
+        }
+        .highlight-box.success {
+            background: linear-gradient(135deg, #f0fff4, #c6f6d5);
+            border-color: #68d391;
+        }
+        .highlight-box h4 {
+            margin-top: 0;
+        }
+
+        /* Callout */
+        .callout {
+            background: var(--bg-card);
+            border-left: 4px solid var(--info);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.5rem;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+        }
+        .callout.accent { border-left-color: var(--accent); }
+
+        /* Lists */
+        ul, ol {
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        li { margin-bottom: 0.3rem; }
+
+        /* Staircase visual */
+        .staircase {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+        .stair-step {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .stair-step .block {
+            border-radius: 6px 6px 0 0;
+            padding: 0.6rem 0.8rem;
+            color: white;
+            min-width: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stair-step .letter {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-right: 0.4rem;
+        }
+        .stair-step .desc {
+            color: var(--text-light);
+            padding: 0.3rem;
+            font-size: 0.7rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+        footer strong {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6rem; }
+            header .subtitle { font-size: 1rem; }
+            section h2 { font-size: 1.3rem; }
+            nav a { font-size: 0.75rem; padding: 0.3rem 0.5rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .staircase { flex-direction: column; align-items: stretch; }
+            .stair-step .block { border-radius: 6px; }
+        }
+
+        /* Print */
+        @media print {
+            nav { display: none; }
+            header { padding: 1.5rem; }
+            .card:hover { transform: none; box-shadow: none; }
+            section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>El Lugar de la FP en la Educaci&oacute;n</h1>
+    <p class="subtitle">Monogr&aacute;fico sobre la Formaci&oacute;n Profesional en el abanico de posibilidades educativas</p>
+    <span class="badge">JEDAI XII &mdash; ITIC BCN</span>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#intro">Introducci&oacute;n</a></li>
+        <li><a href="#sistema">Sistema Educativo</a></li>
+        <li><a href="#niveles">Niveles de FP</a></li>
+        <li><a href="#comparativa">FP vs Universidad</a></li>
+        <li><a href="#pasarelas">Pasarelas</a></li>
+        <li><a href="#dual">FP Dual</a></li>
+        <li><a href="#datos">Datos Clave</a></li>
+        <li><a href="#familias">Familias Profesionales</a></li>
+        <li><a href="#reforma">Nueva Ley de FP</a></li>
+        <li><a href="#retos">Retos y Futuro</a></li>
+        <li><a href="#conclusiones">Conclusiones</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <!-- 1. INTRODUCCION -->
+    <section id="intro">
+        <h2>1. Introducci&oacute;n</h2>
+        <p>
+            Al finalizar la <strong>Educaci&oacute;n Secundaria Obligatoria (ESO)</strong>, cada estudiante se enfrenta a una de las decisiones
+            m&aacute;s importantes de su trayectoria: &iquest;qu&eacute; camino tomar? Durante d&eacute;cadas, la cultura espa&ntilde;ola ha favorecido una visi&oacute;n
+            lineal &mdash; Bachillerato, Selectividad, Universidad &mdash; como la &uacute;nica v&iacute;a de &eacute;xito profesional. Esta percepci&oacute;n ha relegado
+            a la <strong>Formaci&oacute;n Profesional (FP)</strong> a un injusto segundo plano.
+        </p>
+        <p>
+            Sin embargo, la realidad del mercado laboral, las reformas legislativas y los datos de empleabilidad cuentan
+            una historia muy diferente. La FP no es una alternativa menor: es una <strong>opci&oacute;n de primera</strong> que ofrece
+            cualificaci&oacute;n pr&aacute;ctica, inserci&oacute;n laboral r&aacute;pida y pasarelas reales hacia la educaci&oacute;n superior.
+        </p>
+        <div class="callout accent">
+            Este monogr&aacute;fico analiza el lugar que ocupa la FP dentro del sistema educativo espa&ntilde;ol, sus niveles,
+            su comparativa con la v&iacute;a universitaria, el modelo dual, las pasarelas disponibles y la profunda
+            reforma impulsada por la Ley Org&aacute;nica 3/2022.
+        </div>
+    </section>
+
+    <!-- 2. SISTEMA EDUCATIVO -->
+    <section id="sistema">
+        <h2>2. La FP en el Sistema Educativo Espa&ntilde;ol</h2>
+        <p>
+            El sistema educativo espa&ntilde;ol, regulado por la <strong>LOE (2006)</strong> modificada por la <strong>LOMLOE (2020)</strong>,
+            se estructura en etapas obligatorias y post-obligatorias. La FP atraviesa varias de estas etapas,
+            desde la educaci&oacute;n secundaria hasta la formaci&oacute;n post-superior.
+        </p>
+
+        <div class="flow-diagram">
+            <div class="flow-divider">ETAPA OBLIGATORIA</div>
+            <div class="flow-row">
+                <div class="flow-box obligatoria">Educaci&oacute;n Primaria<br><small>6-12 a&ntilde;os</small></div>
+                <span class="flow-arrow">&rarr;</span>
+                <div class="flow-box obligatoria">ESO<br><small>12-16 a&ntilde;os</small></div>
+            </div>
+
+            <div class="flow-divider" style="margin-top:1rem;">BIFURCACI&Oacute;N POST-ESO</div>
+            <div class="flow-row">
+                <div class="flow-box fp">FP B&aacute;sica<br><small>desde 15 a&ntilde;os</small></div>
+                <div class="flow-box fp">FP Grado Medio<br><small>CFGM</small></div>
+                <div class="flow-box academica">Bachillerato<br><small>2 a&ntilde;os</small></div>
+            </div>
+
+            <div class="flow-divider" style="margin-top:1rem;">EDUCACI&Oacute;N SUPERIOR</div>
+            <div class="flow-row">
+                <div class="flow-box fp">FP Grado Superior<br><small>CFGS</small></div>
+                <div class="flow-box academica">Universidad<br><small>Grado 4 a&ntilde;os</small></div>
+                <div class="flow-box especial">Ense&ntilde;anzas Art&iacute;sticas /<br>Deportivas</div>
+            </div>
+
+            <div class="flow-divider" style="margin-top:1rem;">ESPECIALIZACI&Oacute;N</div>
+            <div class="flow-row">
+                <div class="flow-box especial">Cursos de Especializaci&oacute;n<br><small>Post-GM / Post-GS</small></div>
+                <div class="flow-box academica">M&aacute;ster / Doctorado</div>
+                <div class="flow-box trabajo">Mercado Laboral</div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>Posici&oacute;n de la FP</h4>
+            <p style="margin-bottom:0;">
+                La FP ocupa una posici&oacute;n central como pilar paralelo y complementario a la v&iacute;a acad&eacute;mica.
+                Abarca desde la educaci&oacute;n secundaria (<strong>FP B&aacute;sica</strong>) hasta la post-superior
+                (<strong>Cursos de Especializaci&oacute;n</strong>), formando un sistema completo con m&uacute;ltiples puntos de
+                entrada y salida al mercado laboral.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. NIVELES DE FP -->
+    <section id="niveles">
+        <h2>3. Niveles de la Formaci&oacute;n Profesional</h2>
+
+        <div class="card-grid">
+            <div class="card level-card basica">
+                <div class="card-icon">&#127979;</div>
+                <h4>FP B&aacute;sica</h4>
+                <p>
+                    <strong>Acceso:</strong> 15-17 a&ntilde;os, tras 3&ordm; ESO, por recomendaci&oacute;n del equipo docente.<br>
+                    <strong>Duraci&oacute;n:</strong> 2 cursos (2.000 horas).<br>
+                    <strong>Nivel:</strong> EQF 2 / CNCP 1.<br>
+                    <strong>T&iacute;tulo:</strong> Profesional B&aacute;sico. Desde la LOMLOE, tambi&eacute;n otorga el t&iacute;tulo de ESO.
+                </p>
+                <span class="tag">Prevenci&oacute;n del abandono escolar</span>
+            </div>
+
+            <div class="card level-card medio">
+                <div class="card-icon">&#128736;</div>
+                <h4>Grado Medio (CFGM)</h4>
+                <p>
+                    <strong>Acceso:</strong> T&iacute;tulo ESO, FP B&aacute;sica o prueba de acceso (17+ a&ntilde;os).<br>
+                    <strong>Duraci&oacute;n:</strong> 2.000 horas (~2 a&ntilde;os), incluye FCT.<br>
+                    <strong>Nivel:</strong> EQF 3-4 / CNCP 2.<br>
+                    <strong>T&iacute;tulo:</strong> T&eacute;cnico. Acceso a Bachillerato o CFGS.
+                </p>
+                <span class="tag">Cualificaci&oacute;n t&eacute;cnica intermedia</span>
+            </div>
+
+            <div class="card level-card superior">
+                <div class="card-icon">&#127891;</div>
+                <h4>Grado Superior (CFGS)</h4>
+                <p>
+                    <strong>Acceso:</strong> Bachillerato, CFGM o prueba de acceso (19+ a&ntilde;os).<br>
+                    <strong>Duraci&oacute;n:</strong> 2.000 horas (~2 a&ntilde;os), incluye FCT.<br>
+                    <strong>Nivel:</strong> EQF 5 / CNCP 3.<br>
+                    <strong>T&iacute;tulo:</strong> T&eacute;cnico Superior. Acceso directo a Universidad.
+                </p>
+                <span class="tag">Educaci&oacute;n superior profesional</span>
+            </div>
+
+            <div class="card level-card especializacion">
+                <div class="card-icon">&#11088;</div>
+                <h4>Cursos de Especializaci&oacute;n</h4>
+                <p>
+                    <strong>Acceso:</strong> T&iacute;tulo de T&eacute;cnico o T&eacute;cnico Superior (seg&uacute;n curso).<br>
+                    <strong>Duraci&oacute;n:</strong> 300-720 horas.<br>
+                    <strong>Nivel:</strong> EQF 4-5 (post-GM) o EQF 5-6 (post-GS).<br>
+                    <strong>Ejemplos:</strong> Ciberseguridad, IA y Big Data, Videojuegos.
+                </p>
+                <span class="tag">Profesiones emergentes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. COMPARATIVA -->
+    <section id="comparativa">
+        <h2>4. FP frente a la V&iacute;a Universitaria</h2>
+        <p>
+            La comparaci&oacute;n entre ambas v&iacute;as no busca establecer una jerarqu&iacute;a, sino evidenciar que son
+            <strong>caminos complementarios</strong> con fortalezas distintas.
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dimensi&oacute;n</th>
+                        <th>Formaci&oacute;n Profesional</th>
+                        <th>Bachillerato + Universidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Orientaci&oacute;n</strong></td>
+                        <td>Pr&aacute;ctica, competencial, vinculada al puesto de trabajo</td>
+                        <td>Acad&eacute;mica, te&oacute;rica, orientada a la investigaci&oacute;n</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tiempo hasta primera titulaci&oacute;n</strong></td>
+                        <td>2 a&ntilde;os (CFGM tras ESO)</td>
+                        <td>6 a&ntilde;os (2 Bach + 4 Grado)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contacto con la empresa</strong></td>
+                        <td>Obligatorio (FCT: 380-400h m&iacute;n.; Dual: a&uacute;n m&aacute;s)</td>
+                        <td>Pr&aacute;cticas opcionales y tard&iacute;as en la carrera</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coste</strong></td>
+                        <td>Mayoritariamente p&uacute;blico y gratuito o coste muy bajo</td>
+                        <td>Matr&iacute;cula universitaria: 700-2.000+ &euro;/a&ntilde;o (p&uacute;blica)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Empleabilidad</strong></td>
+                        <td>Inmediata tras CFGM o CFGS</td>
+                        <td>Generalmente tras 4-6 a&ntilde;os</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flexibilidad</strong></td>
+                        <td>Modular, compatible con trabajo</td>
+                        <td>R&iacute;gida, dedicaci&oacute;n completa habitual</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Especializaci&oacute;n</strong></td>
+                        <td>Perfiles profesionales muy espec&iacute;ficos</td>
+                        <td>Base amplia, especializaci&oacute;n tard&iacute;a</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Percepci&oacute;n social</strong></td>
+                        <td>Hist&oacute;ricamente infravalorada; en r&aacute;pida mejora</td>
+                        <td>Tradicionalmente prestigiosa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout">
+            <strong>Dato clave:</strong> Muchos titulados de CFGS alcanzan tasas de empleo y salarios comparables
+            o superiores a graduados universitarios en determinados campos, especialmente en el sector tecnol&oacute;gico.
+        </div>
+    </section>
+
+    <!-- 5. PASARELAS -->
+    <section id="pasarelas">
+        <h2>5. Pasarelas entre FP y Universidad</h2>
+        <p>
+            Uno de los mayores avances del sistema educativo espa&ntilde;ol es la <strong>permeabilidad entre itinerarios</strong>.
+            Ning&uacute;n t&iacute;tulo es un callej&oacute;n sin salida: cada nivel abre puertas al siguiente.
+        </p>
+
+        <h3>Acceso directo CFGS &rarr; Universidad</h3>
+        <ul>
+            <li>Los titulados de <strong>T&eacute;cnico Superior</strong> acceden directamente a Grados universitarios.</li>
+            <li>Prioridad de acceso en titulaciones afines.</li>
+            <li><strong>Convalidaci&oacute;n de cr&eacute;ditos:</strong> entre 30 y 60 ECTS de 240 totales, lo que puede acortar la carrera en un a&ntilde;o o m&aacute;s.</li>
+            <li>Pueden presentarse a la EBAU (fase espec&iacute;fica) para mejorar su nota de admisi&oacute;n.</li>
+        </ul>
+
+        <h3>Itinerario vertical completo dentro de la FP</h3>
+        <div class="staircase">
+            <div class="stair-step">
+                <div class="block" style="background:#e53e3e; height:60px;">
+                    <span class="letter">1</span> FP B&aacute;sica
+                </div>
+                <div class="desc">Nivel b&aacute;sico</div>
+            </div>
+            <div class="stair-step">
+                <div class="block" style="background:#ed8936; height:90px;">
+                    <span class="letter">2</span> CFGM
+                </div>
+                <div class="desc">Grado Medio</div>
+            </div>
+            <div class="stair-step">
+                <div class="block" style="background:#38a169; height:120px;">
+                    <span class="letter">3</span> CFGS
+                </div>
+                <div class="desc">Grado Superior</div>
+            </div>
+            <div class="stair-step">
+                <div class="block" style="background:#805ad5; height:150px;">
+                    <span class="letter">4</span> C. Especializaci&oacute;n
+                </div>
+                <div class="desc">Post-GS</div>
+            </div>
+            <div class="stair-step">
+                <div class="block" style="background:#3182ce; height:180px;">
+                    <span class="letter">5</span> Universidad
+                </div>
+                <div class="desc">Opcional</div>
+            </div>
+        </div>
+
+        <h3>Pasarela inversa</h3>
+        <ul>
+            <li>Universitarios que no completen su grado pueden acceder a CFGS con posible reconocimiento de cr&eacute;ditos.</li>
+            <li>Titulados de Bachillerato acceden tanto a CFGM como a CFGS.</li>
+        </ul>
+
+        <div class="highlight-box success">
+            <h4>El concepto de &laquo;escalera&raquo;</h4>
+            <p style="margin-bottom:0;">
+                La nueva ley enfatiza la FP como una <strong>escalera de cualificaciones</strong>: ning&uacute;n t&iacute;tulo
+                es un punto final. Adem&aacute;s, la certificaci&oacute;n modular permite que incluso la formaci&oacute;n parcial
+                quede acreditada y sea acumulable.
+            </p>
+        </div>
+    </section>
+
+    <!-- 6. FP DUAL -->
+    <section id="dual">
+        <h2>6. La FP Dual</h2>
+        <p>
+            El modelo <strong>FP Dual</strong> integra el aprendizaje en el centro educativo con formaci&oacute;n extendida
+            en la empresa. A diferencia de las pr&aacute;cticas FCT tradicionales (realizadas al final del ciclo),
+            la Dual implica a la empresa como <strong>co-formadora a lo largo del programa</strong>.
+        </p>
+
+        <h3>Dos modalidades (Ley 3/2022)</h3>
+        <div class="card-grid">
+            <div class="card">
+                <h4>Dual General</h4>
+                <p>
+                    Entre el <strong>25% y 35%</strong> de las horas formativas se realizan en la empresa.
+                    El estudiante mantiene su condici&oacute;n de alumno sin relaci&oacute;n laboral.
+                </p>
+                <span class="tag">Sin contrato laboral</span>
+            </div>
+            <div class="card">
+                <h4>Dual Intensiva</h4>
+                <p>
+                    M&aacute;s del <strong>35%</strong> de las horas en la empresa. El estudiante tiene un
+                    <strong>contrato de formaci&oacute;n</strong> y recibe remuneraci&oacute;n.
+                </p>
+                <span class="tag">Con contrato y remuneraci&oacute;n</span>
+            </div>
+        </div>
+
+        <h3>Beneficios del modelo Dual</h3>
+        <ul>
+            <li>Experiencia real en el entorno profesional desde el primer a&ntilde;o.</li>
+            <li>Las empresas identifican y forman a futuros empleados de manera temprana.</li>
+            <li>Tasa de inserci&oacute;n laboral superior al <strong>80%</strong>.</li>
+            <li>Reduce la brecha entre formaci&oacute;n acad&eacute;mica y necesidades del mercado.</li>
+        </ul>
+
+        <h3>Retos</h3>
+        <ul>
+            <li>Requiere compromiso significativo por parte de las empresas.</li>
+            <li>Implementaci&oacute;n desigual entre Comunidades Aut&oacute;nomas.</li>
+            <li>Las PYMEs (mayor&iacute;a del tejido empresarial espa&ntilde;ol) a menudo carecen de capacidad para tutorizar.</li>
+            <li>Complejidad administrativa tanto para centros educativos como para empresas.</li>
+        </ul>
+
+        <div class="callout">
+            <strong>Contexto europeo:</strong> La FP Dual espa&ntilde;ola se inspira en el modelo alem&aacute;n/austr&iacute;aco
+            (<em>Duale Ausbildung</em>), donde aproximadamente el 50% de los j&oacute;venes cursan formaci&oacute;n dual.
+            Espa&ntilde;a trabaja hacia una expansi&oacute;n significativa desde una base mucho menor.
+        </div>
+    </section>
+
+    <!-- 7. DATOS CLAVE -->
+    <section id="datos">
+        <h2>7. Datos y Evidencia</h2>
+
+        <div class="stats-row">
+            <div class="stat-box highlight">
+                <div class="number">1,1M+</div>
+                <div class="label">Estudiantes de FP en 2023-24</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">+40%</div>
+                <div class="label">Crecimiento matr&iacute;cula desde 2019</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">75%</div>
+                <div class="label">Inserci&oacute;n laboral CFGS (6 meses)</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">80%+</div>
+                <div class="label">Inserci&oacute;n en FP Dual</div>
+            </div>
+        </div>
+
+        <h3>Matr&iacute;cula por nivel</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nivel</th>
+                        <th>Estudiantes (aprox.)</th>
+                        <th>Tendencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>FP B&aacute;sica</td>
+                        <td>70.000 &ndash; 80.000</td>
+                        <td>Estable</td>
+                    </tr>
+                    <tr>
+                        <td>Grado Medio</td>
+                        <td>400.000+</td>
+                        <td>Crecimiento moderado</td>
+                    </tr>
+                    <tr>
+                        <td>Grado Superior</td>
+                        <td>450.000 &ndash; 500.000+</td>
+                        <td>Mayor crecimiento</td>
+                    </tr>
+                    <tr>
+                        <td>Cursos de Especializaci&oacute;n</td>
+                        <td>Varios miles</td>
+                        <td>Crecimiento r&aacute;pido</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Empleabilidad comparada</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titulaci&oacute;n</th>
+                        <th>Tasa de inserci&oacute;n</th>
+                        <th>Plazo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CFGM</td>
+                        <td>60-65%</td>
+                        <td>6 meses</td>
+                    </tr>
+                    <tr>
+                        <td>CFGS</td>
+                        <td>70-75%</td>
+                        <td>6 meses</td>
+                    </tr>
+                    <tr>
+                        <td>FP Dual</td>
+                        <td>80%+</td>
+                        <td>Inmediata</td>
+                    </tr>
+                    <tr>
+                        <td>Grado Universitario</td>
+                        <td>65-70%</td>
+                        <td>12 meses</td>
+                    </tr>
+                    <tr>
+                        <td>FP Inform&aacute;tica</td>
+                        <td>80%+</td>
+                        <td>6 meses</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="number" style="font-size:1.6rem;">~13%</div>
+                <div class="label">Abandono escolar temprano (2023)<br><small>Baj&oacute; del 30% en 2006</small></div>
+            </div>
+            <div class="stat-box">
+                <div class="number">26</div>
+                <div class="label">Familias profesionales disponibles</div>
+            </div>
+            <div class="stat-box">
+                <div class="number" style="font-size:1.6rem;">85%+</div>
+                <div class="label">Inserci&oacute;n en algunas familias profesionales</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FAMILIAS PROFESIONALES -->
+    <section id="familias">
+        <h2>8. Familias Profesionales</h2>
+        <p>
+            El cat&aacute;logo de FP incluye <strong>26 familias profesionales</strong> que cubren pr&aacute;cticamente
+            todos los sectores productivos. Destacamos las m&aacute;s relevantes para el sector tecnol&oacute;gico.
+        </p>
+
+        <h3>Inform&aacute;tica y Comunicaciones</h3>
+        <div class="highlight-box success">
+            <p>La familia central del <strong>ITIC BCN</strong> y una de las de mayor empleabilidad del sistema.</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4>Grado Medio</h4>
+                <ul style="margin-left:1rem;">
+                    <li><strong>SMR</strong> &ndash; Sistemas Microinform&aacute;ticos y Redes</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Grado Superior</h4>
+                <ul style="margin-left:1rem;">
+                    <li><strong>DAM</strong> &ndash; Desarrollo de Aplicaciones Multiplataforma</li>
+                    <li><strong>DAW</strong> &ndash; Desarrollo de Aplicaciones Web</li>
+                    <li><strong>ASIR</strong> &ndash; Administraci&oacute;n de Sistemas Inform&aacute;ticos en Red</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Especializaci&oacute;n</h4>
+                <ul style="margin-left:1rem;">
+                    <li>Ciberseguridad en Entornos TI</li>
+                    <li>Inteligencia Artificial y Big Data</li>
+                    <li>Desarrollo de Videojuegos y Realidad Virtual</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Otras familias con componente tecnol&oacute;gico</h3>
+        <div class="card-grid">
+            <div class="card">
+                <h4>Electricidad y Electr&oacute;nica</h4>
+                <p>Automatizaci&oacute;n, rob&oacute;tica industrial, telecomunicaciones.</p>
+            </div>
+            <div class="card">
+                <h4>Imagen y Sonido</h4>
+                <p>Animaci&oacute;n 3D, producci&oacute;n multimedia.</p>
+            </div>
+            <div class="card">
+                <h4>Comercio y Marketing</h4>
+                <p>Marketing digital, comercio electr&oacute;nico.</p>
+            </div>
+            <div class="card">
+                <h4>Fabricaci&oacute;n Mec&aacute;nica</h4>
+                <p>CAD/CAM, Industria 4.0.</p>
+            </div>
+        </div>
+
+        <div class="callout accent">
+            <strong>JEDAI e ITIC:</strong> El evento JEDAI conecta directamente a los estudiantes de la familia
+            de Inform&aacute;tica y Comunicaciones con empresas del sector, ejemplificando el puente entre
+            la formaci&oacute;n FP y el mercado laboral tecnol&oacute;gico. La familia de inform&aacute;tica es consistentemente
+            l&iacute;der en demanda de matr&iacute;cula, empleabilidad y nivel salarial para titulados FP.
+        </div>
+    </section>
+
+    <!-- 9. NUEVA LEY DE FP -->
+    <section id="reforma">
+        <h2>9. La Nueva Ley de FP (Ley Org&aacute;nica 3/2022)</h2>
+        <p>
+            La <strong>Ley Org&aacute;nica 3/2022 de Ordenaci&oacute;n e Integraci&oacute;n de la Formaci&oacute;n Profesional</strong>
+            representa la reforma m&aacute;s profunda de la FP espa&ntilde;ola en d&eacute;cadas, sustituyendo el marco anterior
+            (Ley Org&aacute;nica 5/2002).
+        </p>
+
+        <h3>Pilares fundamentales</h3>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">&#128279;</div>
+                <h4>Sistema Unificado</h4>
+                <p>Integra la FP del sistema educativo (Educaci&oacute;n) y la FP para el empleo (Trabajo) en un &uacute;nico sistema coherente. Crea un continuo desde la formaci&oacute;n inicial hasta el aprendizaje a lo largo de la vida.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#127981;</div>
+                <h4>Car&aacute;cter Dual Universal</h4>
+                <p>Toda la FP pasa a ser dual (general o intensiva). No habr&aacute; FP sin participaci&oacute;n significativa de la empresa. Es el cambio m&aacute;s transformador.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#128220;</div>
+                <h4>Estructura Modular</h4>
+                <p>Sistema de 5 grados (A-E) acumulables, desde microformaciones hasta cursos de especializaci&oacute;n. Toda formaci&oacute;n parcial queda acreditada.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#128101;</div>
+                <h4>Orientaci&oacute;n Profesional</h4>
+                <p>La orientaci&oacute;n profesional se refuerza como derecho de toda la ciudadan&iacute;a, no solo de los estudiantes.</p>
+            </div>
+        </div>
+
+        <h3>Los 5 Grados de formaci&oacute;n</h3>
+        <div class="staircase">
+            <div class="stair-step">
+                <div class="block" style="background:#e53e3e; height:50px;">
+                    <span class="letter">A</span>
+                </div>
+                <div class="desc">Acreditaci&oacute;n<br>parcial</div>
+            </div>
+            <div class="stair-step">
+                <div class="block" style="background:#ed8936; height:70px;">
+                    <span class="letter">B</span>
+                </div>
+                <div class="desc">Certificado de<br>competencia</div>
+            </div>
+            <div class="stair-step">
+                <div class="block" style="background:#ecc94b; height:90px;">
+                    <span class="letter">C</span>
+                </div>
+                <div class="desc">Certificado<br>profesional</div>
+            </div>
+            <div class="stair-step">
+                <div class="block" style="background:#38a169; height:110px;">
+                    <span class="letter">D</span>
+                </div>
+                <div class="desc">Ciclos<br>formativos</div>
+            </div>
+            <div class="stair-step">
+                <div class="block" style="background:#805ad5; height:130px;">
+                    <span class="letter">E</span>
+                </div>
+                <div class="desc">Cursos de<br>especializaci&oacute;n</div>
+            </div>
+        </div>
+        <p>
+            Cada grado es <strong>acumulable</strong>: completar suficientes m&oacute;dulos de Grado A/B permite obtener
+            el Grado C, y varios Grados C acumulan hacia el Grado D. Este sistema garantiza que
+            <strong>toda formaci&oacute;n cuenta</strong>.
+        </p>
+
+        <h3>Acreditaci&oacute;n de Competencias (RECEX)</h3>
+        <div class="highlight-box">
+            <p style="margin-bottom:0;">
+                Reconocimiento formal de competencias adquiridas por <strong>experiencia laboral</strong>.
+                El proceso pasa a ser permanente y accesible (antes depend&iacute;a de convocatorias peri&oacute;dicas),
+                democratizando el acceso a la cualificaci&oacute;n oficial.
+            </p>
+        </div>
+    </section>
+
+    <!-- 10. RETOS Y FUTURO -->
+    <section id="retos">
+        <h2>10. Retos y Perspectivas de Futuro</h2>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4>Cambio cultural</h4>
+                <p>
+                    Superar el estigma hist&oacute;rico de la FP como &laquo;segunda opci&oacute;n&raquo;. Los datos
+                    de empleabilidad son la mejor herramienta para este cambio.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Implementaci&oacute;n territorial</h4>
+                <p>
+                    Las 17 Comunidades Aut&oacute;nomas tienen competencias educativas propias, lo que genera
+                    desigualdad en el ritmo de implantaci&oacute;n de la reforma.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Tejido empresarial</h4>
+                <p>
+                    Espa&ntilde;a est&aacute; dominada por PYMEs que a menudo carecen de recursos para participar
+                    plenamente en el modelo dual. Se necesitan incentivos y apoyo.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Transformaci&oacute;n digital</h4>
+                <p>
+                    La actualizaci&oacute;n continua de curr&iacute;culos para mantener la relevancia frente a
+                    tecnolog&iacute;as emergentes (IA, ciberseguridad, cloud) es un desaf&iacute;o constante.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Desempleo juvenil</h4>
+                <p>
+                    Espa&ntilde;a tiene una de las tasas m&aacute;s altas de desempleo juvenil de la UE.
+                    Una FP fuerte y conectada con el mercado es parte esencial de la soluci&oacute;n.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Convergencia europea</h4>
+                <p>
+                    Alinear el sistema espa&ntilde;ol con los l&iacute;deres europeos en FP (Alemania, Austria,
+                    Suiza, Pa&iacute;ses N&oacute;rdicos) sigue siendo un objetivo estrat&eacute;gico.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. CONCLUSIONES -->
+    <section id="conclusiones">
+        <h2>11. Conclusiones</h2>
+
+        <div class="highlight-box success">
+            <h4>La FP como opci&oacute;n de primera</h4>
+            <p>
+                La Formaci&oacute;n Profesional ha dejado de ser una alternativa de consolaci&oacute;n. Con tasas de
+                empleabilidad que igualan o superan a las universitarias en muchos campos, un sistema modular
+                y flexible, pasarelas reales hacia la educaci&oacute;n superior, y un modelo dual que conecta
+                directamente con el mercado laboral, la FP se posiciona como una <strong>elecci&oacute;n estrat&eacute;gica
+                de primer nivel</strong>.
+            </p>
+        </div>
+
+        <p>Los datos son contundentes:</p>
+        <ul>
+            <li>La matr&iacute;cula crece un <strong>40%</strong> en cinco a&ntilde;os, superando el mill&oacute;n de estudiantes.</li>
+            <li>La inserci&oacute;n laboral en FP Dual supera el <strong>80%</strong>.</li>
+            <li>El sector de inform&aacute;tica y comunicaciones muestra una demanda que <strong>supera la oferta</strong> de titulados.</li>
+            <li>La nueva ley crea un sistema <strong>modular, dual y acumulable</strong> sin precedentes.</li>
+            <li>Ning&uacute;n t&iacute;tulo es un callej&oacute;n sin salida: las pasarelas garantizan progresi&oacute;n continua.</li>
+        </ul>
+
+        <p>
+            Para los estudiantes del <strong>ITIC Barcelona</strong>, la FP en la familia de Inform&aacute;tica y Comunicaciones
+            no solo ofrece una formaci&oacute;n de calidad y altamente demandada, sino que abre un abanico de posibilidades
+            que incluye la especializaci&oacute;n en campos de vanguardia (ciberseguridad, IA, videojuegos), el acceso
+            directo a la universidad con convalidaciones, y una inserci&oacute;n laboral privilegiada en un sector en
+            constante crecimiento.
+        </p>
+
+        <div class="callout accent">
+            <strong>El mensaje es claro:</strong> la FP no es una puerta trasera al mercado laboral.
+            Es la puerta principal para quienes buscan una formaci&oacute;n pr&aacute;ctica, actualizada y con
+            resultados demostrables.
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p><strong>JEDAI XII &mdash; ITIC BCN</strong></p>
+    <p>Jornadas de Encuentro y Divulgaci&oacute;n de Aplicaciones Inform&aacute;ticas</p>
+    <p style="margin-top: 0.8rem; font-size: 0.78rem; opacity: 0.7;">
+        Monogr&aacute;fico: El Lugar de la FP en la Educaci&oacute;n | 2025-2026
+    </p>
+</footer>
+
+</body>
+</html>
