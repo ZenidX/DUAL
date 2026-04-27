@@ -29,12 +29,16 @@ const CONFIG = {
 
   // Auto-send per acció. true = envia directe; false = crea draft i avisa al tutor.
   // Pensat perquè el tutor pugui modular el risc fàcilment des d'aquí.
+  // MODE SEGUR INICIAL: tot a false → només drafts mentre validem.
+  // Anar passant a true progressivament després de revisar 4-5 casos reals de cada tipus.
+  // Ordre suggerit: candidat_extern_resposta → inscripcio_formalitzant → inscripcio_oferiment
+  //                 → oferta_agraiment_empresa → oferta_distribucio.
   AUTO_SEND: {
     oferta_distribucio: false,        // mail nou al Group del cicle (alt risc per error)
-    oferta_agraiment_empresa: true,   // resposta a l'empresa un cop distribuïda
-    inscripcio_oferiment: true,       // resposta amb adjunt cessió a l'alumne
-    inscripcio_formalitzant: true,    // confirmació final un cop rebut CV+cessió
-    candidat_extern_resposta: true,   // resposta automàtica a externs
+    oferta_agraiment_empresa: false,  // resposta a l'empresa un cop distribuïda
+    inscripcio_oferiment: false,      // resposta amb adjunt cessió a l'alumne
+    inscripcio_formalitzant: false,   // confirmació final un cop rebut CV+cessió
+    candidat_extern_resposta: false,  // resposta automàtica a externs
   },
 
   // Gemini API (Google AI Studio, no Vertex)

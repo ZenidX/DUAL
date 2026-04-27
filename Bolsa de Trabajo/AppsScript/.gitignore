@@ -1,0 +1,3 @@
+# clasp local config (sensible al usuario, no committejar)
+.clasp.json
+.clasprc.json
