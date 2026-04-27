@@ -1,0 +1,4 @@
+# Només pugem .gs i appsscript.json al projecte Apps Script
+**/**
+!*.gs
+!appsscript.json
